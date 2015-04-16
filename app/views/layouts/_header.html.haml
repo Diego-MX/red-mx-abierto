@@ -1,8 +1,11 @@
 %header.navbar.navbar-fixed-top
   .container
-    = link_to "Polls", root_path, id: "logo"
+    = link_to image_tag("toplogo.png"), root_path, {class: 'navbar-brand'}
     %nav
       %ul.nav.navbar-nav.pull-right
-        %li= link_to "Home",   page_path(id: 'home')
-        %li= link_to "Help",   page_path(id: 'help')
+        %li= link_to "Inicio",   page_path(id: 'home')
+        %li= link_to "Miembros",   page_path(id: 'home')
+        %li= link_to "Herramientas",   page_path(id: 'home')
+        %li= link_to "Únete",   page_path(id: 'home')
+        %li= link_to "Experiencias",   page_path(id: 'home')
         %li= link_to "Log in", user_session_path
