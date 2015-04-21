@@ -4,7 +4,10 @@
 body {
   padding-top: 60px;
 }
-
+.inicio{
+  background-image:url(image_path('blog.png'));
+  height: 400px;
+}
 #logo {
   float: left;
   margin-right: 10px;
