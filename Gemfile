@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-ruby '2.1.5'
+ruby '2.2.0'
 gem 'rails', '4.1.10'
 # Use sqlite3 as the database for Active Record
 # Use SCSS for stylesheets
@@ -48,6 +48,7 @@ gem 'high_voltage'
 gem 'pundit'
 gem 'sendgrid'
 gem 'simple_form'
+gem "font-awesome-rails"
 
 group :development do
   gem 'better_errors'
