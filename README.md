@@ -1,11 +1,11 @@
-## Polls
+## Red México Abierto
 
-Polls and surveys should be a part of an Open Government toolbox. This web app lets you build and publish polls in a matter of minutes.
+Repositorio para el sitio de la Red México Abierto
 
 ### System dependencies
 
 - Ruby on Rails
-- See [Gemfile](https://github.com/mxabierto/polls/blob/master/Gemfile)
+- See [Gemfile](https://github.com/mxabierto/red-mx-abierto/blob/master/Gemfile)
 
 ### Configuration
 
