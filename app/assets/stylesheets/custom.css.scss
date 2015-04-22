@@ -1,12 +1,81 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,300,400);
 
+/* Colors of the template */
+$verde-mx: #00d8a2;
+$verde-mx-hover: #00cc99;
+$verde-mx-sombra:#00b88a;
+
+$azul-mx: #304660;
+
+$rojo-mx: #ff7869;
+
+$amarillo-mx: #fccb2f;
+
+$gris-mx: #cbd0d7;
+$gris-font: #919191;
+$gris-fondo: #f2f2f2;
+$gris-borde: #eae9e9;
+
+
+/*New color assignments for template*/
+
+/* Sections of the template */
 body {
   padding-top: 60px;
+  font-size:16px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  color:$gris-font;
+  h1,h2,h3,h4{
+    color: $azul-mx;
+  }
 }
 .inicio{
-  background-image:url(image_path('blog.png'));
-  height: 400px;
+  h1,h2,h3{
+    color:#fff;
+    font-weight: 400;
+    line-height: 1.6em;
+  }
+  height: 500px;
+  width: 100%;
+  padding: 50px 0;
+  margin-top: -60px;
+  background-color:darken(#000033,0.99);
+  position: relative;
+  text-align: center;
+  a {
+    color:#fff;
+  }
+  .overlay-photo{
+    position: absolute;
+    width: 100%;
+    height:620px;
+    background-image:url(image_path('blog.png'));
+    background-position: center center;
+    z-index:0;
+    opacity: 0.7;
+    margin-top:-170px;
+  }
+  #actualizaciones{
+    height:100px;
+    position: relative;
+    z-index:1;
+    margin-top:-150px;
+    float:right;
+  }
+  .texto-inicio{
+    margin-top: 5%;
+  }
+}
+
+.separador-verde{
+  background-color: $verde-mx;
+  height: 2em;
+}
+.fat-nav{
+  padding: 0px 0;
 }
 #logo {
   float: left;
