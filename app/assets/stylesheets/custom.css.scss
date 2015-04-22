@@ -1,7 +1,3 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,300,400);
-
 /* Colors of the template */
 $verde-mx: #00d8a2;
 $verde-mx-hover: #00cc99;
@@ -20,6 +16,16 @@ $gris-borde: #eae9e9;
 
 
 /*New color assignments for template*/
+$btn-default-bg: #fff;
+$btn-primary-bg: lighten($azul-mx, 0.2);
+$btn-success-bg: $verde-mx;
+$btn-info-bg: lighten($azul-mx, 0.7);
+$btn-warning-bg: $amarillo-mx;
+$btn-danger-bg: $rojo-mx;
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,300,400);
+
 
 /* Sections of the template */
 body {
