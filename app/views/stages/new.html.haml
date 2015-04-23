@@ -1,0 +1,20 @@
+%p= t('.new_stage')
+.stage-form-container{ 'ng-controller' => 'stepsCtrl as steps'}
+  = form_for @stage do |f|
+    .form-group
+      = f.label :name, t('.stage_name')
+      = f.text_field :name, class: 'form-control'
+    .form-group
+      = f.label :position, t('.stage_position')
+      = f.number_field :position, class: 'form-control'
+
+    -# New dynamic step definition
+    .form-group{ 'ng-repeat' => 'step in steps.names track by $index' }
+      = label_tag "steps[]", 'Paso #{{ $index + 1 }}'
+      = text_field_tag "steps[]", nil, placeholder: "#{t('.step_name')} \#{{ $index + 1 }}" , class: 'form-control'
+
+    .actions
+      %a.pull-right{ 'ng-click' => 'steps.addNewStep();'}= t('.add_step')
+
+    .form-group
+      = f.submit t('.save_stage'), class: 'btn btn-success'
