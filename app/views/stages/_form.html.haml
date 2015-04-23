@@ -1,0 +1,39 @@
+.stage-form-container{ 'ng-controller' => 'stepsCtrl as steps'}
+  = form_for @stage do |f|
+    .form-group
+      = f.label :name, t('.stage_name')
+      = f.text_field :name, class: 'form-control'
+    -# We should use this field when it matters the order for each stage
+    -# .form-group
+      = f.label :position, t('.stage_position')
+      = f.number_field :position, class: 'form-control', 'min' => 1
+
+    .form-group
+      - if @stage.steps.any?
+        .row
+          .col-sm-10
+            %p= t('.steps')
+          .col-sm-2
+            %a.pull-right.action_link{ 'ng-click' => 'steps.addNewStep();'}= t('.add_step')
+
+        %table.table.table-hover
+          %thead
+            %tr
+              %th #
+              %th= t('.step_name')
+              %th= t('.actions')
+          %tbody
+            - @stage.steps.each_with_index do |step, idx|
+              %tr
+                %td= idx
+                %td= step.name
+                %td.pull-right
+                  = link_to t('.edit'), '#'
+
+    -# New dynamic step definition
+    .form-group{ 'ng-repeat' => 'step in steps.names track by $index' }
+      = label_tag "steps[]", 'Paso #{{ $index + 1 }}'
+      = text_field_tag "steps[]", nil, placeholder: "#{t('.new_step_name')} \#{{ $index + 1 }}" , class: 'form-control'
+
+    .form-group
+      = f.submit t('.save_stage'), class: 'btn btn-success pull-right'
