@@ -1,8 +1,4 @@
 class StagesController < ApplicationController
-  before_action :set_stage_and_steps, only: :create
-  # before_action :set_steps
-  # before_action :set_activities
-
   layout 'admin'
 
   def index
@@ -14,12 +10,21 @@ class StagesController < ApplicationController
   end
 
   def create
-    raise 1.inspect
+    @stage = Stage.new(stage_params)
+    if @stage.save_and_add_new_steps(steps_params)
+      redirect_to stages_path
+    else
+      redirect_to new_stage_path
+    end
   end
 
   private
 
-  def set_stage_and_steps
-    params.require(:stage).permit(:name, :position, :steps)
+  def stage_params
+    params.require(:stage).permit(:name, :position)
+  end
+
+  def steps_params
+    params.require(:steps)
   end
 end
