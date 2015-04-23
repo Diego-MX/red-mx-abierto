@@ -120,6 +120,13 @@ body {
 .border-between > [class*='col-']:first-child:before {
  display: none;
 }
+
+.fa-envelope:hover {
+    color: #00CC99 !important;
+}
+.fa-twitter:hover {
+    color: #00CC99 !important;
+}
 /*************************a-green******************/
 .a-green{
   color: #919191 !important;
