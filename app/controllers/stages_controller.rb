@@ -5,6 +5,10 @@ class StagesController < ApplicationController
 
   layout 'admin'
 
+  def index
+    @stages = Stage.all
+  end
+
   def new
     @stage = Stage.new
   end

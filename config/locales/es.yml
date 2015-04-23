@@ -10,7 +10,7 @@ es:
       stage_name: Nombre
       stage_position: Posición
       step_name: Nombre del paso
-      add_step: Agregar otro paso
+      add_step: Agregar paso
       save_stage: Guardar etapa
   footer:
     menu:

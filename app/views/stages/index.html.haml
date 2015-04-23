@@ -3,7 +3,8 @@
     %p Etapas
   .col-sm-2
     = link_to t('.new_stage'), new_stage_path, class: 'btn btn-primary pull-right'
-- if @stages
+    
+- if @stages.any?
   %table.table.table-hover
     %thead
       %tr
@@ -11,10 +12,11 @@
         %th= t('.stage_name')
         %th= t('.step_count')
     %tbody
-      %tr
-        %td 1
-        %td Primer ejemplo
-        %td 5
+      - @stage.each_with_index do |st, idx|
+        %tr
+          %td = idx
+          %td = st.name
+          %td 5
 - else
   .jumbotron.text-center{ style: 'margin-top: 15px;' }
     %p= t('.no_stages')
