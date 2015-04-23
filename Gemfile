@@ -50,6 +50,8 @@ gem 'sendgrid'
 gem 'simple_form'
 gem "font-awesome-rails"
 
+gem 'angularjs-rails'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
@@ -89,4 +91,3 @@ group :test do
   gem 'launchy'
   gem 'selenium-webdriver'
 end
-
