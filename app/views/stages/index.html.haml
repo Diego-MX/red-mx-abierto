@@ -11,12 +11,16 @@
         %th #
         %th= t('.stage_name')
         %th= t('.step_count')
+        %th= t('.actions')
     %tbody
       - @stages.each_with_index do |stage, idx|
         %tr
           %td= idx
           %td= stage.name
           %td= stage.steps.count
+          %td
+            = link_to t('.edit'), edit_stage_path(stage)
+
 - else
   .jumbotron.text-center{ style: 'margin-top: 15px;' }
     %p= t('.no_stages')

@@ -9,6 +9,6 @@
 
   %body{ 'ng-app' => 'redMxAbiertoApp', 'data-no-turbolink' => 'true' }
     = render 'layouts/header'
-    = render 'layouts/alert'
     .container
+      = render 'layouts/alert'
       = yield
