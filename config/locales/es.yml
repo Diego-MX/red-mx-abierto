@@ -1,15 +1,27 @@
 es:
   stages:
+    notices:
+      saved_successfully: La etapa fue guardada satisfactoriamente.
+    alerts:
+      save_failed: Hubo un error al guardar los cambios.
     index:
       new_stage: Crear etapa
       stage_name: Nombre
       step_count: "# Pasos"
       no_stages: No se han creado etapas.
+      edit: Editar
     new:
       new_stage: Nueva etapa
+    edit:
+      edit_stage: Editar etapa
+    form:
+      steps: Pasos
+      step_name: Nombre
+      actions: Acciones
+      edit: Editar
       stage_name: Nombre
       stage_position: Posición
-      step_name: Nombre del paso
+      new_step_name: Nombre del paso
       add_step: Agregar paso
       save_stage: Guardar etapa
   footer:
