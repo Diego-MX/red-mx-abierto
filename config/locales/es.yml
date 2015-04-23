@@ -1,6 +1,19 @@
-es: 
-  footer: 
-    menu: 
+es:
+  stages:
+    index:
+      new_stage: Crear etapa
+      stage_name: Nombre
+      step_count: "# Pasos"
+      no_stages: No se han creado etapas.
+    new:
+      new_stage: Nueva etapa
+      stage_name: Nombre
+      stage_position: Posición
+      step_name: Nombre del paso
+      add_step: Agregar otro paso
+      save_stage: Guardar etapa
+  footer:
+    menu:
       acerca: "Acerca de"
       blog: "Blog de Experiencias"
       estudio: "Estudio Fase Piloto"
