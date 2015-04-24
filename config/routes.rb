@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :stages, only: [:index]
+
   get 'pages/home'
 
   root 'pages#home'

@@ -1,0 +1,7 @@
+- if steps.any?
+  - steps.each do |step|
+    %h3= step.name
+    = render 'activities_listing', activities: step.activities
+- else
+  .jumbotron.text-center{ style: 'margin-top: 15px;' }
+    %p= t('.no_steps')
