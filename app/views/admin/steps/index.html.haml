@@ -1,0 +1,32 @@
+.step-container{ 'ng-controller' => 'stepsCtrl as steps'}
+  .row
+    .col-sm-10
+      %p= t('.steps')
+    .col-sm-2
+      %a.open-modal.action_link.btn.btn-primary.pull-right{ 'ng-click' => "steps.openModal(\"\");" }= t('.new_step')
+      = render 'steps_modal', step: @step
+
+  - if @steps.any?
+    %table.table.table-hover
+      %thead
+        %tr
+          %th #
+          %th= t('.step_name')
+          %th= t('.activities_count')
+          %th= t('.actions')
+      %tbody
+        - @steps.each_with_index do |step, idx|
+          %tr
+            %td= idx
+            %td= step.name
+            %td= step.activities.count
+            %td
+              %span
+                %a.open-modal.action_link{ 'ng-click' => "steps.openModal(#{step.id});" }= t('.edit')
+                |
+                = link_to t('.activities'), admin_stage_step_activities_path(@stage, step)
+          = render 'steps_modal', step: step
+
+  - else
+    .jumbotron.text-center{ style: 'margin-top: 15px;' }
+      %p= t('.no_steps')

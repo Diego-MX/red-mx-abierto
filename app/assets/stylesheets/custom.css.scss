@@ -1,34 +1,8 @@
-/* Colors of the template */
-$verde-mx: #00d8a2;
-$verde-mx-hover: #00cc99;
-$verde-mx-sombra:#00b88a;
-$azul-mx: #304660;
-$rojo-mx: #ff7869;
-$amarillo-mx: #fccb2f;
-$gris-mx: #cbd0d7;
-$gris-font: #919191;
-$gris-fondo: #f2f2f2;
-$gris-borde: #eae9e9;
-$gris-contextual: #d8d8d8;
-
-
-/*New color assignments for template*/
-$gray-light:$gris-font;
-$btn-default-bg: #fff;
-$btn-primary-bg: lighten($azul-mx, 0.2);
-$btn-success-bg: $verde-mx;
-$btn-info-bg: lighten($azul-mx, 0.7);
-$btn-warning-bg: $amarillo-mx;
-$btn-danger-bg: $rojo-mx;
-$navbar-inverse-bg: $azul-mx;
-$navbar-inverse-border: transparent;
-$navbar-inverse-link-active-bg: transparent;
-
 /* imports */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "variables";
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,300,400,700);
-
 
 /* Sections of the template */
 body {
@@ -247,7 +221,7 @@ body {
 /* mouse over link */
 .a-green:hover {
   color: #00CC99 !important;
-  text-decoration:none;  
+  text-decoration:none;
 }
 
 /* selected link */

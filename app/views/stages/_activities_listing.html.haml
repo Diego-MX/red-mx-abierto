@@ -1,0 +1,6 @@
+- if activities.any?
+  - activities.each do |activity|
+    .checkbox
+      = label_tag do
+        = check_box_tag "activity[]"
+        = activity.name

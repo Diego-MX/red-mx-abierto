@@ -12,5 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require turbolinks
+//= require angular
+//= require redMxAbiertoApp
 //= require_tree .
