@@ -8,8 +8,16 @@ app.controller('stagesCtrl', function(){
 
   this.openModal = function(id) {
     var modalId = "#stageModal" + id;
-    console.log(modalId);
-    console.log(angular.element(modalId));
+    angular.element(modalId).modal('show');
+  };
+});
+
+app.controller('stepsCtrl', function(){
+  var self = this;
+  this.names = [];
+
+  this.openModal = function(id) {
+    var modalId = "#stepModal" + id;
     angular.element(modalId).modal('show');
   };
 });

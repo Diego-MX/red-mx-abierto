@@ -1,10 +1,10 @@
 .stage-container{ 'ng-controller' => 'stagesCtrl as stages'}
   .row
     .col-sm-10
-      %p Etapas
+      %p= t('.stages')
     .col-sm-2
       %a.open-modal.action_link.btn.btn-primary.pull-right{ 'ng-click' => "stages.openModal(\"\");" }= t('.new_stage')
-      = render 'stage_modal', stage: @stage
+      = render 'stages_modal', stage: @stage
 
   - if @stages.any?
     %table.table.table-hover
@@ -21,8 +21,11 @@
             %td= stage.name
             %td= stage.steps.count
             %td
-              %a.open-modal.action_link{ 'ng-click' => "stages.openModal(#{stage.id});" }= t('.edit')
-          = render 'stage_modal', stage: stage
+              %span
+                %a.open-modal.action_link{ 'ng-click' => "stages.openModal(#{stage.id});" }= t('.edit')
+                |
+                = link_to t('.steps'), stage_steps_path(stage)
+          = render 'stages_modal', stage: stage
 
   - else
     .jumbotron.text-center{ style: 'margin-top: 15px;' }

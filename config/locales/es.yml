@@ -4,33 +4,55 @@ es:
       saved_successfully: La etapa fue guardada satisfactoriamente.
     alerts:
       save_failed: Hubo un error al guardar los cambios.
-    stage_modal:
+    stages_modal:
       stage: Etapas
       stage_name: Nombre de la etapa
       cancel: Cancelar
       save: Guardar cambios
-    # edit_step_modal:
-    #   edit_step: Edita el nombre del paso
-    #   step_placeholder: Nuevo nombre para este paso
-    #   cancel: Cancelar
-    #   save: Guardar cambios
     index:
+      stages: Etapas
       new_stage: Crear etapa
       stage_name: Nombre
       step_count: "# Pasos"
       no_stages: No se han creado etapas.
       edit: Editar
-    new:
-      new_stage: Nueva etapa
-    edit:
-      edit_stage: Editar etapa
-    form:
       steps: Pasos
-      step_name: Nombre
       actions: Acciones
+    # new:
+    #   new_stage: Nueva etapa
+    # edit:
+    #   edit_stage: Editar etapa
+
+  steps:
+    notices:
+      saved_successfully: El paso fue guardado satisfactoriamente.
+    alerts:
+      save_failed: Hubo un error al guardar los cambios.
+    steps_modal:
+      step: Pasos
+      step_name: Nombre del paso
+      cancel: Cancelar
+      save: Guardar cambios
+    index:
+      steps: Pasos
+      new_step: Crear paso
+      step_name: Nombre
+      activities_count: "# Actividades"
+      no_steps: No se han creado actividades.
       edit: Editar
-      stage_name: Nombre
-      stage_position: Posición
-      new_step_name: Nombre del paso
-      add_step: Agregar paso
-      save_stage: Guardar etapa
+      activities: Actividades
+      actions: Acciones
+    # new:
+    #   new_stage: Nueva etapa
+    # edit:
+    #   edit_stage: Editar etapa
+    # form:
+    #   steps: Pasos
+    #   step_name: Nombre
+    #   actions: Acciones
+    #   edit: Editar
+    #   stage_name: Nombre
+    #   stage_position: Posición
+    #   new_step_name: Nombre del paso
+    #   add_step: Agregar paso
+    #   save_stage: Guardar etapa
