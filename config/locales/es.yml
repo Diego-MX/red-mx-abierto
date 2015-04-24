@@ -10,3 +10,15 @@ es:
       herramientas: Herramientas
       miembros: Miembros
       preguntas: "Preguntas Frecuentas"
+  devise:
+    registrations:
+      new:
+        registra: Registrar
+        seccion: CREAR PERFIL
+        titulo: ¡Únete a la red México abierto!
+        subtitulo: En México abierto se pueden registrar servidores públicos de gobiernos de México.
+        radio:
+          titulo: Gobierno
+          estado: Estatal
+          municipio: Municipal
+          delegacion: Delegación

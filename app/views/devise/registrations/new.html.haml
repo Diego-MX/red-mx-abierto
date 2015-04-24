@@ -1,0 +1,43 @@
+%div.row
+  %div.container
+    %div.col-md-8.col-md-offset-2
+      %div.row
+        %div.col-md-4.col-md-offset-4
+          %h3.text-center
+            = t('.seccion')
+            %hr.small
+      %div.p.text-center
+        = t('.titulo')
+        %br
+        = t('.subtitulo')
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| 
+        %div.row
+          %div.col-md-3
+            = t('.radio.titulo')
+          %div.col-md-3
+            = f.radio_button :contactmethod, 'estatal', :checked => true
+            = label :contactmethod_estatal,  t('.radio.estado')
+          %div.col-md-3
+            = f.radio_button :contactmethod, 'municipal', :checked => false
+            = label :contactmethod_municipal,  t('.radio.municipio')
+          %div.col-md-3
+            = f.radio_button :contactmethod, 'delagacion', :checked => false
+            = label :contactmethod_municipal,  t('.radio.delegacion')
+        %div.field
+          = f.text_field :state, autofocus: true
+        %div.field
+          = f.text_field :municipality
+        %div.field
+          = f.text_field :deputation
+        %div.field
+          = f.text_field :dependency_name
+        %div.field
+          = f.label :full_name
+        %div.field
+          = f.email_field :email, autofocus: true
+        %div.field
+          = f.password_field :password, autocomplete: "off"
+        %div.field
+          = f.password_field :password_confirmation, autocomplete: "off"
+        %div.actions
+          = f.submit t('.registra')
