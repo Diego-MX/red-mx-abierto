@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :pages, only: :home
+
+  resources :stages, only: :index
+
   namespace :admin do
     resources :stages, only: [:index, :create, :update] do
       resources :steps, only: [:index, :create, :update] do
@@ -9,8 +12,6 @@ Rails.application.routes.draw do
       end
     end
   end
-
-  resources :stages, only: [:index]
 
   get 'pages/home'
 

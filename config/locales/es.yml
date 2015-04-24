@@ -1,4 +1,9 @@
 es:
+  stages:
+    index:
+      no_stages: No se han creado etapas.
+    steps_listing:
+      no_steps: No hay pasos dentro de esta etapa.
   admin:
     stages:
       notices:
