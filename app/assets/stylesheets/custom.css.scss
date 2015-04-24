@@ -9,6 +9,7 @@ $gris-mx: #cbd0d7;
 $gris-font: #919191;
 $gris-fondo: #f2f2f2;
 $gris-borde: #eae9e9;
+$gris-contextual: #d8d8d8;
 
 
 /*New color assignments for template*/
@@ -102,11 +103,78 @@ body {
   }
 }
 
+.card-reciente{
+  margin-top:54px;
+  list-style: none;
+  padding: 30px 50px;
+  border: 2px solid $gris-borde;
+  border-radius: 6px;
+  .avatar {
+    width:15%;
+    float:left;
+    img{
+      max-width: 72px;
+    }
+  }
+  .estado{
+    width: 85%;
+    float:left;
+  }
+  .hora{
+    color:$gris-contextual;
+  }
+}
+
+.etapa{
+  h3{
+    margin-bottom:30px;
+  }
+  .glyphicon{
+    color: $gris-contextual;
+    font-size:0.8em;
+  }
+  .card-reciente{
+    margin: 20px;
+    height:100px;
+    padding: 18px;
+    position: relative;
+  }
+  .avatar {
+    width:35%;
+    float:left;
+    img{
+      max-width: 60px;
+    }
+  }
+  .estado{
+    left: 40%;
+    float: left;
+    top: 40%;
+    position: absolute;
+  }
+
+}
+
+.herramienta{
+  ul{
+    list-style: none;
+  }
+  .avatar {
+    width:26%;
+    float:left;
+    img{
+      max-width: 60px;
+      margin:5px;
+    }
+  }
+}
+
+
 .separador-verde{
   background-color: $verde-mx;
   height: 22px;
 }
-.section{
+.section, .section-mini{
   padding: 50px 0;
   h1,h2,h3{
     font-weight: 700;
@@ -117,6 +185,9 @@ body {
   }
 }
 
+.section-mini{
+  padding: 25px 0;
+}
 .italicas{
   font-style: italic;
 }
