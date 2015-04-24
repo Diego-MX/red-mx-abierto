@@ -1,0 +1,22 @@
+= form_for [@stage, @step, activity] do |f|
+  .modal.fade{ id: "activityModal#{activity.id}", tabindex: '-1', role: 'dialog', 'aria-labelledby'=> 'activityModalLabel', 'aria-hidden'=> 'true' }
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button{ type: 'button', class: 'close', 'data-dismiss'=> 'modal', 'aria-label'=> 'Close' }
+            %span{ 'aria-hidden'=> 'true' }
+              &times;
+          %h4#myModalLabel.modal-title= t('.activity')
+        .modal-body
+          .form-group
+            = f.label :name, t('.activity_name')
+            = f.text_field :name, class: 'form-control'
+          -# We should use this field when it matters the order for each activity
+          -# .form-group
+            = f.label :position, t('.activity_position')
+            = f.number_field :position, class: 'form-control', 'min' => 1
+
+          .form-group
+        .modal-footer
+          %button.btn.btn-default{ 'data-dismiss'=> 'modal' }= t('.cancel')
+          = f.submit t('.save'), class: 'btn btn-primary'

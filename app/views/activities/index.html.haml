@@ -1,0 +1,28 @@
+.activity-container{ 'ng-controller' => 'activitiesCtrl as activities'}
+  .row
+    .col-sm-10
+      %p= t('.activities')
+    .col-sm-2
+      %a.open-modal.action_link.btn.btn-primary.pull-right{ 'ng-click' => "activities.openModal(\"\");" }= t('.new_activity')
+      = render 'activities_modal', activity: @activity
+
+  - if @activities.any?
+    %table.table.table-hover
+      %thead
+        %tr
+          %th #
+          %th= t('.activity_name')
+          %th= t('.actions')
+      %tbody
+        - @activities.each_with_index do |activity, idx|
+          %tr
+            %td= idx
+            %td= activity.name
+            %td
+              %span
+                %a.open-modal.action_link{ 'ng-click' => "activities.openModal(#{activity.id});" }= t('.edit')
+          = render 'activities_modal', activity: activity
+
+  - else
+    .jumbotron.text-center{ style: 'margin-top: 15px;' }
+      %p= t('.no_activities')
