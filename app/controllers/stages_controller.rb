@@ -7,10 +7,6 @@ class StagesController < ApplicationController
     @stages = Stage.all
   end
 
-  def new
-    @stage = Stage.new
-  end
-
   def create
     @stage = Stage.new(stage_params)
     if @stage.save(stage_params)
@@ -18,9 +14,6 @@ class StagesController < ApplicationController
     else
       redirect_to stages_path, alert: I18n.t('stages.alerts.save_failed')
     end
-  end
-
-  def edit
   end
 
   def update

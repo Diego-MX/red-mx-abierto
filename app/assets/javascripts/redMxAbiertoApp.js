@@ -21,3 +21,13 @@ app.controller('stepsCtrl', function(){
     angular.element(modalId).modal('show');
   };
 });
+
+app.controller('activitiesCtrl', function(){
+  var self = this;
+  this.names = [];
+
+  this.openModal = function(id) {
+    var modalId = "#activityModal" + id;
+    angular.element(modalId).modal('show');
+  };
+});

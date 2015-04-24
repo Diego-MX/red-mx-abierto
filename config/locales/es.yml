@@ -18,10 +18,6 @@ es:
       edit: Editar
       steps: Pasos
       actions: Acciones
-    # new:
-    #   new_stage: Nueva etapa
-    # edit:
-    #   edit_stage: Editar etapa
 
   steps:
     notices:
@@ -38,21 +34,25 @@ es:
       new_step: Crear paso
       step_name: Nombre
       activities_count: "# Actividades"
-      no_steps: No se han creado actividades.
+      no_steps: No se han creado pasos.
       edit: Editar
       activities: Actividades
       actions: Acciones
-    # new:
-    #   new_stage: Nueva etapa
-    # edit:
-    #   edit_stage: Editar etapa
-    # form:
-    #   steps: Pasos
-    #   step_name: Nombre
-    #   actions: Acciones
-    #   edit: Editar
-    #   stage_name: Nombre
-    #   stage_position: Posición
-    #   new_step_name: Nombre del paso
-    #   add_step: Agregar paso
-    #   save_stage: Guardar etapa
+
+  activities:
+    notices:
+      saved_successfully: La actividad fue guardada satisfactoriamente.
+    alerts:
+      save_failed: Hubo un error al guardar los cambios.
+    activities_modal:
+      activity: Actividades
+      activity_name: Nombre de la actividad
+      cancel: Cancelar
+      save: Guardar cambios
+    index:
+      activities: Actividades
+      new_activity: Crear actividad
+      activity_name: Nombre
+      no_activities: No se han creado actividades.
+      edit: Editar
+      actions: Acciones

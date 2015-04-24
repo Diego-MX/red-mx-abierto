@@ -8,10 +8,6 @@ class StepsController < ApplicationController
     @steps = Step.all
   end
 
-  def new
-    @step = Step.new
-  end
-
   def create
     @step = Step.new(step_params)
     if @step.save(step_params)
@@ -21,9 +17,6 @@ class StepsController < ApplicationController
     end
   end
 
-  def edit
-  end
-
   def update
     if @step.update_attributes(step_params)
       redirect_to stage_steps_path(@stage), notice: I18n.t('steps.notices.saved_successfully')
@@ -31,7 +24,6 @@ class StepsController < ApplicationController
       redirect_to stage_steps_path(@stage), alert: I18n.t('steps.alerts.save_failed')
     end
   end
-
 
   private
 
