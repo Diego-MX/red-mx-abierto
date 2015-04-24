@@ -24,7 +24,7 @@
               %span
                 %a.open-modal.action_link{ 'ng-click' => "steps.openModal(#{step.id});" }= t('.edit')
                 |
-                = link_to t('.activities'), stage_step_activities_path(@stage, step)
+                = link_to t('.activities'), admin_stage_step_activities_path(@stage, step)
           = render 'steps_modal', step: step
 
   - else
