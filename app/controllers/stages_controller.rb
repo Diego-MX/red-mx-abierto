@@ -3,6 +3,7 @@ class StagesController < ApplicationController
   before_action :set_stage, only: [:edit, :update]
 
   def index
+    @stage = Stage.new
     @stages = Stage.all
   end
 
@@ -12,7 +13,7 @@ class StagesController < ApplicationController
 
   def create
     @stage = Stage.new(stage_params)
-    if @stage.save_and_add_new_steps(steps_params)
+    if @stage.save(stage_params)
       redirect_to stages_path, notice: I18n.t('stages.notices.saved_successfully')
     else
       redirect_to new_stage_path, alert: I18n.t('stages.alerts.save_failed')
@@ -38,9 +39,5 @@ class StagesController < ApplicationController
 
   def stage_params
     params.require(:stage).permit(:name, :position)
-  end
-
-  def steps_params
-    params.require(:steps)
   end
 end
