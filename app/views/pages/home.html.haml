@@ -6,64 +6,332 @@
   = render 'layouts/header'
   %div.container.texto-inicio
     %div.col-md-12
-      %h3.center-text
+      %h3.tag-line
         La Red México Abierto impulsa la colaboración nacional para compartir
-        %br
         herramientas y experiencias que faciliten la publicación
         y uso de Datos en
-        %br
         todos los niveles de gobierno del país.
       %p.center-text
+        %div
+          = image_tag("play.png", {class:'img-responsive center-block image-button'})
         %a
           Conoce más sobre la Red
 
 %div.separador-verde
 
-%div.row
+%div.row.section
   %div.container
     %div.col-md-12
-      %h3.text-center
-        ¿Qué está pasando?
-      %p.text-center
-        Red México Abierto está compuesta por funcionarios de los
-        gobiernos de municipios, estados, el Distrito Federal
-        y sus delegaciones.
+      %div.col-md-4.col-md-offset-4
+        %h3.text-center.section-title
+          Lo
+          %a
+            más reciente
+          de la red
+          %hr
+      %ul.card-reciente.col-md-10.col-md-offset-1
+        %li.avatar
+          = image_tag 'placeholders/president.jpg', class: 'img-circle'
+        %li.estado
+          %a
+            @soyUnaPrueba
 
-%div.row
+          \: Lemon drops tootsie roll bear claw gingerbread. Jujubes pudding
+          tart donut biscuit brownie. Cake dragée biscuit cupcake chocolate
+          fruitcake. Cotton candy halvah topping candy jelly beans dessert.
+          %br
+          %p.hora
+            %span.glyphicon.glyphicon-time{"aria-hidden" => "true"}
+            Hace 3 horas
+%hr
+
+%div.row.section
   %div.container
     %div.col-md-12
-      %h3.text-center
-        Miembros
-      %p.text-center
-        Red México Abierto está compuesta por funcionarios de los
-        gobiernos de municipios, estados, el Distrito Federal
-        y sus delegaciones.
-      %p.text-center
-        Al formar parte de la Red inicias en un proceso de apertura
-        de datos que se describe en la
-        %a{href:''}
-          Guía de Implementación 
-        y que se compone de 4 pasos:
+      %div.col-md-4.col-md-offset-4
+        %h3.text-center.section-title
+          Miembros
+          %hr
+      %div.col-md-6.col-md-offset-3
+        %p.text-center
+          Red México Abierto está compuesta por funcionarios de los
+          gobiernos de municipios, estados, el Distrito Federal
+          y sus delegaciones.
+        %p.text-center
+          Al formar parte de la Red inicias en un proceso de apertura
+          de datos que se describe en la
+          %a{href:''}
+            Guía de Implementación 
+          y que se compone de 4 pasos:
 
-%div.container
+%div.container.section
   %div.row
-    %div.col-md-3
-      %h3
+    %div.etapa.col-md-3
+      %h3.text-center
         Planea
-    %div.col-md-3
-      %h3
+        %span.glyphicon.glyphicon-question-sign{"aria-hidden" => "true"}
+      %div
+        %ul.card-reciente
+          %li.avatar
+            = image_tag 'placeholders/playa.jpg', class: 'img-circle'
+          %li.estado
+            Cancún, Q.R.
+        %ul.card-reciente
+          %li.avatar
+            = image_tag 'placeholders/guadalajara.jpg', class: 'img-circle'
+          %li.estado
+            Guadalajara, Jal.
+        %ul.card-reciente
+          %li.avatar
+            = image_tag 'placeholders/silla.jpg', class: 'img-circle'
+          %li.estado
+            Monterrey, N.L.
+    %div.etapa.col-md-3
+      %h3.text-center
         Publica
-    %div.col-md-3
-      %h3
+        %span.glyphicon.glyphicon-question-sign{"aria-hidden" => "true"}
+      %div
+        %ul.card-reciente
+          %li.avatar
+            = image_tag 'placeholders/playa.jpg', class: 'img-circle'
+          %li.estado
+            Cancún, Q.R.
+        %ul.card-reciente
+          %li.avatar
+            = image_tag 'placeholders/guadalajara.jpg', class: 'img-circle'
+          %li.estado
+            Guadalajara, Jal.
+        %ul.card-reciente
+          %li.avatar
+            = image_tag 'placeholders/silla.jpg', class: 'img-circle'
+          %li.estado
+            Monterrey, N.L.
+    %div.etapa.col-md-3
+      %h3.text-center
         Perfecciona
-    %div.col-md-3
-      %h3
+        %span.glyphicon.glyphicon-question-sign{"aria-hidden" => "true"}
+      %div
+        %ul.card-reciente
+          %li.avatar
+            = image_tag 'placeholders/playa.jpg', class: 'img-circle'
+          %li.estado
+            Cancún, Q.R.
+        %ul.card-reciente
+          %li.avatar
+            = image_tag 'placeholders/guadalajara.jpg', class: 'img-circle'
+          %li.estado
+            Guadalajara, Jal.
+        %ul.card-reciente
+          %li.avatar
+            = image_tag 'placeholders/silla.jpg', class: 'img-circle'
+          %li.estado
+            Monterrey, N.L.
+    %div.etapa.col-md-3
+      %h3.text-center
         Promueve
-  %div.row
+        %span.glyphicon.glyphicon-question-sign{"aria-hidden" => "true"}
+      %div
+        %ul.card-reciente
+          %li.avatar
+            = image_tag 'placeholders/playa.jpg', class: 'img-circle'
+          %li.estado
+            Cancún, Q.R.
+        %ul.card-reciente
+          %li.avatar
+            = image_tag 'placeholders/guadalajara.jpg', class: 'img-circle'
+          %li.estado
+            Guadalajara, Jal.
+        %ul.card-reciente
+          %li.avatar
+            = image_tag 'placeholders/silla.jpg', class: 'img-circle'
+          %li.estado
+            Monterrey, N.L.
+  %div.row.section
     %div.col-md-12
-      %a.text-center
-        Ver a todos los miembros
+      %p.text-center
+        %a
+          Ver a todos los miembros
       %p.text-center
         ¿Te gustaría formar parte de la Red México Abierto?
       %button.btn.btn-lg.btn-success.center-block
         ¡Únete!
+
+%hr
+
+%div.row.section
+  %div.container
+    %div.row.section
+      %div.col-md-4.col-md-offset-4
+        %h3.text-center.section-title.section
+          Miembros
+          %hr
+        %p.text-center
+          Los miembros de la Red México Abierto cuentan
+          con una caja de herramientas para abrir sus datos:
+    %div.row
+      %div.col-md-4
+        %div.herramienta
+          %ul
+            %li.avatar
+              = image_tag 'datatron.png'
+            %li
+              %h3
+                Datatrón
+            %li
+              Priorización de temas
+        %div.herramienta
+          %ul
+            %li.avatar
+              = image_tag 'adela.png'
+            %li
+              %h3
+                Adela
+            %li
+              Crea tu plan de apertura e
+              inventario de datos
+
+      %div.col-md-4
+        %div.herramienta
+          %ul
+            %li.avatar
+              = image_tag 'refinadora.png'
+            %li
+              %h3
+                Refinadora
+            %li
+              Estandariza y valida datasets
+        %div.herramienta
+          %ul
+            %li.avatar
+              = image_tag 'nubedatos.png'
+            %li
+              %h3
+                Nube de Datos
+            %li
+              Sube tus datos a la nube
+      %div.col-md-4
+        %div.herramienta
+          %ul
+            %li.avatar
+              = image_tag 'publisher.png'
+            %li
+              %h3
+                Publisher
+            %li
+              Publica en un portal de datos abiertos
+        %div.herramienta
+          %ul
+            %li.avatar
+              = image_tag 'templates.png'
+            %li
+              %h3
+                Templates
+            %li
+              Promueve y socializa tus datos
+
+    %div.row.section-mini
+      %div.col-md-12
+        %p.text-center
+          %a
+            Ver todas las herramientas
+
+    %div.row
+      %div.col-md-4.col-md-offset-4
+        %h3.text-center.section-title
+          %hr
+
+    %div.row.section-mini
+      %div.col-md-12
+        %div.col-md-5.col-md-offset-1
+          = image_tag 'recursos.png'
+          %h3
+            Recursos Institucionales
+          %ul
+            %li
+              Decreto para la regulación de datos abiertos
+            %li
+              Lineamientos para la liberación de datos
+              abiertos
+            %li
+              Acuerdo para la liberación y acceso de datos
+              abiertos
+        %div.col-md-5.herramienta
+          = image_tag 'planeacion.png', class: ''
+          %h3
+            Planeación
+          %ul
+            %li
+              Oficio de designación del enlace y el administrador
+            %li
+              Inventario general de datos
+            %li
+              Modelo Plan de Apertura
+            %li
+              Infraestructura Estratégica de Datos Abiertos
+%div.row.section
+  %div.container
+    %div.col-md-12
+      %h3.text-center.section-title
+        Experiencias
+    %div.col-md-6
+      %p
+        %h3
+          Título del post
+        %h4.italicas
+          Gerardo Pérez - Unidad Gobierno Digital
+          %br
+          Marzo 18, 2015
+        %p
+          Gouda cottage cheese say cheese. Port-salut red leicester lancashire mozzarella cheese triangles cheese strings brie croque monsieur. Parmesan chalk and cheese cheese and wine mozzarella the big cheese lancashire hard cheese emmental. Pecorino cheese strings edam caerphilly fromage cottage cheese cheesy feet cheese slices. Fondue.
+    %div.col-md-6
+      %p
+        %h3
+          Título del post
+        %h4.italicas
+          Andrea Barenque - Dirección de Gobierno Abierto
+          %br
+          Marzo 24, 2015
+        %p
+          Gouda cottage cheese say cheese. Port-salut red leicester lancashire mozzarella cheese triangles cheese strings brie croque monsieur. Parmesan chalk and cheese cheese and wine mozzarella the big cheese lancashire hard cheese emmental. Pecorino cheese strings edam caerphilly fromage cottage cheese cheesy feet cheese slices. Fondue.
+%div.row.section
+  %div.container
+    %div.col-md-12
+      %h3.text-center.section-title
+        Conversaciones Abiertas
+    %div.col-md-12
+      %table.table.table-bordered
+        %tbody
+          %tr
+            %td ¿Cómo implementar Adela con múltiples entidades?
+            %td Martha Ramos O.
+            %td San Luis Potosí
+          %tr
+            %td Lanzando nuestro primer datatón
+            %td Linda García
+            %td Torreón, Coah.
+          %tr
+            %td ¿Quién ha sido su campeón local hasta el momento?
+            %td José Ruíz Pérez
+            %td San Pedro, N.L.
+          %tr
+            %td Lanzando nuestro primer datatón
+            %td Armando Garza
+            %td Jalisco
+          %tr
+            %td ¿Quién ha sido su campeón local hasta el momento?
+            %td Luis Sánchez
+            %td Sonora
+%div.row.section.azulado
+  %div.container
+    %div.col-md-12
+      %p
+      %form.form-inline
+        .form-group
+          %label{:for => "exampleInputEmail2"}
+            ¿Quiéres saber más sobre la Red México Abierto?
+          %input#exampleInputEmail2.form-control{:placeholder => "Correo electrónico", :type => "email"}
+        %button.btn.btn-default.btn-success{:type => "submit"} Send invitation
+
+%div.separador-verde
+= render 'layouts/footer'
+
