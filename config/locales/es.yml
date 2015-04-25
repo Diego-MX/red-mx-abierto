@@ -18,7 +18,19 @@ es:
         titulo: ¡Únete a la red México abierto!
         subtitulo: En México abierto se pueden registrar servidores públicos de gobiernos de México.
         radio:
-          titulo: Gobierno
+          titulo: 'Gobierno:'
           estado: Estatal
           municipio: Municipal
           delegacion: Delegación
+        dependency_name_hint: Nombre de la secretaría
+        full_name_hint: Tu nombre completo
+        email_hint: E-mail
+        password_hint: contraseña
+        password_confirmation_hint: confirma contraseña 
+        dependency_name: 'Nombre de la dependencia de contacto:'
+        full_name: 'Nombre completo:'
+        email: "Correo electrónico:"
+        password: 'Elige una contraseña:'
+        password_confirmation: confirma contraseña 
+        terminos: Acepto el
+        liga_terminos: Aviso de Privacidad y Términos de la Red  

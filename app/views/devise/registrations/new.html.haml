@@ -1,4 +1,4 @@
-%div.row
+%div.row.padding-row
   %div.container
     %div.col-md-8.col-md-offset-2
       %div.row
@@ -6,38 +6,67 @@
           %h3.text-center
             = t('.seccion')
             %hr.small
-      %div.p.text-center
+      %div.p.text-center.padding-row
         = t('.titulo')
         %br
         = t('.subtitulo')
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| 
         %div.row
-          %div.col-md-3
-            = t('.radio.titulo')
-          %div.col-md-3
-            = f.radio_button :contactmethod, 'estatal', :checked => true
-            = label :contactmethod_estatal,  t('.radio.estado')
-          %div.col-md-3
-            = f.radio_button :contactmethod, 'municipal', :checked => false
-            = label :contactmethod_municipal,  t('.radio.municipio')
-          %div.col-md-3
-            = f.radio_button :contactmethod, 'delagacion', :checked => false
-            = label :contactmethod_municipal,  t('.radio.delegacion')
-        %div.field
-          = f.text_field :state, autofocus: true
-        %div.field
-          = f.text_field :municipality
-        %div.field
-          = f.text_field :deputation
-        %div.field
-          = f.text_field :dependency_name
-        %div.field
-          = f.label :full_name
-        %div.field
-          = f.email_field :email, autofocus: true
-        %div.field
-          = f.password_field :password, autocomplete: "off"
-        %div.field
-          = f.password_field :password_confirmation, autocomplete: "off"
-        %div.actions
-          = f.submit t('.registra')
+          %div.col-md-10.col-md-offset-1.padding-row
+            %div.col-md-3
+              = t('.radio.titulo')
+            %div.col-md-3
+              - if @estatal_cheked 
+                = f.radio_button :government_type, 'estatal', :checked => true, :onclick => "this.form.submit();"
+              - else 
+                = f.radio_button :government_type, 'estatal', :checked => false, :onclick => "this.form.submit();"
+              = label :government_type_estatal,  t('.radio.estado')
+            %div.col-md-3
+              - if @municional_cheked
+                = f.radio_button :government_type, 'municipal', :checked => true, :onclick => "this.form.submit();"
+              - else 
+                = f.radio_button :government_type, 'municipal', :checked => false, :onclick => "this.form.submit();"
+              = label :government_type_municipal,  t('.radio.municipio')
+            %div.col-md-3
+              - if @delegacional_cheked
+                = f.radio_button :government_type, 'delagacion', :checked => true, :onclick => "this.form.submit();"
+              - else 
+                = f.radio_button :government_type, 'delagacion', :checked => false, :onclick => "this.form.submit();"
+              = label :government_type_delegacional,  t('.radio.delegacion')
+        %div.row.margin-text-field
+          %div.col-md-8.col-md-offset-2.padding-row
+            = f.text_field :state, autofocus: true , :class => 'form-control'
+        %div.row.margin-text-field
+          %div.col-md-8.col-md-offset-2.padding-row
+            = f.text_field :municipality, :class => 'form-control'
+        %div.row.margin-text-field
+          %div.col-md-8.col-md-offset-2.padding-row
+            = f.text_field :deputation, :class => 'form-control'
+        %div.row.margin-text-field
+          %div.col-md-8.col-md-offset-2.padding-row
+            = f.label t('.dependency_name')
+            = f.text_field :dependency_name , :placeholder =>  t('.dependency_name_hint'), :class => 'form-control'
+        %div.row.margin-text-field
+          %div.col-md-8.col-md-offset-2.padding-row
+            = f.label t('.full_name')
+            = f.text_field :full_name , :placeholder =>  t('.full_name_hint'), :class => 'form-control'
+        %div.row.margin-text-field
+          %div.col-md-8.col-md-offset-2.padding-row
+            = f.label t('.email')
+            = f.email_field :email, autofocus: true , :placeholder =>  t('.email_hint'), :class => 'form-control'
+        %div.row.margin-text-field
+          %div.col-md-8.col-md-offset-2
+            = f.label t('.password')
+            = f.password_field :password, autocomplete: "off" , :placeholder =>  t('.password_hint'), :class => 'form-control'
+        %div.row.margin-text-field
+          %div.col-md-8.col-md-offset-2.padding-row
+            = f.password_field :password_confirmation, autocomplete: "off" , :placeholder =>  t('.password_confirmation_hint'), :class => 'form-control'
+        %div.actions.margin-text-field
+          %div.col-md-7.col-md-offset-2.padding-row
+            = check_box_tag 'accept',:class => 'myCheckbox'
+            = t('.terminos')
+            = link_to t('.liga_terminos'), root_path, :class => 'a-green'
+          %div.col-md-8.col-md-offset-2.padding-row
+            = f.submit t('.registra'), :class => 'btn btn-lg btn-success center-block'
+%div.separador-verde
+= render 'layouts/footer'
