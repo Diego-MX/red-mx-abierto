@@ -33,15 +33,18 @@
               - else 
                 = f.radio_button :government_type, 'delagacion', :checked => false, :onclick => "this.form.submit();"
               = label :government_type_delegacional,  t('.radio.delegacion')
-        %div.row.margin-text-field
-          %div.col-md-8.col-md-offset-2.padding-row
-            = f.text_field :state, autofocus: true , :class => 'form-control'
-        %div.row.margin-text-field
-          %div.col-md-8.col-md-offset-2.padding-row
-            = f.text_field :municipality, :class => 'form-control'
-        %div.row.margin-text-field
-          %div.col-md-8.col-md-offset-2.padding-row
-            = f.text_field :deputation, :class => 'form-control'
+        - if @estatal_cheked || @municional_cheked
+          %div.row.margin-text-field
+            %div.col-md-8.col-md-offset-2.padding-row 
+              = f.text_field :state, autofocus: true , :class => 'form-control'
+        - if @municional_cheked 
+          %div.row.margin-text-field
+            %div.col-md-8.col-md-offset-2.padding-row
+              = f.text_field :municipality, :class => 'form-control'
+        - if @delegacional_cheked              
+          %div.row.margin-text-field
+            %div.col-md-8.col-md-offset-2.padding-row
+              = f.text_field :deputation, :class => 'form-control'
         %div.row.margin-text-field
           %div.col-md-8.col-md-offset-2.padding-row
             = f.label t('.dependency_name')
@@ -53,7 +56,7 @@
         %div.row.margin-text-field
           %div.col-md-8.col-md-offset-2.padding-row
             = f.label t('.email')
-            = f.email_field :email, autofocus: true , :placeholder =>  t('.email_hint'), :class => 'form-control'
+            = f.email_field :email , :placeholder =>  t('.email_hint'), :class => 'form-control'
         %div.row.margin-text-field
           %div.col-md-8.col-md-offset-2
             = f.label t('.password')
