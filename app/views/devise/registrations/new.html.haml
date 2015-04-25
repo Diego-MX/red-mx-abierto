@@ -36,7 +36,7 @@
         - if @estatal_cheked || @municional_cheked
           %div.row.margin-text-field
             %div.col-md-8.col-md-offset-2.padding-row 
-              = f.text_field :state, autofocus: true , :class => 'form-control'
+              = f.select(:state, @states, {:include_blank => 'Selecciona un estado'}, :class => 'form-control')
         - if @municional_cheked 
           %div.row.margin-text-field
             %div.col-md-8.col-md-offset-2.padding-row
@@ -44,7 +44,7 @@
         - if @delegacional_cheked              
           %div.row.margin-text-field
             %div.col-md-8.col-md-offset-2.padding-row
-              = f.text_field :deputation, :class => 'form-control'
+              = f.select(:deputation, @deputation, {:include_blank => 'Selecciona una delegación'}, :class => 'form-control')
         %div.row.margin-text-field
           %div.col-md-8.col-md-offset-2.padding-row
             = f.label t('.dependency_name')
