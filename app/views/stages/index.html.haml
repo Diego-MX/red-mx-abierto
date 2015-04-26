@@ -6,7 +6,7 @@
         %a.btn.btn-default{'href' => "#tab#{stage.id}", 'data-toggle' => 'tab'}
           = truncate stage.name
 
-    .tab-content
+    .tab-content{ 'ng-controller' => 'activitiesCtrl as activities' }
       - @stages.tap do |head, *body|
         -# First element should be selected
         .tab-pane.fade.in.active{ id: "tab#{head.id}" }

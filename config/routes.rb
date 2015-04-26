@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :pages, only: :home
 
-  resources :stages, only: :index
+  resources :stages, only: [:index, :update]
 
   namespace :admin do
     resources :stages, only: [:index, :create, :update] do

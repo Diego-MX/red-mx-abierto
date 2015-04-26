@@ -22,12 +22,18 @@ app.controller('stepsCtrl', function(){
   };
 });
 
-app.controller('activitiesCtrl', function(){
+app.controller('activitiesCtrl', ['$http', function($http){
   var self = this;
   this.names = [];
+
+  this.user_activities = [];
+
+  this.activityChecked = function(activityId) {
+    // $http.post('')
+  };
 
   this.openModal = function(id) {
     var modalId = "#activityModal" + id;
     angular.element(modalId).modal('show');
   };
-});
+}]);

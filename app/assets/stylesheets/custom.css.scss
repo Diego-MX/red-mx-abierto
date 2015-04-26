@@ -21,6 +21,10 @@ body {
     color: $verde-mx-sombra;
   }
 }
+
+.no-padding-top {
+  padding-top: 0;
+}
 .navbar{
   padding:25px 0;
   background-color:transparent;

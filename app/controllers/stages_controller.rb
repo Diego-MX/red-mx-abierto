@@ -4,9 +4,9 @@ class StagesController < ApplicationController
 
   def index
     @stages = Stage.all
+    @user_activities = current_user.user_activities
   end
 
   def update
-
   end
 end
