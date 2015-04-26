@@ -29,7 +29,24 @@ app.controller('activitiesCtrl', ['$http', function($http){
   this.user_activities = [];
 
   this.activityChecked = function(activityId) {
-    // $http.post('')
+    // Get token
+    var csrfToken = angular.element('meta[name=csrf-token]')[0].content;
+
+    // Checkbox id and state to change
+    var data = {
+      authenticity_token: csrfToken,
+      user_activity: {
+        id: activityId,
+        checked: this.user_activities[activityId]
+      }
+    };
+
+    // Let's submit the checkbox info
+    $http.post('/stages', data)
+    .success(function(data, statues, headers, config){
+      console.log('submited');
+      console.log(data);
+    });
   };
 
   this.openModal = function(id) {

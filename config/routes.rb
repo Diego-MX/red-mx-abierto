@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   resources :pages, only: :home
 
-  resources :stages, only: [:index, :update]
+  resources :stages, only: :index
+  match '/stages', to: 'stages#update', via: :post
 
   namespace :admin do
     resources :stages, only: [:index, :create, :update] do

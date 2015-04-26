@@ -9,7 +9,6 @@
 
   %body.no-padding-top{ 'ng-app' => 'redMxAbiertoApp', 'data-no-turbolink' => 'true' }
     = render 'layouts/header', custom_classes: 'azulado'
-    -# = render 'layouts/admin_header',
     .container
       = render 'layouts/alert'
       = yield
