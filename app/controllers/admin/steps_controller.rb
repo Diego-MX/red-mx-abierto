@@ -6,7 +6,7 @@ module Admin
 
     def index
       @step = Step.new
-      @steps = @stage.steps
+      @steps = @stage.steps.order('created_at ASC')
     end
 
     def create

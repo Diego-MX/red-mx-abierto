@@ -77,6 +77,7 @@ group :development, :test do
   gem 'pry-rescue'
   gem 'rspec-rails'
   gem 'sqlite3'
+  gem 'seed_dump'
 end
 
 group :production do
