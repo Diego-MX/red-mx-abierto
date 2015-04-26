@@ -1,6 +1,9 @@
 - if activities.any?
+  %h4= t('.activities')
   - activities.each do |activity|
-    .checkbox
+    - user_activity = @user_activities.find_by(activity: activity)
+    .checkbox{ 'ng-init' => "activities.user_activities[#{user_activity.id}] = #{user_activity.checked}" }
+      -# %p{ 'ng-bind' => "activities.user_activities[#{user_activity.id}]" }
       = label_tag do
-        = check_box_tag "activity[]"
+        %input{ type: 'checkbox', 'ng-model' => "activities.user_activities[#{user_activity.id}]", 'ng-change' => "activities.activityChecked(#{user_activity.id})" }
         = activity.name

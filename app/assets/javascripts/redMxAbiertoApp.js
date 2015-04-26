@@ -22,12 +22,35 @@ app.controller('stepsCtrl', function(){
   };
 });
 
-app.controller('activitiesCtrl', function(){
+app.controller('activitiesCtrl', ['$http', function($http){
   var self = this;
   this.names = [];
+
+  this.user_activities = [];
+
+  this.activityChecked = function(activityId) {
+    // Get token
+    var csrfToken = angular.element('meta[name=csrf-token]')[0].content;
+
+    // Checkbox id and state to change
+    var data = {
+      authenticity_token: csrfToken,
+      user_activity: {
+        id: activityId,
+        checked: this.user_activities[activityId]
+      }
+    };
+
+    // Let's submit the checkbox info
+    $http.post('/stages', data)
+    .success(function(data, statues, headers, config){
+      console.log('submited');
+      console.log(data);
+    });
+  };
 
   this.openModal = function(id) {
     var modalId = "#activityModal" + id;
     angular.element(modalId).modal('show');
   };
-});
+}]);

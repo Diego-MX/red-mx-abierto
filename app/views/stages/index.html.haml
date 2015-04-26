@@ -3,10 +3,11 @@
   - if @stages.any?
     .btn-group.btn-group-justified{ role: 'group' }
       - @stages.each do |stage|
-        %a.btn.btn-default{'href' => "#tab#{stage.id}", 'data-toggle' => 'tab'}
-          = stage.name
+        %a.btn.btn-default{'href' => "#tab#{stage.id}", 'data-toggle' => 'tab' }
+          %div{ 'data-toggle' => "tooltip", 'data-placement' => "left", 'title' => "#{stage.name}" }
+            = truncate stage.name
 
-    .tab-content
+    .tab-content{ 'ng-controller' => 'activitiesCtrl as activities' }
       - @stages.tap do |head, *body|
         -# First element should be selected
         .tab-pane.fade.in.active{ id: "tab#{head.id}" }
