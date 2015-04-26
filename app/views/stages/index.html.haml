@@ -4,7 +4,7 @@
     .btn-group.btn-group-justified{ role: 'group' }
       - @stages.each do |stage|
         %a.btn.btn-default{'href' => "#tab#{stage.id}", 'data-toggle' => 'tab'}
-          = stage.name
+          = truncate stage.name
 
     .tab-content
       - @stages.tap do |head, *body|
