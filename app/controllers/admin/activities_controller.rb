@@ -7,7 +7,7 @@ module Admin
 
     def index
       @activity = Activity.new
-      @activities = @step.activities
+      @activities = @step.activities.order('created_at ASC')
     end
 
     def create

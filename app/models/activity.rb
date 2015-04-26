@@ -9,7 +9,7 @@ class Activity < ActiveRecord::Base
   private
 
   def add_activity_to_user
-    Users.all.each do |u|
+    User.all.each do |u|
       self.user_activities.create(user: u)
     end
   end
