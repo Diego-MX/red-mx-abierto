@@ -1,4 +1,12 @@
 es:
+  devise:
+    sessions:
+      user:
+        signed_in: Has iniciado sesión.
+        signed_out: Has cerrado sesión.
+    failure:
+      user:
+        not_found_in_database: Revisa que el usuario y contraseña han sido escritos correctamente.
   stages:
     index:
       no_stages: No se han creado etapas.
