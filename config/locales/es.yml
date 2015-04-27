@@ -1,6 +1,11 @@
 es:
   devise:
     sessions:
+      new:
+        log_in: Incia sesión
+        email: Correo electrónico
+        password: Contraseña
+        log_in_button: Entrar
       user:
         signed_in: Has iniciado sesión.
         signed_out: Has cerrado sesión.
