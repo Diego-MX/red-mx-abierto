@@ -10,6 +10,8 @@ $gris-font: #919191;
 $gris-fondo: #f2f2f2;
 $gris-borde: #eae9e9;
 $gris-contextual: #d8d8d8;
+$azul-claro-mx: #50D0E8;
+$morado-mx: #825DA4;
 
 
 /*New color assignments for template*/
@@ -20,6 +22,14 @@ $btn-success-bg: $verde-mx;
 $btn-info-bg: lighten($azul-mx, 0.7);
 $btn-warning-bg: $amarillo-mx;
 $btn-danger-bg: $rojo-mx;
+$input-color-placeholder: $gris-contextual;
+$input-height-large: 60px;
 $navbar-inverse-bg: $azul-mx;
 $navbar-inverse-border: transparent;
 $navbar-inverse-link-active-bg: transparent;
+$colores-tematicas: (
+    (seguridad, $rojo-mx),
+    (transporte, $amarillo-mx),
+    (salud, $azul-mx),
+    (educacion, $morado-mx)
+);
