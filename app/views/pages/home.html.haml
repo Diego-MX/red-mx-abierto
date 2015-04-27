@@ -71,17 +71,17 @@
         Planea
         %span.glyphicon.glyphicon-question-sign{"aria-hidden" => "true"}
       %div
-        %ul.card-reciente
+        %ul.card-miembros
           %li.avatar
             = image_tag 'placeholders/playa.jpg', class: 'img-circle'
           %li.estado
             Cancún, Q.R.
-        %ul.card-reciente
+        %ul.card-miembros
           %li.avatar
             = image_tag 'placeholders/guadalajara.jpg', class: 'img-circle'
           %li.estado
             Guadalajara, Jal.
-        %ul.card-reciente
+        %ul.card-miembros
           %li.avatar
             = image_tag 'placeholders/silla.jpg', class: 'img-circle'
           %li.estado
@@ -91,17 +91,17 @@
         Publica
         %span.glyphicon.glyphicon-question-sign{"aria-hidden" => "true"}
       %div
-        %ul.card-reciente
+        %ul.card-miembros
           %li.avatar
             = image_tag 'placeholders/playa.jpg', class: 'img-circle'
           %li.estado
             Cancún, Q.R.
-        %ul.card-reciente
+        %ul.card-miembros
           %li.avatar
             = image_tag 'placeholders/guadalajara.jpg', class: 'img-circle'
           %li.estado
             Guadalajara, Jal.
-        %ul.card-reciente
+        %ul.card-miembros
           %li.avatar
             = image_tag 'placeholders/silla.jpg', class: 'img-circle'
           %li.estado
@@ -111,17 +111,17 @@
         Perfecciona
         %span.glyphicon.glyphicon-question-sign{"aria-hidden" => "true"}
       %div
-        %ul.card-reciente
+        %ul.card-miembros
           %li.avatar
             = image_tag 'placeholders/playa.jpg', class: 'img-circle'
           %li.estado
             Cancún, Q.R.
-        %ul.card-reciente
+        %ul.card-miembros
           %li.avatar
             = image_tag 'placeholders/guadalajara.jpg', class: 'img-circle'
           %li.estado
             Guadalajara, Jal.
-        %ul.card-reciente
+        %ul.card-miembros
           %li.avatar
             = image_tag 'placeholders/silla.jpg', class: 'img-circle'
           %li.estado
@@ -131,17 +131,17 @@
         Promueve
         %span.glyphicon.glyphicon-question-sign{"aria-hidden" => "true"}
       %div
-        %ul.card-reciente
+        %ul.card-miembros
           %li.avatar
             = image_tag 'placeholders/playa.jpg', class: 'img-circle'
           %li.estado
             Cancún, Q.R.
-        %ul.card-reciente
+        %ul.card-miembros
           %li.avatar
             = image_tag 'placeholders/guadalajara.jpg', class: 'img-circle'
           %li.estado
             Guadalajara, Jal.
-        %ul.card-reciente
+        %ul.card-miembros
           %li.avatar
             = image_tag 'placeholders/silla.jpg', class: 'img-circle'
           %li.estado
@@ -158,12 +158,12 @@
 
 %hr
 
-%div.row.section
+%div.row.section.herramientas
   %div.container
     %div.row.section
       %div.col-md-4.col-md-offset-4
         %h3.text-center.section-title.section
-          Miembros
+          Herramientas
           %hr
         %p.text-center
           Los miembros de la Red México Abierto cuentan
@@ -242,85 +242,113 @@
 
     %div.row.section-mini
       %div.col-md-12
-        %div.col-md-5.col-md-offset-1
-          = image_tag 'recursos.png'
+        %div.col-md-5.col-md-offset-2
+          %div.row
+            = image_tag 'recursos.png', class: 'imagen-herramienta img-responsive'
+            %h3.titulo-herramienta
+              Recursos Institucionales
+          %div.row
+            %ul.lista-herramienta
+              %li
+                Decreto para la regulación de datos abiertos
+              %li
+                Lineamientos para la liberación de datos
+                abiertos
+              %li
+                Acuerdo para la liberación y acceso de datos
+                abiertos
+        %div.col-md-5
+          %div.row
+            = image_tag 'planeacion.png', class: 'imagen-herramienta img-responsive'
+            %h3.titulo-herramienta
+              Planeación
+          %div.row
+            %ul.lista-herramienta
+              %li
+                Oficio de designación del enlace y el administrador
+              %li
+                Inventario general de datos
+              %li
+                Modelo Plan de Apertura
+              %li
+                Infraestructura Estratégica de Datos Abiertos
+%hr
+
+%div.row.section
+  %div.container.experiencias
+    %div.row.section
+      %div.col-md-4.col-md-offset-4
+        %h3.text-center.section-title.section
+          Experiencias
+          %hr
+    %div.col-md-6
+      = image_tag 'placeholders/obama.jpg', class: 'img-rounded col-sm-3'
+      %div.col-sm-9
+        %p
           %h3
-            Recursos Institucionales
-          %ul
-            %li
-              Decreto para la regulación de datos abiertos
-            %li
-              Lineamientos para la liberación de datos
-              abiertos
-            %li
-              Acuerdo para la liberación y acceso de datos
-              abiertos
-        %div.col-md-5.herramienta
-          = image_tag 'planeacion.png', class: ''
+            Título del post
+          %h5.italicas
+            Gerardo Pérez - Unidad Gobierno Digital
+            %br
+            Marzo 18, 2015
+          %p
+            Gouda cottage cheese say cheese. Pecorino cheese strings edam caerphilly fromage cottage cheese cheesy feet cheese slices. Fondue.
+          %p
+            %a
+              Ver la historia completa >
+    %div.col-md-6
+      = image_tag 'placeholders/bachelet.jpg', class: 'img-rounded col-sm-3'
+      %div.col-sm-9
+        %p
           %h3
-            Planeación
-          %ul
-            %li
-              Oficio de designación del enlace y el administrador
-            %li
-              Inventario general de datos
-            %li
-              Modelo Plan de Apertura
-            %li
-              Infraestructura Estratégica de Datos Abiertos
+            Título del post
+          %h5.italicas
+            Andrea Barenque - Dirección de Gobierno Abierto
+            %br
+            Marzo 24, 2015
+          %p
+            Gouda cottage cheese say cheese. Pecorino cheese strings edam caerphilly fromage cottage cheese cheesy feet cheese slices. Fondue.
+          %p
+            %a
+              Ver la historia completa >
 %div.row.section
   %div.container
-    %div.col-md-12
-      %h3.text-center.section-title
-        Experiencias
-    %div.col-md-6
-      %p
-        %h3
-          Título del post
-        %h4.italicas
-          Gerardo Pérez - Unidad Gobierno Digital
-          %br
-          Marzo 18, 2015
-        %p
-          Gouda cottage cheese say cheese. Port-salut red leicester lancashire mozzarella cheese triangles cheese strings brie croque monsieur. Parmesan chalk and cheese cheese and wine mozzarella the big cheese lancashire hard cheese emmental. Pecorino cheese strings edam caerphilly fromage cottage cheese cheesy feet cheese slices. Fondue.
-    %div.col-md-6
-      %p
-        %h3
-          Título del post
-        %h4.italicas
-          Andrea Barenque - Dirección de Gobierno Abierto
-          %br
-          Marzo 24, 2015
-        %p
-          Gouda cottage cheese say cheese. Port-salut red leicester lancashire mozzarella cheese triangles cheese strings brie croque monsieur. Parmesan chalk and cheese cheese and wine mozzarella the big cheese lancashire hard cheese emmental. Pecorino cheese strings edam caerphilly fromage cottage cheese cheesy feet cheese slices. Fondue.
-%div.row.section
-  %div.container
-    %div.col-md-12
-      %h3.text-center.section-title
-        Conversaciones Abiertas
-    %div.col-md-12
-      %table.table.table-bordered
-        %tbody
-          %tr
-            %td ¿Cómo implementar Adela con múltiples entidades?
-            %td Martha Ramos O.
-            %td San Luis Potosí
-          %tr
-            %td Lanzando nuestro primer datatón
-            %td Linda García
-            %td Torreón, Coah.
-          %tr
-            %td ¿Quién ha sido su campeón local hasta el momento?
-            %td José Ruíz Pérez
-            %td San Pedro, N.L.
-          %tr
-            %td Lanzando nuestro primer datatón
-            %td Armando Garza
-            %td Jalisco
-          %tr
-            %td ¿Quién ha sido su campeón local hasta el momento?
-            %td Luis Sánchez
-            %td Sonora
+    %div.row.section
+      %div.col-md-4.col-md-offset-4
+        %h3.text-center.section-title.section
+          Temas más tratados
+          %hr
+    %div.row.section
+      %div.col-md-8.col-md-offset-2
+        %ul.card-experiencias.col-md-6
+          %li
+            Bacon ipsum dolor amet porchetta chicken leberkas biltong turkey meatball short loin kevin. Beef pastrami chuck chicken kielbasa.
+          %li.context-info
+            Seguridad
+          %li
+            %i.fa.fa-circle.seguridad
+        %ul.card-experiencias.col-md-6
+          %li
+            Bacon ipsum dolor amet porchetta chicken leberkas biltong turkey meatball short loin kevin. Beef pastrami chuck chicken kielbasa.
+          %li.context-info.salud
+            Salud
+          %li.circulo
+            %i.fa.fa-circle.salud
+        %ul.card-experiencias.col-md-6
+          %li
+            Bacon ipsum dolor amet porchetta chicken leberkas biltong turkey meatball short loin kevin. Beef pastrami chuck chicken kielbasa.
+          %li.context-info
+            Transporte y Tráfico
+          %li.circulo
+            %i.fa.fa-circle.transporte
+        %ul.card-experiencias.col-md-6
+          %li
+            Bacon ipsum dolor amet porchetta chicken leberkas biltong turkey meatball short loin kevin. Beef pastrami chuck chicken kielbasa.
+          %li.context-info
+            Educación
+          %li.circulo
+            %i.fa.fa-circle.educacion
+
 %div.row.section.azulado
   %div.container
     %div.col-md-12
@@ -334,4 +362,3 @@
 
 %div.separador-verde
 = render 'layouts/footer'
-

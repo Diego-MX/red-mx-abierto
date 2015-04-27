@@ -10,7 +10,8 @@ $gris-font: #919191;
 $gris-fondo: #f2f2f2;
 $gris-borde: #eae9e9;
 $gris-contextual: #d8d8d8;
-
+$azul-claro-mx: #50D0E8;
+$morado-mx: #825DA4;
 
 /*New color assignments for template*/
 $gray-light:$gris-font;
@@ -23,7 +24,12 @@ $btn-danger-bg: $rojo-mx;
 $navbar-inverse-bg: $azul-mx;
 $navbar-inverse-border: transparent;
 $navbar-inverse-link-active-bg: transparent;
-
+$colores-tematicas: (
+    (seguridad, $rojo-mx),
+    (transporte, $amarillo-mx),
+    (salud, $azul-mx),
+    (educacion, $morado-mx)
+);
 /* imports */
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -37,7 +43,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   color:$gris-font;
-  h1,h2,h3,h4{
+  h1,h2,h3,h4,h5 {
     color: $azul-mx;
   }
   a{
@@ -47,10 +53,49 @@ body {
     color: $verde-mx-sombra;
   }
 }
+
+
+@mixin circulos-temas($class, $color){
+  .#{$class}{
+    color: #{$color};
+  }
+}
+
+@each $class, $color in $colores-tematicas {
+  @include circulos-temas($class, $color);
+}
+
+
+.section, .section-mini{
+  padding: 50px 0;
+  h1,h2,h3{
+    font-weight: 700;
+  }
+  .section-title{
+    text-transform: uppercase;
+    padding: 30px 0;
+  }
+}
+
+.section-mini{
+  padding: 25px 0;
+}
+
+.italicas{
+  font-style: italic;
+}
+
+.azulado{
+  color: #FFF;
+  background-color: $azul-mx;
+}
 .navbar{
   padding:25px 0;
   background-color:transparent;
 }
+
+
+/******** Secciones ********/
 .inicio{
   h1,h2,h3{
     color:#fff;
@@ -103,12 +148,42 @@ body {
   }
 }
 
-.card-reciente{
-  margin-top:54px;
+@mixin card{
   list-style: none;
   padding: 30px 50px;
   border: 2px solid $gris-borde;
+  min-height: 100px;
   border-radius: 6px;
+  .context-info, .hora{
+    color:$gris-contextual;
+  }
+}
+
+.card{
+  @include card;
+}
+.card-experiencias{
+  @extend .card;
+  min-height: 200px;
+  max-width:325px;
+  margin: 18px 18px;
+  padding: 30px 25px;
+  font-size: 14px;
+  .context-info, .fa{
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+  }
+  .context-info{
+    right: 45px;
+    bottom: 22px;
+  }
+}
+
+.card-reciente{
+  @extend .card;
+  min-height: 140px;
+  margin-top:54px;
   .avatar {
     width:15%;
     float:left;
@@ -120,9 +195,10 @@ body {
     width: 85%;
     float:left;
   }
-  .hora{
-    color:$gris-contextual;
-  }
+}
+.card-miembros{
+  @extend .card-reciente;
+  min-height: 100px;
 }
 
 .etapa{
@@ -169,33 +245,38 @@ body {
   }
 }
 
+.herramientas{
+  .imagen-herramienta{
+    float: left;
+  }
+  .titulo-herramienta{
+    float: left;
+    left: 2%;
+    position: relative;
+  }
+  .lista-herramienta{
+    margin-top: 2em;
+    line-height: 1.8em;
+    margin-left: -20px;
+  }
+}
+
+.experiencias{
+  img{
+    margin-top: 20px;
+    max-width: 145px;
+    padding: 0;
+  }
+  a{
+    font-style: underline;
+  }
+}
 
 .separador-verde{
   background-color: $verde-mx;
   height: 22px;
 }
-.section, .section-mini{
-  padding: 50px 0;
-  h1,h2,h3{
-    font-weight: 700;
-  }
-  .section-title{
-    text-transform: uppercase;
-    padding: 30px 0;
-  }
-}
 
-.section-mini{
-  padding: 25px 0;
-}
-.italicas{
-  font-style: italic;
-}
-
-.azulado{
-  color: #FFF;
-  background-color: $azul-mx;
-}
 /*******************footer*******************/
 .branding{
   padding-top: 50px;
