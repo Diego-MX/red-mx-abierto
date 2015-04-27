@@ -38,31 +38,37 @@
           %div.row.margin-text-field
             %div.col-md-8.col-md-offset-2.padding-row 
               = f.select(:state, @states, {:include_blank => 'Selecciona un estado'}, :class => 'form-control')
+              %div.text-red
+                = @user.errors[:state][0].to_s
         - if @municional_cheked 
           %div.row.margin-text-field
             %div.col-md-8.col-md-offset-2.padding-row
               = f.text_field :municipality, :class => 'form-control'
+              %div.text-red
+                = @user.errors[:municipality][0].to_s
         - if @delegacional_cheked              
           %div.row.margin-text-field
             %div.col-md-8.col-md-offset-2.padding-row
               = f.select(:deputation, @deputations, {:include_blank => 'Selecciona una delegación'}, :class => 'form-control')
+              %div.text-red
+                = @user.errors[:deputation][0].to_s
         %div.row.margin-text-field
           %div.col-md-8.col-md-offset-2.padding-row
             = f.label t('.dependency_name')
             = f.text_field :dependency_name , :placeholder =>  t('.dependency_name_hint'), :class => 'form-control'
-            %div.texto-rojo
+            %div.text-red
               = @user.errors[:dependency_name][0].to_s
         %div.row.margin-text-field
           %div.col-md-8.col-md-offset-2.padding-row
             = f.label t('.full_name')
             = f.text_field :full_name , :placeholder =>  t('.full_name_hint'), :class => 'form-control'
-            %div.texto-rojo
+            %div.text-red
               = @user.errors[:full_name][0].to_s
         %div.row.margin-text-field
           %div.col-md-8.col-md-offset-2.padding-row
             = f.label t('.email')
             = f.email_field :email , :placeholder =>  t('.email_hint'), :class => 'form-control'
-            %div.texto-rojo
+            %div.text-red
               = @user.errors[:email][0].to_s
         %div.row.margin-text-field
           %div.col-md-8.col-md-offset-2
@@ -71,7 +77,7 @@
         %div.row.margin-text-field
           %div.col-md-8.col-md-offset-2.padding-row
             = f.password_field :password_confirmation, autocomplete: "off" , :placeholder =>  t('.password_confirmation_hint'), :class => 'form-control'
-            %div.texto-rojo
+            %div.text-red
               = @user.errors[:password][0].to_s
         %div.actions.margin-text-field
           %div.col-md-7.col-md-offset-2.padding-row
