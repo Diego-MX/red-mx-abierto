@@ -1,3 +1,4 @@
+= render "layouts/alert"
 %div.row.padding-row
   %div.container
     %div.col-md-8.col-md-offset-2
@@ -10,7 +11,7 @@
         = t('.titulo')
         %br
         = t('.subtitulo')
-      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| 
+      = form_for(@user, html: { multipart: true }, :validate => true) do |f| 
         %div.row
           %div.col-md-10.col-md-offset-1.padding-row
             %div.col-md-3
@@ -44,19 +45,25 @@
         - if @delegacional_cheked              
           %div.row.margin-text-field
             %div.col-md-8.col-md-offset-2.padding-row
-              = f.select(:deputation, @deputation, {:include_blank => 'Selecciona una delegación'}, :class => 'form-control')
+              = f.select(:deputation, @deputations, {:include_blank => 'Selecciona una delegación'}, :class => 'form-control')
         %div.row.margin-text-field
           %div.col-md-8.col-md-offset-2.padding-row
             = f.label t('.dependency_name')
             = f.text_field :dependency_name , :placeholder =>  t('.dependency_name_hint'), :class => 'form-control'
+            %div.texto-rojo
+              = @user.errors[:dependency_name][0].to_s
         %div.row.margin-text-field
           %div.col-md-8.col-md-offset-2.padding-row
             = f.label t('.full_name')
             = f.text_field :full_name , :placeholder =>  t('.full_name_hint'), :class => 'form-control'
+            %div.texto-rojo
+              = @user.errors[:full_name][0].to_s
         %div.row.margin-text-field
           %div.col-md-8.col-md-offset-2.padding-row
             = f.label t('.email')
             = f.email_field :email , :placeholder =>  t('.email_hint'), :class => 'form-control'
+            %div.texto-rojo
+              = @user.errors[:email][0].to_s
         %div.row.margin-text-field
           %div.col-md-8.col-md-offset-2
             = f.label t('.password')
@@ -64,6 +71,8 @@
         %div.row.margin-text-field
           %div.col-md-8.col-md-offset-2.padding-row
             = f.password_field :password_confirmation, autocomplete: "off" , :placeholder =>  t('.password_confirmation_hint'), :class => 'form-control'
+            %div.texto-rojo
+              = @user.errors[:password][0].to_s
         %div.actions.margin-text-field
           %div.col-md-7.col-md-offset-2.padding-row
             = check_box_tag 'accept',:class => 'myCheckbox'

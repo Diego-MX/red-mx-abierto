@@ -33,4 +33,15 @@ es:
         password: 'Elige una contraseña:'
         password_confirmation: confirma contraseña 
         terminos: Acepto el
-        liga_terminos: Aviso de Privacidad y Términos de la Red  
+        liga_terminos: Aviso de Privacidad y Términos de la Red
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: Debes poner un correo
+              invalid: El correo no es válido
+            password:
+              blank: Debes poner una contraseña
+              too_short: La contraseña es muy corta

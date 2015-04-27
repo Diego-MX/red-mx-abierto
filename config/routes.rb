@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: "users/registrations"}
   resources :pages, only: [:home]
+  resources :users
   get 'pages/home'
 
   root 'pages#home'
