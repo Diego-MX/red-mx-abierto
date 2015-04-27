@@ -3,11 +3,8 @@
     = link_to image_tag("toplogo.png"), root_path, {class: 'navbar-brand'}
     %nav
       %ul.nav.navbar-nav.pull-right
-        %li= link_to "Inicio",   page_path(id: 'home')
-        %li= link_to "Miembros",   page_path(id: 'home')
-        %li= link_to "Herramientas",   page_path(id: 'home')
-        %li= link_to "Únete",   page_path(id: 'home')
-        %li= link_to "Experiencias",   page_path(id: 'home')
+        %li= link_to "Inicio", root_path
+        %li= link_to "Únete", new_user_registration_path
         - if user_signed_in?
           %li= link_to "Log out", destroy_user_session_path, method: :delete
         - else
