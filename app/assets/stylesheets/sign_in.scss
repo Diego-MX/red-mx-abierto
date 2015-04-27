@@ -1,11 +1,16 @@
+$padding-top: 40px;
+$padding-bottom: 40px;
+$background-color: #eee;
+$container_width: 330px;
+
 .sign_in {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #eee;
+  padding-top: $padding-top;
+  padding-bottom: $padding-bottom;
+  background-color: $background-color;
 }
 
 .form-signin {
-  max-width: 330px;
+  max-width: $container_width;
   padding: 15px;
   margin: 0 auto;
 }
