@@ -311,14 +311,15 @@
           %p
             %a
               Ver la historia completa >
+%hr
 %div.row.section
   %div.container
-    %div.row.section
+    %div.mini-section
       %div.col-md-4.col-md-offset-4
         %h3.text-center.section-title.section
           Temas más tratados
           %hr
-    %div.row.section
+    %div.section
       %div.col-md-8.col-md-offset-2
         %ul.card-experiencias.col-md-6
           %li
@@ -352,13 +353,14 @@
 %div.row.section.azulado
   %div.container
     %div.col-md-12
-      %p
-      %form.form-inline
+      %form.form-inline.newsletter.col-md-offset-2
         .form-group
           %label{:for => "exampleInputEmail2"}
             ¿Quiéres saber más sobre la Red México Abierto?
-          %input#exampleInputEmail2.form-control{:placeholder => "Correo electrónico", :type => "email"}
-        %button.btn.btn-default.btn-success{:type => "submit"} Send invitation
+          %div.input-group.input-group-lg
+            %input.form-control{ :placeholder => "Correo electrónico", :type => "email"}
+        %button.btn.btn-default.btn-success.btn-lg{:type => "submit"}
+          %i.fa.fa-check
 
 %div.separador-verde
 = render 'layouts/footer'
