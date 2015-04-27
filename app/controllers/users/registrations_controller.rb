@@ -16,15 +16,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
         tipo_funcionario
         if all_params 
          @user =  User.create(email:  @email,   password: @password, government_type:  @government_type, state: @state, municipality: @municipality, deputation: @deputation,  dependency_name: @dependency_name, full_name: @full_name)
-        1.spec
          unless @user.id.nil?
-            user.save
-            redirect_to new_user_registration_path,  notice:  "Usuario gurdado"
+            @user.save
+            redirect_to root_path,  notice:  "Usuario gurdado"
           else
             redirect_to new_user_registration_path,  alert:  "Usuario ya existe"
           end
-        #else
-         #redirect_to new_user_registration_path,  alert:  "Falta llenar datos"
        end
    end
 
