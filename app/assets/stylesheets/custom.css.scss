@@ -313,18 +313,18 @@ input[type='radio']:checked:before {
   padding-bottom: 30px;
 }
 
-.myCheckbox input {
+.my-checkbox input {
     display: none;
 }
 
-.myCheckbox span {
+.my-checkbox span {
     width: 20px;
     height: 20px;
     display: block;
     background: url("link_to_image");
 }
 
-.myCheckbox input:checked + span {
+.my-checkbox input:checked + span {
     background: url("link_to_another_image");
 }
 
