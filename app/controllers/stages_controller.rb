@@ -5,5 +5,6 @@ class StagesController < ApplicationController
   def index
     @stages = Stage.all
     @user_activities = current_user.user_activities
+    @last_activity = current_user.last_activity
   end
 end
