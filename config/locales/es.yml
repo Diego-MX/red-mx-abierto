@@ -133,6 +133,9 @@ es:
     #     no_activities: No se han creado actividades.
     #     edit: Editar
     #     actions: Acciones
+  navbar:
+    inicio: "Inicio"
+    registrar: "Regístrate"
   footer:
     menu:
       acerca: "Acerca de"
