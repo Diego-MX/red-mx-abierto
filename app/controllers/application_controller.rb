@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   after_action :verify_authorized, :except => :index
 
   def authenticate_admin!
-    current_user.admin? or not_found
+    (user_signed_in? && current_user.admin?) or not_found
   end
 
   def after_sign_in_path_for(resource)

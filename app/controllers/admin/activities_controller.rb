@@ -1,5 +1,6 @@
 module Admin
   class ActivitiesController < ApplicationController
+    before_action :authenticate_admin!
     before_action :set_stage
     before_action :set_step
     before_action :set_activity, only: [:update]
