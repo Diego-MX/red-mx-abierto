@@ -6,6 +6,8 @@ class Activity < ActiveRecord::Base
 
   after_create :add_activity_to_user
 
+  default_scope { order(:created_at) }
+
   private
 
   def add_activity_to_user

@@ -3,6 +3,11 @@
   -# Check if this is a first time user
   = render 'first_time_user'
 
+  .row
+    .col-sm-5
+    .col-sm-7
+      %p.pull-right
+        = raw t('.current_step', last_step: @last_activity.step.name)
   -# Activities checklist rendering
   - if @stages.any?
     .btn-group.btn-group-justified{ role: 'group' }

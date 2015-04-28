@@ -9,6 +9,10 @@ class User < ActiveRecord::Base
 
   after_create :add_activities_to_user
 
+  def last_activity
+    self.user_activities.where(checked:true).order(activity_id: :desc).first.activity
+  end
+
   def first_log_in?
     self.sign_in_count == 1
   end
