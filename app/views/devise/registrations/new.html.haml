@@ -17,13 +17,13 @@
             %div.col-md-3
               = t('.radio.titulo')
             %div.col-md-3
-              = f.radio_button :government_type, 'estatal', :checked => @estatal_cheked , :onclick => "this.form.submit();"
+              = f.radio_button :government_type, 'estatal', :checked => @estatal_cheked , :onclick => "this.form.submit();", :class => 'js-government-type'
               = label :government_type_estatal,  t('.radio.estado')
             %div.col-md-3
-              = f.radio_button :government_type, 'municipal', :checked => @municional_cheked, :onclick => "this.form.submit();"
+              = f.radio_button :government_type, 'municipal', :checked => @municional_cheked, :onclick => "this.form.submit();", :class => 'js-government-type'
               = label :government_type_municipal,  t('.radio.municipio')
             %div.col-md-3
-              = f.radio_button :government_type, 'delagacion', :checked => @delegacional_cheked, :onclick => "this.form.submit();"
+              = f.radio_button :government_type, 'delagacion', :checked => @delegacional_cheked, :onclick => "this.form.submit();", :class => 'js-government-type'
               = label :government_type_delegacional,  t('.radio.delegacion')
         %div.text-red
           = @user.errors[:municipality][0].to_s
@@ -81,11 +81,3 @@
             = f.submit t('.registra'), :class => 'btn btn-lg btn-success center-block', :disabled => !@acepted
 %div.separador-verde
 = render 'layouts/footer'
-
-:javascript
-  var checkboxes = $("input[type='checkbox']"),
-    submitButt = $("input[type='submit']");
-
-  checkboxes.click(function() {
-      submitButt.attr("disabled", !checkboxes.is(":checked"));
-  });
