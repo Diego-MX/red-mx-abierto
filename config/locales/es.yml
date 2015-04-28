@@ -34,6 +34,9 @@ es:
         password_confirmation: confirma contraseña 
         terminos: Acepto el
         liga_terminos: Aviso de Privacidad y Términos de la Red
+        state_hint: Selecciona tu estado
+        municipality_hint: Escribe tu municipio
+        deputation_hint: Selecciona una delegación
   user:
     validation:
       dependency_name_empty: Debes escribir el nombre de la dependencia
@@ -44,6 +47,8 @@ es:
       government_type_empty: Indica el tipo de gobierno al que perteneces
       state_empty: Indica tu Estado
       deputation_empty: Indica tu delegación
+  messages:
+    user_create: Usuario registrado exitosamente
   activerecord:
     errors:
       models:

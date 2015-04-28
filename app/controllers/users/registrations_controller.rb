@@ -11,7 +11,7 @@ module Devise
             type_of_officer
               @user = User.new(user_params) 
               if @user.save 
-                redirect_to root_path,  notice:  "Usuario registrado"
+                redirect_to root_path,  notice:  I18n.t('messages.user_create') 
               else
                 render :new
               end
