@@ -3,9 +3,9 @@
     = link_to image_tag("toplogo.png"), root_path, {class: 'navbar-brand'}
     %nav
       %ul.nav.navbar-nav.pull-right
-        %li= link_to "Inicio", root_path
-        %li= link_to "Regístrate", new_user_registration_path
+        %li= link_to t('navbar.inicio'), root_path
+        %li= link_to t('navbar.registrar'), new_user_registration_path
         - if user_signed_in?
-          %li= link_to "Log out", destroy_user_session_path, method: :delete
+          %li= link_to t("devise.sessions.log_out"), destroy_user_session_path, method: :delete
         - else
-          %li= link_to "Log in", user_session_path
+          %li= link_to t("devise.sessions.log_in"), user_session_path
