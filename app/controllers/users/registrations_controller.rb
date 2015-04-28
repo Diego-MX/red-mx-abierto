@@ -47,11 +47,11 @@ module Devise
       def type_of_officer
         @type_government = params[:user][:government_type]
         if @type_government  == 'delagacion'
-          @delegacional_cheked = 'true'
+          @delegacional_cheked = true
         elsif @type_government  == 'municipal'
-          @municional_cheked = 'true'
+          @municional_cheked = true
         elsif @type_government  == 'estatal'
-          @estatal_cheked = 'true'
+          @estatal_cheked = true
         end
       end
 end

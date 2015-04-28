@@ -17,22 +17,13 @@
             %div.col-md-3
               = t('.radio.titulo')
             %div.col-md-3
-              - if @estatal_cheked 
-                = f.radio_button :government_type, 'estatal', :checked => true, :onclick => "this.form.submit();"
-              - else 
-                = f.radio_button :government_type, 'estatal', :checked => false, :onclick => "this.form.submit();"
+              = f.radio_button :government_type, 'estatal', :checked => @estatal_cheked , :onclick => "this.form.submit();"
               = label :government_type_estatal,  t('.radio.estado')
             %div.col-md-3
-              - if @municional_cheked
-                = f.radio_button :government_type, 'municipal', :checked => true, :onclick => "this.form.submit();"
-              - else 
-                = f.radio_button :government_type, 'municipal', :checked => false, :onclick => "this.form.submit();"
+              = f.radio_button :government_type, 'municipal', :checked => @municional_cheked, :onclick => "this.form.submit();"
               = label :government_type_municipal,  t('.radio.municipio')
             %div.col-md-3
-              - if @delegacional_cheked
-                = f.radio_button :government_type, 'delagacion', :checked => true, :onclick => "this.form.submit();"
-              - else 
-                = f.radio_button :government_type, 'delagacion', :checked => false, :onclick => "this.form.submit();"
+              = f.radio_button :government_type, 'delagacion', :checked => @delegacional_cheked, :onclick => "this.form.submit();"
               = label :government_type_delegacional,  t('.radio.delegacion')
         %div.text-red
           = @user.errors[:municipality][0].to_s
