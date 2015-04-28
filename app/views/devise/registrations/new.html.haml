@@ -17,29 +17,29 @@
             %div.col-md-3
               = t('.radio.titulo')
             %div.col-md-3
-              = f.radio_button :government_type, 'estatal', :checked => @estatal_cheked, :class => 'js-government-type'
+              = f.radio_button :government_type, 'estatal', :class => 'js-government-type'
               = label :government_type_estatal,  t('.radio.estado')
             %div.col-md-3
-              = f.radio_button :government_type, 'municipal', :checked => @municional_cheked, :class => 'js-government-type'
+              = f.radio_button :government_type, 'municipal', :class => 'js-government-type'
               = label :government_type_municipal,  t('.radio.municipio')
             %div.col-md-3
-              = f.radio_button :government_type, 'delegacion', :checked => @delegacional_cheked, :class => 'js-government-type'
+              = f.radio_button :government_type, 'delegacion', :class => 'js-government-type'
               = label :government_type_delegacional,  t('.radio.delegacion')
         %div.text-red
           = @user.errors[:municipality][0].to_s
-        %div.row.margin-text-field.state.hide
+        %div.row.margin-text-field.state{class: show_government_fields_class(['estatal', 'municipal'],@user.government_type)}
           %div.col-md-8.col-md-offset-2.padding-row 
-            = f.select(:state, @states, {:include_blank => t('.state_hint')}, :class => 'form-control')
+            = f.select(:state, states_options, {:include_blank => t('.state_hint')}, :class => 'form-control')
             %div.text-red
               = @user.errors[:state][0].to_s
-        %div.row.margin-text-field.municipality.hide
+        %div.row.margin-text-field.municipality{class: show_government_fields_class([ 'municipal'],@user.government_type)}
           %div.col-md-8.col-md-offset-2.padding-row
             = f.text_field :municipality, :placeholder => t('.municipality_hint'), :class => 'form-control'
             %div.text-red
               = @user.errors[:municipality][0].to_s           
-        %div.row.margin-text-field.deputation.hide
+        %div.row.margin-text-field.deputation{class: show_government_fields_class(['delegacion'],@user.government_type)}
           %div.col-md-8.col-md-offset-2.padding-row
-            = f.select(:deputation, @deputations, {:include_blank => t('.deputation_hint')}, :class => 'form-control')
+            = f.select(:deputation, deputations_options, {:include_blank => t('.deputation_hint')}, :class => 'form-control')
             %div.text-red
               = @user.errors[:deputation][0].to_s
         %div.row.margin-text-field
