@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :pages, only: :home
 
   resources :stages, only: :index
-  match '/stages', to: 'stages#update', via: :post
+  match '/user_activities', to: 'user_activities#update', via: :post
 
   namespace :admin do
     resources :stages, only: [:index, :create, :update] do
