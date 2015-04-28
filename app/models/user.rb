@@ -9,6 +9,10 @@ class User < ActiveRecord::Base
 
   after_create :add_activities_to_user
 
+  def first_log_in?
+    self.sign_in_count == 1
+  end
+
   private
 
   def add_activities_to_user
