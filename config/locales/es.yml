@@ -11,6 +11,12 @@ es:
       miembros: Miembros
       preguntas: "Preguntas Frecuentas"
   devise:
+    sessions:
+      new:
+        log_in_button: Aceptar
+        log_in: Ingresar
+        email: 'Correo:'
+        password: 'Contraseña:'
     registrations:
       new:
         registra: Registrar
