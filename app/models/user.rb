@@ -9,16 +9,12 @@ class User < ActiveRecord::Base
   validates_length_of :full_name, :minimum => 10, :message => 'Tu nombre debe tener por lo menos 3 caracteres.', on:  :create
   validates_format_of :full_name, :with => /\A[a-zA-Z áéíóúÁÉÍÓÚñÑ]+\z/, :message => "El nombre solo debe tener letras.", on:  :create
 
+  validates_presence_of :government_type ,  :message => "Indica el tipo de gobierno al que perteneces"
   validates_presence_of :state ,  :message => "Indica tu Estado",  if: :deputation_is_blank?
-  validates_presence_of :municipality ,  :message => "Indica tu municipio", if: :deputation_is_blank_and_state_is_fill?
   validates_presence_of :deputation ,  :message => "Indica tu delegación", if: :state_is_blank?
 
   def deputation_is_blank?
     deputation.nil? || deputation.blank?
-  end
-
-  def deputation_is_blank_and_state_is_fill?
-    deputation.nil? || deputation.blank? && !state.nil? && !state.empty?
   end
 
   def state_is_blank?
