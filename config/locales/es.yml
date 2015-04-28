@@ -1,13 +1,31 @@
 es:
   devise:
     sessions:
+      new:
+        log_in: Inicia sesión
+        email: Correo electrónico
+        password: Contraseña
+        log_in_button: Entrar
       user:
         signed_in: Has iniciado sesión.
         signed_out: Has cerrado sesión.
+    registrations:
+      new:
+        sign_up: Regístrate
+        email: Correo electrónico
+        password: Contraseña
+        password_confirmation: Vuelve a escribir tu contraseña
+        sign_up_button: Entrar
+      user:
+        signed_up: Has creado tu cuenta satisfactoriamente.
     failure:
       user:
         not_found_in_database: Revisa que el usuario y contraseña han sido escritos correctamente.
+        invalid: Revisa que el usuario y contraseña han sido escritos correctamente.
   stages:
+    first_time_user:
+      welcome_title: ¡Bienvenido a tu perfil de MéxicoAbierto.org!
+      welcome_message: A continuación puedes ver las actividades que te llevarán a tener una apertura eficiente en tu ciudad, estado o delegación. Lleva el registro y el avance de las actividades en tu ciudad marcando con una palomita las actividades que ya se están realizando.
     index:
       no_stages: No se han creado etapas.
     steps_listing:
