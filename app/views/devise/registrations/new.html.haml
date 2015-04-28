@@ -17,34 +17,31 @@
             %div.col-md-3
               = t('.radio.titulo')
             %div.col-md-3
-              = f.radio_button :government_type, 'estatal', :checked => @estatal_cheked , :onclick => "this.form.submit();", :class => 'js-government-type'
+              = f.radio_button :government_type, 'estatal', :checked => @estatal_cheked, :class => 'js-government-type'
               = label :government_type_estatal,  t('.radio.estado')
             %div.col-md-3
-              = f.radio_button :government_type, 'municipal', :checked => @municional_cheked, :onclick => "this.form.submit();", :class => 'js-government-type'
+              = f.radio_button :government_type, 'municipal', :checked => @municional_cheked, :class => 'js-government-type'
               = label :government_type_municipal,  t('.radio.municipio')
             %div.col-md-3
-              = f.radio_button :government_type, 'delagacion', :checked => @delegacional_cheked, :onclick => "this.form.submit();", :class => 'js-government-type'
+              = f.radio_button :government_type, 'delegacion', :checked => @delegacional_cheked, :class => 'js-government-type'
               = label :government_type_delegacional,  t('.radio.delegacion')
         %div.text-red
           = @user.errors[:municipality][0].to_s
-        - if @estatal_cheked || @municional_cheked
-          %div.row.margin-text-field
-            %div.col-md-8.col-md-offset-2.padding-row 
-              = f.select(:state, @states, {:include_blank => t('.state_hint')}, :class => 'form-control')
-              %div.text-red
-                = @user.errors[:state][0].to_s
-        - if @municional_cheked 
-          %div.row.margin-text-field
-            %div.col-md-8.col-md-offset-2.padding-row
-              = f.text_field :municipality, :placeholder => t('.municipality_hint'), :class => 'form-control'
-              %div.text-red
-                = @user.errors[:municipality][0].to_s
-        - if @delegacional_cheked              
-          %div.row.margin-text-field
-            %div.col-md-8.col-md-offset-2.padding-row
-              = f.select(:deputation, @deputations, {:include_blank => t('.deputation_hint')}, :class => 'form-control')
-              %div.text-red
-                = @user.errors[:deputation][0].to_s
+        %div.row.margin-text-field.state.hide
+          %div.col-md-8.col-md-offset-2.padding-row 
+            = f.select(:state, @states, {:include_blank => t('.state_hint')}, :class => 'form-control')
+            %div.text-red
+              = @user.errors[:state][0].to_s
+        %div.row.margin-text-field.municipality.hide
+          %div.col-md-8.col-md-offset-2.padding-row
+            = f.text_field :municipality, :placeholder => t('.municipality_hint'), :class => 'form-control'
+            %div.text-red
+              = @user.errors[:municipality][0].to_s           
+        %div.row.margin-text-field.deputation.hide
+          %div.col-md-8.col-md-offset-2.padding-row
+            = f.select(:deputation, @deputations, {:include_blank => t('.deputation_hint')}, :class => 'form-control')
+            %div.text-red
+              = @user.errors[:deputation][0].to_s
         %div.row.margin-text-field
           %div.col-md-8.col-md-offset-2.padding-row
             = f.label t('.dependency_name')
@@ -74,10 +71,35 @@
               = @user.errors[:password][0].to_s
         %div.actions.margin-text-field
           %div.col-md-7.col-md-offset-2.padding-row
-            = check_box("accept", :key, {checked: @acepted})#check_box_tag :accept, :checked => @acepted
+            = check_box_tag "accept",:key, @acepted, :class => "js-button-checked"
             = t('.terminos')
             = link_to t('.liga_terminos'), root_path, :class => 'a-green'
           %div.col-md-8.col-md-offset-2.padding-row
             = f.submit t('.registra'), :class => 'btn btn-lg btn-success center-block', :disabled => !@acepted
 %div.separador-verde
 = render 'layouts/footer'
+:javascript
+  var checkboxes = $("input[type='checkbox']"),
+  submitButt = $("input[type='submit']");
+
+  checkboxes.click(function() {
+      submitButt.attr("disabled", !checkboxes.is(":checked"));
+  });
+  $('.js-government-type').click(function() {
+      resetGovernmentType();
+      var government_value = this.value;
+      if(government_value == 'municipal'){
+        $(".state").removeClass("hide")
+        $(".municipality").removeClass("hide")
+      }else if(government_value == 'estatal'){
+      	$(".state").removeClass("hide")
+      }else if(government_value == 'delegacion'){
+        $(".deputation").removeClass("hide")
+      }
+  });
+  function resetGovernmentType(){
+    $(".state").addClass("hide")
+    $(".municipality").addClass("hide")
+    $(".deputation").addClass("hide")
+  }
+
