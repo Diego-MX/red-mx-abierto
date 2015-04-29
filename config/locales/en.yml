@@ -21,3 +21,6 @@
 
 en:
   hello: "Hello world"
+  navbar:
+    inicio: "Home"
+    registrar: "Register"

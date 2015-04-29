@@ -13,6 +13,11 @@ class User < ActiveRecord::Base
   validates_presence_of :state ,  :message => I18n.t('user.validation.state_empty'),  if: :deputation_is_blank?
   validates_presence_of :deputation ,  :message => I18n.t('user.validation.deputation_empty'), if: :state_is_blank?
 
+  has_many :user_activities
+  has_many :activities, through: :user_activities
+
+  after_create :add_activities_to_user
+
   def deputation_is_blank?
     deputation.nil? || deputation.blank?
   end
@@ -20,5 +25,16 @@ class User < ActiveRecord::Base
   def state_is_blank?
     return state.nil? || state.blank?
   end
-end
 
+  def first_log_in?
+    self.sign_in_count == 1
+  end
+
+  private
+
+  def add_activities_to_user
+    Activity.all.each do |a|
+      self.user_activities.create(activity: a)
+    end
+  end
+end

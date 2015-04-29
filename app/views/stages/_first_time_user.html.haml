@@ -1,0 +1,7 @@
+- if current_user.first_log_in?
+  .alert.alert-info.alert-dismissible.fade.in{ role: 'alert', 'ng-hide': 'activities.hideWelcomeMessage' }
+    %button.close{ 'type': "button", 'data-dismiss': 'alert', 'aria-label': 'Close' }
+      -# let's save a cookie so that it doesn't display the
+      .span{ 'aria-hidden': 'true', 'ng-click': 'activities.hideFirstTimeUserMessage()' } ×
+    %h4= t('.welcome_title')
+    %p= t('.welcome_message')

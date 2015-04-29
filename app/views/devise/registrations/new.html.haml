@@ -76,8 +76,6 @@
             = link_to t('.liga_terminos'), root_path, :class => 'a-green'
           %div.col-md-8.col-md-offset-2.padding-row
             = f.submit t('.registra'), :class => 'btn btn-lg btn-success center-block', :disabled => !@acepted
-%div.separador-verde
-= render 'layouts/footer'
 :javascript
   var checkboxes = $("input[type='checkbox']"),
   submitButt = $("input[type='submit']");
@@ -102,4 +100,3 @@
     $(".municipality").addClass("hide")
     $(".deputation").addClass("hide")
   }
-

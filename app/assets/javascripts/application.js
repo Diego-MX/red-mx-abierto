@@ -13,5 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require registrations_user.js
+//= require bootstrap-sprockets
 //= require turbolinks
+//= require angular
+//= require redMxAbiertoApp
 //= require_tree .
