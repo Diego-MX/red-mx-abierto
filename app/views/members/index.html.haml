@@ -21,9 +21,22 @@
               %div.text-center
                 = image_tag("municipio.png")
               %br
-              = user.municipality
+              = user.municipality+', '+user.state
             -if user.government_type == 'delegacion'
               %div.text-center
                 = image_tag("federacion.png")
               %br
-                = user.deputation 
+                = user.deputation+', D.F.' 
+            %hr.small
+            = t('.herramientas')
+
+  %div.row.section
+    %div.col-md-12
+      %div.col-md-4.col-md-offset-4
+        %h3.text-center.section-title
+        %hr.small
+        %p.text-center
+          ¿Te gustaría formar parte de la Red México Abierto?
+        %a{:href => "#{new_user_registration_path}"}
+          %button.btn.btn-lg.btn-success.center-block
+            ¡Regístrate!
