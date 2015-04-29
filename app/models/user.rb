@@ -10,7 +10,15 @@ class User < ActiveRecord::Base
   after_create :add_activities_to_user
 
   def last_activity
-    self.user_activities.where(checked:true).order(activity_id: :desc).first.activity
+    last_checked_user_activity = self.user_activities.where(checked:true).order(activity_id: :desc).first
+    # let's check first if there's at least one checked activity
+    if last_checked_user_activity.present?
+      # return the last checked activity
+      last_checked_user_activity.activity
+    else
+      # there isn't a checked activity, return the first activity
+      self.user_activities.order(activity_id: :asc).first.activity
+    end
   end
 
   def first_log_in?
