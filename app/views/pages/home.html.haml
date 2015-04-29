@@ -150,8 +150,8 @@
   %div.row.section
     %div.col-md-12
       %p.text-center
-        %a.en_el_futuro
-          Ver a todos los miembros
+        %a
+          = link_to t('.Ver a todos los miembros'), members_path
       %p.text-center
         ¿Te gustaría formar parte de la Red México Abierto?
       %a{:href => "#{new_user_registration_path}"}

@@ -45,6 +45,12 @@ es:
       no_steps: No hay pasos dentro de esta etapa.
     activities_listing:
       activities: Actividades
+  members:
+    index:
+      title: Miembros
+      subtitle: Red México Abierto está compuesta por funcionarios de los gobiernos de municipios, estados, el Distrito Federal y sus delegaciones.
+      num_miembros: '%{num} miembros actualmente en la Red.'
+      filtrar_por: Filtrar por:'
   admin:
     stages:
       notices:

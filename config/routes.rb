@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: "users/registrations"}
   resources :pages, only: [:home]
   resources :users
+  resources :members, only: [:index]
   get 'pages/home'
 
   resources :pages, only: :home

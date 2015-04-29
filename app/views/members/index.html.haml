@@ -1,0 +1,29 @@
+%div.row.section
+  %div.container
+    %div.col-md-12
+      %div.col-md-4.col-md-offset-4
+        %h3.text-center.section-title
+          = t('.title')
+        %hr.small
+      %div.col-md-6.col-md-offset-3.text-center
+        = t('.subtitle')
+      %div.col-md-6.col-md-offset-3.text-center.section
+        = t('.num_miembros',num: @user.count)
+      - @user.each do |user|
+        %div.col-md-4.text-center
+          %div.marco
+            -if user.government_type == 'estatal'
+              %div.text-center
+                = image_tag("estado.png")
+              %br
+              = user.state
+            -if user.government_type == 'municipal'
+              %div.text-center
+                = image_tag("municipio.png")
+              %br
+              = user.municipality
+            -if user.government_type == 'delegacion'
+              %div.text-center
+                = image_tag("federacion.png")
+              %br
+                = user.deputation 
