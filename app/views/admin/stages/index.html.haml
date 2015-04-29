@@ -25,6 +25,8 @@
                 %a.open-modal.action_link{ 'ng-click' => "stages.openModal(#{stage.id});" }= t('.edit')
                 |
                 = link_to t('.steps'), admin_stage_steps_path(stage)
+                |
+                = link_to t('.delete_stage'), admin_stage_path(stage), method: :delete, data: { confirm: t('.delete_confirmation') }
           = render 'stages_modal', stage: stage
 
   - else

@@ -49,8 +49,10 @@ es:
     stages:
       notices:
         saved_successfully: La etapa fue guardada satisfactoriamente.
+        deleted_successfully: La etapa ha sido borrada satisfactoriamente.
       alerts:
         save_failed: Hubo un error al guardar los cambios.
+        delete_failed: Hubo un error al borrar la etapa.
       stages_modal:
         stage: Etapas
         stage_name: Nombre de la etapa
@@ -65,6 +67,8 @@ es:
         edit: Editar
         steps: Pasos
         actions: Acciones
+        delete_stage: Borrar
+        delete_confirmation: Esta etapa junto con todos los pasos y actividades relacionadas serán borradas. ¿Deseas continuar?
 
     steps:
       notices:
