@@ -1,4 +1,16 @@
 es:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid: Correo inválido.
+              taken: El correo ya ha sido tomado.
+            password:
+              too_short: La contraseña debe estar compuesta por al menos 8 caracteres.
+            password_confirmation:
+              confirmation: Las contraseñas deben ser iguales.
   devise:
     sessions:
       new:
