@@ -49,8 +49,10 @@ es:
     stages:
       notices:
         saved_successfully: La etapa fue guardada satisfactoriamente.
+        deleted_successfully: La etapa ha sido borrada satisfactoriamente.
       alerts:
         save_failed: Hubo un error al guardar los cambios.
+        delete_failed: Hubo un error al borrar la etapa.
       stages_modal:
         stage: Etapas
         stage_name: Nombre de la etapa
@@ -65,12 +67,16 @@ es:
         edit: Editar
         steps: Pasos
         actions: Acciones
+        delete_stage: Borrar
+        delete_confirmation: Esta etapa junto con todos los pasos y actividades relacionadas serán borradas. ¿Deseas continuar?
 
     steps:
       notices:
         saved_successfully: El paso fue guardado satisfactoriamente.
+        deleted_successfully: El paso ha sido borrado satisfactoriamente.
       alerts:
         save_failed: Hubo un error al guardar los cambios.
+        delete_failed: Hubo un error al borrar el paso.
       steps_modal:
         step: Pasos
         step_name: Nombre del paso
@@ -90,12 +96,16 @@ es:
         save_stage: Guardar etapa
         activities: Actividades
         actions: Acciones
+        delete_step: Borrar
+        delete_confirmation: Este paso y todas las actividades relacionadas serán borradas. ¿Deseas continuar?
 
     activities:
       notices:
         saved_successfully: La actividad fue guardada satisfactoriamente.
+        deleted_successfully: La actividad fue borrada satisfactoriamente.
       alerts:
         save_failed: Hubo un error al guardar los cambios.
+        delete_failed: Hubo un error al borrar la actividad.
       activities_modal:
         activity: Actividades
         activity_name: Nombre de la actividad
@@ -108,6 +118,8 @@ es:
         no_activities: No se han creado actividades.
         edit: Editar
         actions: Acciones
+        delete_activity: Borrar
+        delete_confirmation: ¿Estás seguro que quieres borrar esta actividad?
   navbar:
     inicio: Inicio
     registrar: Regístrate
