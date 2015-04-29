@@ -69,8 +69,10 @@ es:
     steps:
       notices:
         saved_successfully: El paso fue guardado satisfactoriamente.
+        deleted_successfully: El paso ha sido borrado satisfactoriamente.
       alerts:
         save_failed: Hubo un error al guardar los cambios.
+        delete_failed: Hubo un error al borrar el paso.
       steps_modal:
         step: Pasos
         step_name: Nombre del paso
@@ -90,6 +92,8 @@ es:
         save_stage: Guardar etapa
         activities: Actividades
         actions: Acciones
+        delete_step: Borrar
+        delete_confirmation: Este paso y todas las actividades relacionadas serán borradas. ¿Deseas continuar?
 
     activities:
       notices:
