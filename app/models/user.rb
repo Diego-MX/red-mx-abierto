@@ -40,7 +40,7 @@ class User < ActiveRecord::Base
     else
       # there isn't a checked activity, return the first activity
       self.user_activities
-          .order('created_at ASC')
+          .order('id ASC')
           .first
           .activity
     end
