@@ -3,7 +3,7 @@ module Admin
     before_action :authenticate_admin!
     before_action :set_stage
     before_action :set_step
-    before_action :set_activity, only: [:update]
+    before_action :set_activity, only: [:update, :destroy]
     layout 'admin'
 
     def index
@@ -30,6 +30,14 @@ module Admin
       end
     end
 
+    def destroy
+      authorize @activity
+      if @activity.destroy
+        redirect_to admin_stage_step_activities_path(@stage, @step), notice: I18n.t('admin.activities.notices.deleted_successfully')
+      else
+        redirect_to admin_stage_step_activities_path(@stage, @step), notice: I18n.t('admin.activities.alerts.delete_failed')
+      end
+    end
 
     private
 

@@ -94,8 +94,10 @@ es:
     activities:
       notices:
         saved_successfully: La actividad fue guardada satisfactoriamente.
+        deleted_successfully: La actividad fue borrada satisfactoriamente.
       alerts:
         save_failed: Hubo un error al guardar los cambios.
+        delete_failed: Hubo un error al borrar la actividad.
       activities_modal:
         activity: Actividades
         activity_name: Nombre de la actividad
@@ -108,6 +110,8 @@ es:
         no_activities: No se han creado actividades.
         edit: Editar
         actions: Acciones
+        delete_activity: Borrar
+        delete_confirmation: ¿Estás seguro que quieres borrar esta actividad?
   navbar:
     inicio: Inicio
     registrar: Regístrate
