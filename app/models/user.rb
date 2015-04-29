@@ -26,6 +26,26 @@ class User < ActiveRecord::Base
     return state.nil? || state.blank?
   end
 
+  def last_activity
+    checked_user_activities = self.user_activities
+                                  .where(checked:true)
+
+    # let's check first if there's at least one checked activity
+    if checked_user_activities.any?
+      # return the last checked activity
+      checked_user_activities.includes(:activity)
+                             .order('activities.step_id DESC')
+                             .first
+                             .activity
+    else
+      # there isn't a checked activity, return the first activity
+      self.user_activities
+          .order('created_at ASC')
+          .first
+          .activity
+    end
+  end
+
   def first_log_in?
     self.sign_in_count == 1
   end

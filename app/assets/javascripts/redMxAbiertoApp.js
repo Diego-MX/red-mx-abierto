@@ -46,7 +46,7 @@ app.controller('activitiesCtrl', [ '$http', '$cookies', function($http, $cookies
     };
 
     // Let's submit the checkbox info
-    $http.post('/stages', data)
+    $http.post('/user_activities', data)
     .success(function(data, statues, headers, config){
       // do something when the checkbox has beeen successfully submitted ...
       // e.g. strike the checklist item or show a message that it has been updated
