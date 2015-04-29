@@ -27,6 +27,11 @@ es:
       timeout: 'Tu sesión ha expirado, por favor ingresa nuevamente para continuar.'
       inactive: 'Tu cuenta aún no ha sido activada.'
     sessions:
+      new:
+        log_in_button: Aceptar
+        log_in: Ingresar
+        email: 'Correo:'
+        password: 'Contraseña:'
       log_in: 'Ingresar'
       log_out: 'Salir'
       signed_in: 'Ingreso exitoso.'
@@ -49,6 +54,31 @@ es:
         inactive: 'inactiva'
         unconfirmed: 'sin confirmar'
         locked: 'bloqueada'
+      new:
+        registra: Registrar
+        seccion: CREAR PERFIL
+        titulo: ¡Únete a la red México abierto!
+        subtitulo: En México abierto se pueden registrar servidores públicos de gobiernos de México.
+        radio:
+          titulo: 'Gobierno:'
+          estado: Estatal
+          municipio: Municipal
+          delegacion: Delegación
+        dependency_name_hint: Nombre de la secretaría
+        full_name_hint: Tu nombre completo
+        email_hint: E-mail
+        password_hint: contraseña
+        password_confirmation_hint: confirma contraseña 
+        dependency_name: 'Nombre de la dependencia de contacto:'
+        full_name: 'Nombre completo:'
+        email: "Correo electrónico:"
+        password: 'Elige una contraseña:'
+        password_confirmation: confirma contraseña 
+        terminos: Acepto el
+        liga_terminos: Aviso de Privacidad y Términos de la Red
+        state_hint: Selecciona tu estado
+        municipality_hint: Escribe tu municipio
+        deputation_hint: Selecciona una delegación
     unlocks:
       send_instructions: 'Recibirás un correo electrónico con instrucciones sobre cómo desbloquear tu cuenta en unos minutos.'
       unlocked: 'Tu cuenta fue desbloqueada con éxito, has sido ingresado al sistema.'

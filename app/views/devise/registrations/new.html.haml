@@ -1,11 +1,102 @@
-= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), defaults: { input_html: { class: 'form-control' }, label_html: { style: 'margin-top:15px;' } }, html:  { class: 'form-signin' }) do |f|
-  = f.error_notification
-  %h2.form-signin-heading.text-muted.text-center= t('.sign_up')
-  .form-inputs
-    = f.input :email, label: t('.email'), required: true, autofocus: true
-    = f.input :password, label: t('.password'), required: true, hint: ("Al menos #{@minimum_password_length} caracteres" if @validatable)
-    = f.input :password_confirmation, label: t('.password_confirmation'), required: true
+= render "layouts/alert"
+%div.row.padding-row
+  %div.container
+    %div.col-md-8.col-md-offset-2
+      %div.row
+        %div.col-md-4.col-md-offset-4
+          %h3.text-center
+            = t('.seccion')
+            %hr.small
+      %div.p.text-center.padding-row
+        = t('.titulo')
+        %br
+        = t('.subtitulo')
+      = form_for(@user, html: { multipart: true }, :validate => true) do |f| 
+        %div.row
+          %div.col-md-10.col-md-offset-1.padding-row
+            %div.col-md-3
+              = t('.radio.titulo')
+            %div.col-md-3
+              = f.radio_button :government_type, 'estatal', :class => 'js-government-type'
+              = label :government_type_estatal,  t('.radio.estado')
+            %div.col-md-3
+              = f.radio_button :government_type, 'municipal', :class => 'js-government-type'
+              = label :government_type_municipal,  t('.radio.municipio')
+            %div.col-md-3
+              = f.radio_button :government_type, 'delegacion', :class => 'js-government-type'
+              = label :government_type_delegacional,  t('.radio.delegacion')
+        %div.text-red
+          = @user.errors[:municipality][0].to_s
+        %div.row.margin-text-field.state{class: show_government_fields_class(['estatal', 'municipal'],@user.government_type)}
+          %div.col-md-8.col-md-offset-2.padding-row 
+            = f.select(:state, states_options, {:include_blank => t('.state_hint')}, :class => 'form-control')
+            %div.text-red
+              = @user.errors[:state][0].to_s
+        %div.row.margin-text-field.municipality{class: show_government_fields_class([ 'municipal'],@user.government_type)}
+          %div.col-md-8.col-md-offset-2.padding-row
+            = f.text_field :municipality, :placeholder => t('.municipality_hint'), :class => 'form-control'
+            %div.text-red
+              = @user.errors[:municipality][0].to_s           
+        %div.row.margin-text-field.deputation{class: show_government_fields_class(['delegacion'],@user.government_type)}
+          %div.col-md-8.col-md-offset-2.padding-row
+            = f.select(:deputation, deputations_options, {:include_blank => t('.deputation_hint')}, :class => 'form-control')
+            %div.text-red
+              = @user.errors[:deputation][0].to_s
+        %div.row.margin-text-field
+          %div.col-md-8.col-md-offset-2.padding-row
+            = f.label t('.dependency_name')
+            = f.text_field :dependency_name , :placeholder =>  t('.dependency_name_hint'), :class => 'form-control'
+            %div.text-red
+              = @user.errors[:dependency_name][0].to_s
+        %div.row.margin-text-field
+          %div.col-md-8.col-md-offset-2.padding-row
+            = f.label t('.full_name')
+            = f.text_field :full_name , :placeholder =>  t('.full_name_hint'), :class => 'form-control'
+            %div.text-red
+              = @user.errors[:full_name][0].to_s
+        %div.row.margin-text-field
+          %div.col-md-8.col-md-offset-2.padding-row
+            = f.label t('.email')
+            = f.email_field :email , :placeholder =>  t('.email_hint'), :class => 'form-control'
+            %div.text-red
+              = @user.errors[:email][0].to_s
+        %div.row.margin-text-field
+          %div.col-md-8.col-md-offset-2
+            = f.label t('.password')
+            = f.password_field :password, autocomplete: "off" , :placeholder =>  t('.password_hint'), :class => 'form-control'
+        %div.row.margin-text-field
+          %div.col-md-8.col-md-offset-2.padding-row
+            = f.password_field :password_confirmation, autocomplete: "off" , :placeholder =>  t('.password_confirmation_hint'), :class => 'form-control'
+            %div.text-red
+              = @user.errors[:password][0].to_s
+        %div.actions.margin-text-field
+          %div.col-md-7.col-md-offset-2.padding-row
+            = check_box_tag "accept",:key, @acepted, :class => "js-button-checked"
+            = t('.terminos')
+            = link_to t('.liga_terminos'), root_path, :class => 'a-green'
+          %div.col-md-8.col-md-offset-2.padding-row
+            = f.submit t('.registra'), :class => 'btn btn-lg btn-success center-block', :disabled => !@acepted
+:javascript
+  var checkboxes = $("input[type='checkbox']"),
+  submitButt = $("input[type='submit']");
 
-
-  .form-actions{ style: 'margin-top: 15px;'}
-    = f.button :submit, t('.sign_up_button'), class: 'btn btn-block btn-success'
+  checkboxes.click(function() {
+      submitButt.attr("disabled", !checkboxes.is(":checked"));
+  });
+  $('.js-government-type').click(function() {
+      resetGovernmentType();
+      var government_value = this.value;
+      if(government_value == 'municipal'){
+        $(".state").removeClass("hide")
+        $(".municipality").removeClass("hide")
+      }else if(government_value == 'estatal'){
+      	$(".state").removeClass("hide")
+      }else if(government_value == 'delegacion'){
+        $(".deputation").removeClass("hide")
+      }
+  });
+  function resetGovernmentType(){
+    $(".state").addClass("hide")
+    $(".municipality").addClass("hide")
+    $(".deputation").addClass("hide")
+  }

@@ -7,7 +7,10 @@
     = csrf_meta_tags
     = render 'layouts/shim'
 
-  %body.sign_in
+  %body.no-padding-top
+    = render 'layouts/header', custom_classes: 'azulado'
     .container
       = render 'layouts/alert'
       = yield
+    %div.separador-verde
+    = render 'layouts/footer'

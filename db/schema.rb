@@ -59,6 +59,12 @@ ActiveRecord::Schema.define(version: 20150426000648) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin",                  default: false
+    t.string   "government_type"
+    t.string   "state"
+    t.string   "municipality"
+    t.string   "deputation"
+    t.string   "dependency_name"
+    t.string   "full_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
