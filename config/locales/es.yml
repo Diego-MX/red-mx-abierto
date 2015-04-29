@@ -122,7 +122,7 @@ es:
         delete_confirmation: ¿Estás seguro que quieres borrar esta actividad?
   navbar:
     inicio: Inicio
-    registrar: Regístrate
+    registrar: Registrar
     implementation_guide: Guía de implementación
   footer:
     menu:
