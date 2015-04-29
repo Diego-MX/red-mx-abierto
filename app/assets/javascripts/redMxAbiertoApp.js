@@ -1,12 +1,12 @@
 // 'Red México Abierto' webapp
 
-var app = angular.module('redMxAbiertoApp', []);
+var app = angular.module('redMxAbiertoApp', ['ngCookies']);
 
 app.controller('stagesCtrl', function(){
   var self = this;
-  this.names = [];
+  self.names = [];
 
-  this.openModal = function(id) {
+  self.openModal = function(id) {
     var modalId = "#stageModal" + id;
     angular.element(modalId).modal('show');
   };
@@ -14,21 +14,25 @@ app.controller('stagesCtrl', function(){
 
 app.controller('stepsCtrl', function(){
   var self = this;
-  this.names = [];
+  self.names = [];
 
-  this.openModal = function(id) {
+  self.openModal = function(id) {
     var modalId = "#stepModal" + id;
     angular.element(modalId).modal('show');
   };
 });
 
-app.controller('activitiesCtrl', ['$http', function($http){
+app.controller('activitiesCtrl', [ '$http', '$cookies', function($http, $cookies){
   var self = this;
-  this.names = [];
 
-  this.user_activities = [];
+  self.init = function() {
+    // initialize variables
+    self.names = [];
+    self.user_activities = [];
+    self.hideWelcomeMessage = !!$cookies["_hide_first_log_in_message"];
+  };
 
-  this.activityChecked = function(activityId) {
+  self.activityChecked = function(activityId) {
     // Get token
     var csrfToken = angular.element('meta[name=csrf-token]')[0].content;
 
@@ -37,20 +41,28 @@ app.controller('activitiesCtrl', ['$http', function($http){
       authenticity_token: csrfToken,
       user_activity: {
         id: activityId,
-        checked: this.user_activities[activityId]
+        checked: self.user_activities[activityId]
       }
     };
 
     // Let's submit the checkbox info
-    $http.post('/stages', data)
+    $http.post('/user_activities', data)
     .success(function(data, statues, headers, config){
-      console.log('submited');
-      console.log(data);
+      // do something when the checkbox has beeen successfully submitted ...
+      // e.g. strike the checklist item or show a message that it has been updated
     });
   };
 
-  this.openModal = function(id) {
+  self.openModal = function(id) {
     var modalId = "#activityModal" + id;
     angular.element(modalId).modal('show');
   };
+
+  self.hideFirstTimeUserMessage = function() {
+    // Let's set a cookie so that the message doesn't appear again
+    self.hideWelcomeMessage = true;
+    $cookies["_hide_first_log_in_message"] = true;
+  };
+
+  self.init();
 }]);

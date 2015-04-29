@@ -1,5 +1,14 @@
-.row
+.row{ 'ng-controller' => 'activitiesCtrl as activities' }
   %br
+  -# Check if this is a first time user
+  = render 'first_time_user'
+
+  .row{ style: 'margin-bottom:15px;'}
+    .col-sm-5
+    .col-sm-7
+      %p.pull-right
+        = raw t('.current_step', last_step: @last_activity.step.name)
+  -# Activities checklist rendering
   - if @stages.any?
     .btn-group.btn-group-justified{ role: 'group' }
       - @stages.each do |stage|
@@ -7,7 +16,7 @@
           %div{ 'data-toggle' => "tooltip", 'data-placement' => "left", 'title' => "#{stage.name}" }
             = truncate stage.name
 
-    .tab-content{ 'ng-controller' => 'activitiesCtrl as activities' }
+    .tab-content
       - @stages.tap do |head, *body|
         -# First element should be selected
         .tab-pane.fade.in.active{ id: "tab#{head.id}" }

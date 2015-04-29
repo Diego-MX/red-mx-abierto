@@ -1,4 +1,16 @@
 es:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid: Correo inválido.
+              taken: El correo ya ha sido tomado.
+            password:
+              too_short: La contraseña debe estar compuesta por al menos 8 caracteres.
+            password_confirmation:
+              confirmation: Las contraseñas deben ser iguales.
   devise:
     sessions:
       new:
@@ -21,9 +33,14 @@ es:
     failure:
       user:
         not_found_in_database: Revisa que el usuario y contraseña han sido escritos correctamente.
+        invalid: Revisa que el usuario y contraseña han sido escritos correctamente.
   stages:
+    first_time_user:
+      welcome_title: ¡Bienvenido a tu perfil de MéxicoAbierto.org!
+      welcome_message: A continuación puedes ver las actividades que te llevarán a tener una apertura eficiente en tu ciudad, estado o delegación. Lleva el registro y el avance de las actividades en tu ciudad marcando con una palomita las actividades que ya se están realizando.
     index:
       no_stages: No se han creado etapas.
+      current_step: "<span style='font-weight:800;'>Paso actual:</span> %{last_step}"
     steps_listing:
       no_steps: No hay pasos dentro de esta etapa.
     activities_listing:
@@ -32,8 +49,10 @@ es:
     stages:
       notices:
         saved_successfully: La etapa fue guardada satisfactoriamente.
+        deleted_successfully: La etapa ha sido borrada satisfactoriamente.
       alerts:
         save_failed: Hubo un error al guardar los cambios.
+        delete_failed: Hubo un error al borrar la etapa.
       stages_modal:
         stage: Etapas
         stage_name: Nombre de la etapa
@@ -48,12 +67,16 @@ es:
         edit: Editar
         steps: Pasos
         actions: Acciones
+        delete_stage: Borrar
+        delete_confirmation: Esta etapa junto con todos los pasos y actividades relacionadas serán borradas. ¿Deseas continuar?
 
     steps:
       notices:
         saved_successfully: El paso fue guardado satisfactoriamente.
+        deleted_successfully: El paso ha sido borrado satisfactoriamente.
       alerts:
         save_failed: Hubo un error al guardar los cambios.
+        delete_failed: Hubo un error al borrar el paso.
       steps_modal:
         step: Pasos
         step_name: Nombre del paso
@@ -73,12 +96,16 @@ es:
         save_stage: Guardar etapa
         activities: Actividades
         actions: Acciones
+        delete_step: Borrar
+        delete_confirmation: Este paso y todas las actividades relacionadas serán borradas. ¿Deseas continuar?
 
     activities:
       notices:
         saved_successfully: La actividad fue guardada satisfactoriamente.
+        deleted_successfully: La actividad fue borrada satisfactoriamente.
       alerts:
         save_failed: Hubo un error al guardar los cambios.
+        delete_failed: Hubo un error al borrar la actividad.
       activities_modal:
         activity: Actividades
         activity_name: Nombre de la actividad
@@ -91,52 +118,43 @@ es:
         no_activities: No se han creado actividades.
         edit: Editar
         actions: Acciones
-
-    # steps:
-    #   notices:
-    #     saved_successfully: El paso fue guardado satisfactoriamente.
-    #   alerts:
-    #     save_failed: Hubo un error al guardar los cambios.
-    #   steps_modal:
-    #     step: Pasos
-    #     step_name: Nombre del paso
-    #     cancel: Cancelar
-    #     save: Guardar cambios
-    #   index:
-    #     steps: Pasos
-    #     new_step: Crear paso
-    #     step_name: Nombre
-    #     activities_count: "# Actividades"
-    #     no_steps: No se han creado pasos.
-    #     edit: Editar
-    #     activities: Actividades
-    #     actions: Acciones
-
-    # activities:
-    #   notices:
-    #     saved_successfully: La actividad fue guardada satisfactoriamente.
-    #   alerts:
-    #     save_failed: Hubo un error al guardar los cambios.
-    #   activities_modal:
-    #     activity: Actividades
-    #     activity_name: Nombre de la actividad
-    #     cancel: Cancelar
-    #     save: Guardar cambios
-    #   index:
-    #     activities: Actividades
-    #     new_activity: Crear actividad
-    #     activity_name: Nombre
-    #     no_activities: No se han creado actividades.
-    #     edit: Editar
-    #     actions: Acciones
+        delete_activity: Borrar
+        delete_confirmation: ¿Estás seguro que quieres borrar esta actividad?
+  navbar:
+    inicio: Inicio
+    registrar: Regístrate
+    implementation_guide: Guía de implementación
   footer:
     menu:
-      acerca: "Acerca de"
-      blog: "Blog de Experiencias"
-      estudio: "Estudio Fase Piloto"
+      acerca: Acerca de
+      blog: Blog de Experiencias
+      estudio: Estudio Fase Piloto
       foro: Foro
-      glosario: "Glosario de Términos"
-      guia: "Guía de Implementación"
+      glosario: Glosario de Términos
+      guia: Guía de Implementación
       herramientas: Herramientas
       miembros: Miembros
-      preguntas: "Preguntas Frecuentas"
+      preguntas: Preguntas Frecuentas
+  user:
+    validation:
+      dependency_name_empty: Debes escribir el nombre de la dependencia
+      dependency_name_length: El nombre de la dependencia debe tener por lo menos 3 caracteres.
+      full_name_empty: Tu nombre  no puede estar en blanco.
+      full_name_length: Tu nombre debe tener por lo menos 3 caracteres.
+      full_name_format: El nombre solo debe tener letras.
+      government_type_empty: Indica el tipo de gobierno al que perteneces
+      state_empty: Indica tu Estado
+      deputation_empty: Indica tu delegación
+  messages:
+    user_create: Usuario registrado exitosamente
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: Debes poner un correo
+              invalid: El correo no es válido
+            password:
+              blank: Debes poner una contraseña
+              too_short: La contraseña es muy corta

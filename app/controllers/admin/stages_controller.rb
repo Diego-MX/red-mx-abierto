@@ -1,6 +1,7 @@
 module Admin
   class StagesController < ApplicationController
-    before_action :set_stage, only: [:edit, :update]
+    before_action :authenticate_admin!
+    before_action :set_stage, only: [:edit, :update, :destroy]
     layout 'admin'
 
     def index
@@ -10,7 +11,8 @@ module Admin
 
     def create
       @stage = Stage.new(stage_params)
-      if @stage.save(stage_params)
+      authorize @stage
+      if @stage.save
         redirect_to admin_stages_path, notice: I18n.t('admin.stages.notices.saved_successfully')
       else
         redirect_to admin_stages_path, alert: I18n.t('admin.stages.alerts.save_failed')
@@ -18,10 +20,20 @@ module Admin
     end
 
     def update
+      authorize @stage
       if @stage.update_attributes(stage_params)
         redirect_to admin_stages_path, notice: I18n.t('admin.stages.notices.saved_successfully')
       else
         redirect_to admin_stages_path, alert: I18n.t('admin.stages.alerts.save_failed')
+      end
+    end
+
+    def destroy
+      authorize @stage
+      if @stage.destroy
+        redirect_to admin_stages_path, notice: I18n.t('admin.stages.notices.deleted_successfully')
+      else
+        redirect_to admin_stages_path, notice: I18n.t('admin.stages.alerts.delete_failed')
       end
     end
 

@@ -1,0 +1,9 @@
+es:
+  simple_form:
+    "yes": 'Sí'
+    "no": 'No'
+    required:
+      text: 'Requerido'
+      mark: '*'
+    error_notification:
+      default_message: "Revisa que la información esté correcta:"
