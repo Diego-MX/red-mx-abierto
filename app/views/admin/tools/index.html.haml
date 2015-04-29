@@ -24,10 +24,10 @@
             %td= tool.url
             %td
               %span
-                = t('.edit')
+                = link_to t('.edit'), edit_admin_tool_path(tool)
                 |
-                = t('.delete')
+                = link_to t('.delete'), admin_tool_path(tool), method: :delete, data: { confirm: t('.delete_confirmation') }
 
   - else
-    .jumbotron.text-center{ style: 'margin-top: 15px;' }
+    .jumbotron.text-center.slight-top-margin
       %p= t('.no_tools_available')

@@ -7,6 +7,18 @@ class ToolPolicy < ApplicationPolicy
     new?
   end
 
+  def edit?
+    new?
+  end
+
+  def update?
+    edit?
+  end
+
+  def destroy?
+    create?
+  end
+
   class Scope < Scope
     def resolve
       scope
