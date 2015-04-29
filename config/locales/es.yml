@@ -46,6 +46,15 @@ es:
     activities_listing:
       activities: Actividades
   admin:
+    tools:
+      notices:
+      alerts:
+      index:
+        new_tool: Nueva herramienta
+        no_tools_available: No hay herramientas en el sistema.
+      new:
+        title: Nueva herramienta
+
     stages:
       notices:
         saved_successfully: La etapa fue guardada satisfactoriamente.
@@ -124,6 +133,7 @@ es:
     inicio: Inicio
     registrar: Regístrate
     implementation_guide: Guía de implementación
+    tools: Herramientas
   footer:
     menu:
       acerca: Acerca de

@@ -1,5 +1,22 @@
 es:
+  helpers:
+    submit:
+      tool:
+        create: Agregar herramienta
+        update: Guardar cambios
   simple_form:
+
+    labels:
+      tool:
+        name: Nombre de la herramienta
+        description: Descripción (Máximo 250 caracteres)
+        url: Dirección web
+    placeholders:
+      tool:
+        name: Adela
+        description: Crea tu plan de apertura e inventario de datos.
+        url: https://www.datatron.mx
+
     "yes": 'Sí'
     "no": 'No'
     required:
