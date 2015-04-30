@@ -75,7 +75,7 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
   gem 'thin'
-  gem 'fog-aws'
+  gem 'fog'
 end
 
 group :test do
