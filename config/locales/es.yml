@@ -52,6 +52,7 @@ es:
       num_miembros: '%{num} miembros actualmente en la Red.'
       filtrar_por: Filtrar por:'
       herramientas: 'Herramientas utilizadas:'
+      seleccionar: 'Seleccionar por:'
   admin:
     stages:
       notices:

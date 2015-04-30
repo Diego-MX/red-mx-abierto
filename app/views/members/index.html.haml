@@ -9,11 +9,15 @@
       %div.col-md-6.col-md-offset-3.text-center
         = t('.subtitle')
       %div.col-md-6.col-md-offset-3.text-center.top30
-        = select("post", "government_type", type_of_members.collect {|p| [  p[1] ] }, {include_blank: 'Todos'},onchange: "this.form.submit();")
-      %div.col-md-6.col-md-offset-3.text-center.section
         = t('.num_miembros',num: @user.count)
+      %div.col-md-6.col-md-offset-3.top30
+        %div.row.form-control
+          %div.col-md-4.text-right
+            = t('.seleccionar')
+          %div.col-md-8.text-left
+            = select("post", "government_type", type_of_members.collect {|p| [  p[1] ] }, {include_blank: 'Todos',:selected => @type},onchange: "this.form.submit();", :class => 'form-control-members')
       - @user.each do |user|
-        %div.col-md-4.text-center
+        %div.col-md-4.text-center.top30
           %div.marco
             -if user.government_type == 'estatal'
               %div.text-center
