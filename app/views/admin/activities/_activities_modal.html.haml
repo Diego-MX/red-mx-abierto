@@ -13,7 +13,7 @@
             = f.text_field :name, class: 'form-control'
             .slight-top-margin
             - if @tools.any?
-              %p= t('.activities')
+              %p= t('.tools')
               = f.collection_check_boxes(:tool_ids, @tools, :id, :name) do |b|
                 .checkbox
                   = b.label { b.check_box + b.text }

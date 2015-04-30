@@ -10,5 +10,6 @@
           .row.slight-top-margin
             - activity.tools.each do |tool|
               .col-sm-2.text-center
-                = image_tag(tool.icon_url(:thumb), class: 'tool-icon') if tool.icon?
-                %p= tool.name
+                = link_to tool.url, target: '_blank' do
+                  = image_tag(tool.icon_url(:thumb), class: 'tool-icon') if tool.icon?
+                  %p= tool.name
