@@ -9,7 +9,7 @@
     = render 'layouts/shim'
 
   %body.no-padding-top{ 'ng-app' => 'redMxAbiertoApp', 'data-no-turbolink' => 'true' }
-    = render 'layouts/header', custom_classes: 'azulado'
+    = render 'layouts/header', custom_classes: header_background
     .container
       = render 'layouts/alert'
       = yield

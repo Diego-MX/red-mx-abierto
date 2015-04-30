@@ -127,6 +127,7 @@ es:
       activities_modal:
         activity: Actividades
         activity_name: Nombre de la actividad
+        tools: Herramientas
         cancel: Cancelar
         save: Guardar cambios
       index:

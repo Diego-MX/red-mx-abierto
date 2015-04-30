@@ -3,7 +3,13 @@
   - activities.each do |activity|
     - user_activity = @user_activities.find_by(activity: activity)
     .checkbox{ 'ng-init' => "activities.user_activities[#{user_activity.id}] = #{user_activity.checked}" }
-      -# %p{ 'ng-bind' => "activities.user_activities[#{user_activity.id}]" }
       = label_tag do
         %input{ type: 'checkbox', 'ng-model' => "activities.user_activities[#{user_activity.id}]", 'ng-change' => "activities.activityChecked(#{user_activity.id})" }
         = activity.name
+        - if activity.tools.any?
+          .row.slight-top-margin
+            - activity.tools.each do |tool|
+              .col-sm-2.text-center
+                = link_to tool.url, target: '_blank' do
+                  = image_tag(tool.icon_url(:thumb), class: 'tool-icon') if tool.icon?
+                  %p= tool.name
