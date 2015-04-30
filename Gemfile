@@ -27,23 +27,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
-
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'devise_invitable'
-gem 'figaro', '>= 1.0.0.rc1'
+gem 'figaro'
 gem 'haml-rails'
 gem 'high_voltage'
 gem 'pundit'
@@ -52,6 +39,9 @@ gem 'simple_form'
 gem "font-awesome-rails"
 
 gem 'angularjs-rails'
+
+gem 'carrierwave'
+gem "mini_magick"
 
 group :development do
   gem 'better_errors'
@@ -85,6 +75,7 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
   gem 'thin'
+  gem 'fog-aws'
 end
 
 group :test do

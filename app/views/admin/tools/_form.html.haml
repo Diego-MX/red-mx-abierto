@@ -2,4 +2,7 @@
   = f.input :name
   = f.input :description, as: :text
   = f.input :url, as: :url
+  %span
+    = link_to(@tool.icon_identifier, @tool.icon_url, target: "_blank") if @tool.icon_url
+  = f.input :icon, as: :file
   = f.button :submit, class: 'btn btn-primary slight-top-margin pull-right'

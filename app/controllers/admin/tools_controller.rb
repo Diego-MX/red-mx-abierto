@@ -49,7 +49,7 @@ module Admin
     private
 
     def tool_params
-      params.require(:tool).permit(:name, :description, :url)
+      params.require(:tool).permit(:name, :description, :url, :icon)
     end
 
     def set_tool
