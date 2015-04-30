@@ -9,6 +9,7 @@ module Admin
     def index
       @activity = Activity.new
       @activities = @step.activities.order('created_at ASC')
+      @tools = Tool.all
     end
 
     def create
@@ -23,7 +24,7 @@ module Admin
 
     def update
       authorize @activity
-      if @activity.update_attributes(activity_params)
+      if @activity.update(activity_params)
         redirect_to admin_stage_step_activities_path(@stage, @step), notice: I18n.t('admin.activities.notices.saved_successfully')
       else
         redirect_to admin_stage_step_activities_path(@stage, @step), alert: I18n.t('admin.activities.alerts.save_failed')
@@ -54,7 +55,7 @@ module Admin
     end
 
     def activity_params
-      params.require(:activity).permit(:name, :position)
+      params.require(:activity).permit(:name, :position, tool_ids: [])
     end
   end
 end
