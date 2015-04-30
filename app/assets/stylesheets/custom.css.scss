@@ -1,7 +1,7 @@
 /* imports */
+@import "variables";
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "variables";
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,300,400,700);
 
 /* Sections of the template */
@@ -21,8 +21,13 @@ body {
     color: $verde-mx-sombra;
   }
   .btn-lg{
-    height: 60px;
+    min-height: 50px;
     min-width: 60px;
+    padding: 14px 16px;
+    font-size: 16px;
+  }
+  .btn-success{
+    box-shadow: 0 0 0 0px rgba(251, 218, 88, 0) inset, 0 0 0 0px rgba(255, 255, 255, 0.15) inset, 0 6px 0 0px rgba(0, 0, 0, 0.2), 0 6px 0 0 darken($btn-success-bg, 0.6);
   }
 }
 
@@ -98,12 +103,17 @@ body {
     opacity: 0.7;
     margin-top:-120px;
   }
-  #actualizaciones{
-    height:100px;
+  .actualizaciones{
+    height: 45px;
     position: relative;
     z-index:1;
-    margin-top:-150px;
-    float:right;
+    text-align: right;
+    .btn{
+      position: relative;
+      right: 1%;
+      border-top-left-radius:0;
+      border-top-right-radius:0;
+    }
   }
   .texto-inicio{
     margin-top: 5%;
