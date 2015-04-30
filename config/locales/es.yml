@@ -157,9 +157,9 @@ es:
   user:
     validation:
       dependency_name_empty: Debes escribir el nombre de la dependencia
-      dependency_name_length: El nombre de la dependencia debe tener por lo menos 3 caracteres.
+      dependency_name_length: El nombre de la dependencia debe tener por lo menos 10 caracteres.
       full_name_empty: Tu nombre  no puede estar en blanco.
-      full_name_length: Tu nombre debe tener por lo menos 3 caracteres.
+      full_name_length: Tu nombre debe tener por lo menos 10 caracteres.
       full_name_format: El nombre solo debe tener letras.
       government_type_empty: Indica el tipo de gobierno al que perteneces
       state_empty: Indica tu Estado
