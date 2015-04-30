@@ -20,6 +20,7 @@ $gray-light:$gris-font;
 $btn-default-bg: #fff;
 $btn-primary-bg: lighten($azul-mx, 0.2);
 $btn-success-bg: $verde-mx;
+$btn-success-border: darken($verde-mx, 0.2);
 $btn-info-bg: lighten($azul-mx, 0.7);
 $btn-warning-bg: $amarillo-mx;
 $btn-danger-bg: $rojo-mx;

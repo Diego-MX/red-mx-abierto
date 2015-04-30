@@ -1,8 +1,9 @@
 = content_for :page_title, 'Red México Abierto: Inicio'
 %div.inicio
   %div.overlay-photo
-  %div.container#actualizaciones
-    =# link_to 'Recibe actualizaciones','#'
+  %div.container.actualizaciones
+    = link_to 'Recibe actualizaciones','#actualizaciones', {class: 'btn btn-lg btn-success'}
+
   = render 'layouts/header'
   %div.container.texto-inicio
     %div.col-md-12
@@ -357,7 +358,7 @@
           %li.circulo
             %i.fa.fa-circle.educacion
 
-%div.row.section.azulado
+%div.row.section.azulado#actualizaciones
   %div.container
     %div.col-md-12
       %form.form-inline.newsletter.col-md-offset-2

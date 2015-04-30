@@ -80,3 +80,9 @@ pickle-email-*.html
 
 .ruby-gemset
 .ruby-version
+
+# Ignore application configuration
+/config/application.yml
+
+# Carrierwave uploads
+public/uploads/

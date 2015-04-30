@@ -1,4 +1,4 @@
-.step-container{ 'ng-controller' => 'stepsCtrl as steps'}
+.resource-container{ 'ng-controller' => 'stepsCtrl as steps'}
   .row
     .col-sm-10
       %p= t('.steps')
@@ -30,5 +30,5 @@
           = render 'steps_modal', step: step
 
   - else
-    .jumbotron.text-center{ style: 'margin-top: 15px;' }
+    .jumbotron.text-center.slight-top-margin
       %p= t('.no_steps')
