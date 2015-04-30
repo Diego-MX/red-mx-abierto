@@ -331,7 +331,9 @@ input[type='radio']:checked:before {
   padding-bottom: 10px;
   color: $gris-font;
 }
-
+.icons-padding-footer{
+  padding-bottom: 50px;
+}
 .border-between > [class*='col-']:before {
  background: #e3e3e3;
  bottom: 0;
