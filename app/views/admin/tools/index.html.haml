@@ -1,0 +1,33 @@
+-# .resource-container{ 'ng-controller' => 'toolsCtrl as tools'}
+.resource-container
+  .row
+    .col-sm-10
+      %p= t('.tools')
+    .col-sm-2
+      = link_to t('.new_tool'), new_admin_tool_path, class: 'btn btn-primary pull-right'
+
+  - if @tools.any?
+    %table.table.table-hover
+      %thead
+        %tr
+          %th #
+          %th= t('.name')
+          %th= t('.description')
+          %th= t('.url')
+          %th= t('.actions')
+      %tbody
+        - @tools.each_with_index do |tool, idx|
+          %tr
+            %td= idx
+            %td= tool.name
+            %td= tool.description
+            %td= tool.url
+            %td
+              %span
+                = link_to t('.edit'), edit_admin_tool_path(tool)
+                |
+                = link_to t('.delete'), admin_tool_path(tool), method: :delete, data: { confirm: t('.delete_confirmation') }
+
+  - else
+    .jumbotron.text-center.slight-top-margin
+      %p= t('.no_tools_available')

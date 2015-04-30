@@ -15,6 +15,7 @@ Rails.application.routes.draw do
         resources :activities, only: [:index, :create, :update, :destroy]
       end
     end
+    resources :tools, only: [:index, :new, :create, :edit, :update, :destroy]
   end
 
   get 'pages/home'

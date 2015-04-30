@@ -1,4 +1,4 @@
-.activity-container{ 'ng-controller' => 'activitiesCtrl as activities'}
+.resource-container{ 'ng-controller' => 'activitiesCtrl as activities'}
   .row
     .col-sm-10
       %p= t('.activities')
@@ -26,5 +26,5 @@
           = render 'activities_modal', activity: activity
 
   - else
-    .jumbotron.text-center{ style: 'margin-top: 15px;' }
+    .jumbotron.text-center.slight-top-margin
       %p= t('.no_activities')

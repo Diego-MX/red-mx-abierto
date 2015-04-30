@@ -3,6 +3,8 @@ class Activity < ActiveRecord::Base
 
   has_many :user_activities, dependent: :destroy
   has_many :users, through: :user_activities
+  has_many :activity_tools
+  has_many :tools, through: :activity_tools
 
   after_create :add_activity_to_user
 

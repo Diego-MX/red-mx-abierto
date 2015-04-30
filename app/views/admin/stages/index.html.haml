@@ -1,4 +1,4 @@
-.stage-container{ 'ng-controller' => 'stagesCtrl as stages'}
+.resource-container{ 'ng-controller' => 'stagesCtrl as stages'}
   .row
     .col-sm-10
       %p= t('.stages')
@@ -30,5 +30,5 @@
           = render 'stages_modal', stage: stage
 
   - else
-    .jumbotron.text-center{ style: 'margin-top: 15px;' }
+    .jumbotron.text-center.slight-top-margin
       %p= t('.no_stages')

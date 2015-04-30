@@ -5,7 +5,11 @@
       %ul.nav.navbar-nav.pull-right
         %li= link_to t('navbar.inicio'), root_path
         - if user_signed_in?
-          %li= link_to t("navbar.implementation_guide"), stages_path
+          - if current_user.admin?
+            = render 'layouts/admin_links'
+          - else
+            = render 'layouts/member_links'
+            
           %li= link_to t("devise.sessions.log_out"), destroy_user_session_path, method: :delete
         - else
           %li= link_to t('navbar.registrar'), new_user_registration_path

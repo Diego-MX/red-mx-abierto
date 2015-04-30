@@ -46,6 +46,24 @@ es:
     activities_listing:
       activities: Actividades
   admin:
+    tools:
+      notices:
+        saved_successfully: La herramienta fue guardada satisfactoriamente.
+        deleted_successfully: La herramienta ha sido borrada.
+      alerts:
+        save_failed: Hubo un error al guardar los cambios.
+        delete_failed: Hubo un error al borrar la herramienta.
+      index:
+        new_tool: Nueva herramienta
+        no_tools_available: No hay herramientas en el sistema.
+        edit: Editar
+        delete: Borrar
+        delete_confirmation: Esta herramienta junto con toda su información relacionada será borrada. ¿Deseas continuar?
+      new:
+        title: Nueva herramienta
+      edit:
+        title: Editar herramienta
+
     stages:
       notices:
         saved_successfully: La etapa fue guardada satisfactoriamente.
@@ -124,6 +142,7 @@ es:
     inicio: Inicio
     registrar: Registrar
     implementation_guide: Guía de implementación
+    tools: Herramientas
   footer:
     menu:
       acerca: Acerca de
