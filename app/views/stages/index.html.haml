@@ -15,13 +15,11 @@
         %a.btn.btn-default{'href' => "#tab#{stage.id}", 'data-toggle' => 'tab' }
           %div{ 'data-toggle' => "tooltip", 'data-placement' => "left", 'title' => "#{stage.name}" }
             = truncate stage.name
-
     .tab-content
       - @stages.tap do |head, *body|
         -# First element should be selected
         .tab-pane.fade.in.active{ id: "tab#{head.id}" }
           = render 'steps_listing', steps: head.steps
-
         -# Remaining elements
         - body.each do |stage|
           .tab-pane.fade.in{ id: "tab#{stage.id}" }

@@ -1,7 +1,25 @@
 - if steps.any?
-  - steps.each do |step|
-    %h3= step.name
-    = render 'activities_listing', stage: step.stage, activities: step.activities
+  %br
+  - steps.each_with_index do |step, index|
+    %div.col-md-1
+      = label :index,  index+1, :class => 'js-activity-number', :id => index
+  %br
+  - steps.each_with_index do |step, index|
+    - if index == 0
+      %div.listener{ class: "hide#{index}"}
+        %h3= step.name
+        = render 'activities_listing', stage: step.stage, activities: step.activities
+    - else
+      %div.listener.hide{ class: "hide#{index}"}
+        %h3= step.name
+        = render 'activities_listing', stage: step.stage, activities: step.activities
 - else
   .jumbotron.text-center.slight-top-margin
     %p= t('.no_steps')
+:javascript
+  $('.js-activity-number').click(function() {
+      for (i = 0; i < 30; i++) { 
+        $(".hide"+i).addClass("hide");
+      }
+      $(".hide"+this.id).removeClass("hide");
+  });
