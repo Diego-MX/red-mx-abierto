@@ -10,9 +10,9 @@
         = raw t('.current_step', last_step: @last_activity.step.name)
   -# Activities checklist rendering
   - if @stages.any?
-    .btn-group.btn-group-justified{ role: 'group' }
-      - @stages.each do |stage|
-        %a.btn.btn-default{'href' => "#tab#{stage.id}", 'data-toggle' => 'tab' }
+    #stage-wrapper.btn-group.btn-group-justified{ role: 'group' }
+      - @stages.each_with_index do |stage, idx|
+        %a.btn.btn-default{'href' => "#tab#{stage.id}", 'data-toggle' => 'tab', class: "#{no_left_border(idx)}" }
           %div{ 'data-toggle' => "tooltip", 'data-placement' => "left", 'title' => "#{stage.name}" }
             = truncate stage.name
 
