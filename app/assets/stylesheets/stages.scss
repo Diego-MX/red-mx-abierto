@@ -1,0 +1,51 @@
+@import 'variables';
+
+@mixin active_stage_background() {
+  color: white;
+  background-color: $verde-mx;
+}
+
+#stage-wrapper {
+  height: 60px;
+  a {
+    border-top: 0;
+    border-bottom: 0;
+    border-right: 0;
+    color: $grey-500;
+    background-color: $grey-100;
+
+    &:hover {
+      @include active_stage_background();
+    }
+
+    &.active{
+      @include active_stage_background();
+    }
+  }
+}
+
+#step-wrapper {
+  height: 60px;
+  a {
+    border: 0;
+    color: $grey-500;
+    background-color: none;
+    border-radius: 50%;
+
+    &:hover {
+      @include active_stage_background();
+    }
+
+    &.active{
+      @include active_stage_background();
+    }
+  }
+}
+
+.no-left-border {
+  border-left: 0;
+}
+
+.action_link {
+  cursor: pointer;
+}
