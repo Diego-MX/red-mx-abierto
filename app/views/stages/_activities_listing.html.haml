@@ -2,14 +2,16 @@
   %h4= t('.activities')
   - activities.each do |activity|
     - user_activity = @user_activities.find_by(activity: activity)
-    .checkbox{ 'ng-init' => "activities.user_activities[#{user_activity.id}] = #{user_activity.checked}" }
-      = label_tag do
-        %input{ type: 'checkbox', 'ng-model' => "activities.user_activities[#{user_activity.id}]", 'ng-change' => "activities.activityChecked(#{user_activity.id})" }
-        = activity.name
+    .row.checkbox{ 'ng-init' => "activities.user_activities[#{user_activity.id}] = #{user_activity.checked}" }
+      .col-xs-12.col-sm-9
+        = label_tag do
+          %input{ type: 'checkbox', 'ng-model' => "activities.user_activities[#{user_activity.id}]", 'ng-change' => "activities.activityChecked(#{user_activity.id})" }
+          = activity.name
+      .col-xs-12.col-sm-3
         - if activity.tools.any?
           .row.slight-top-margin
             - activity.tools.each do |tool|
-              .col-sm-2.text-center
+              .col-xs-4.text-center
                 = link_to tool.url, target: '_blank' do
-                  = image_tag(tool.icon_url(:thumb), class: 'tool-icon') if tool.icon?
+                  = image_tag(tool.icon_url, class: 'tool-icon') if tool.icon?
                   %p= tool.name

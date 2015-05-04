@@ -10,8 +10,4 @@ class IconUploader < CarrierWave::Uploader::Base
   def extension_white_list
     %w(jpg jpeg png gif)
   end
-
-  version :thumb do
-    process :resize_to_fill => [50, 50]
-  end
 end
