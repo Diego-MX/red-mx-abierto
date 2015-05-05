@@ -26,6 +26,18 @@ class User < ActiveRecord::Base
     return state.nil? || state.blank?
   end
 
+  def government_name
+    name = ""
+    if !self.deputation.blank?
+      name = self.deputation
+    elsif !self.state.blank?
+      name = self.state
+    elsif !self.municipality.blank?
+      name = self.municipality
+    end
+    return name
+  end
+
   def last_activity
     checked_user_activities = self.user_activities
                                   .where(checked:true)
