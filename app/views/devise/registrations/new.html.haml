@@ -35,7 +35,7 @@
           %div.col-md-8.col-md-offset-2.padding-row
             = f.text_field :municipality, :placeholder => t('.municipality_hint'), :class => 'form-control'
             %div.text-red
-              = @user.errors[:municipality][0].to_s           
+              = @user.errors[:municipality][0].to_s
         %div.row.margin-text-field.deputation{class: show_government_fields_class(['delegacion'],@user.government_type)}
           %div.col-md-8.col-md-offset-2.padding-row
             = f.select(:deputation, deputations_options, {:include_blank => t('.deputation_hint')}, :class => 'form-control')
@@ -55,13 +55,13 @@
               = @user.errors[:full_name][0].to_s
         %div.row.margin-text-field
           %div.col-md-8.col-md-offset-2.padding-row
-            = f.label t('.email')
+            = f.label t('.email') + ':'
             = f.email_field :email , :placeholder =>  t('.email_hint'), :class => 'form-control'
             %div.text-red
               = @user.errors[:email][0].to_s
         %div.row.margin-text-field
           %div.col-md-8.col-md-offset-2
-            = f.label t('.password')
+            = f.label t('.password') + ':'
             = f.password_field :password, autocomplete: "off" , :placeholder =>  t('.password_hint'), :class => 'form-control'
         %div.row.margin-text-field
           %div.col-md-8.col-md-offset-2.padding-row
@@ -74,7 +74,8 @@
             = t('.terminos')
             = link_to t('.liga_terminos'), root_path, :class => 'a-green'
           %div.col-md-8.col-md-offset-2.padding-row
-            = f.submit t('.registra'), :class => 'btn btn-lg btn-success center-block', :disabled => !@acepted
+            %button.btn.btn-lg.btn-success.center-block
+              = f.submit t('.registra') , :disabled => !@acepted
 :javascript
   var checkboxes = $("input[type='checkbox']"),
   submitButt = $("input[type='submit']");
