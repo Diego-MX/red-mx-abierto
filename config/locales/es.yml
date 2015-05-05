@@ -178,6 +178,10 @@ es:
       deputation_empty: Indica tu delegación
   messages:
     user_create: Usuario registrado exitosamente
+    tooltip_planea: Desarrollar y publicar el Plan de Apertura
+    tooltip_publica: Dar las características de datos abiertos
+    tooltip_perfecciona: Avanzar en la madurez de los datos abiertos
+    tooltip_promueve: Colaborar con los usuarios de datos
   activerecord:
     errors:
       models:
