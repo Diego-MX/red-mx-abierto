@@ -445,7 +445,7 @@ input[type='radio']:checked:before {
 .card-miembros-detalle{
   @extend .card-miembros;
   text-align:center;
-  min-height: 308px;
+  min-height: 250px;
   max-width: 250px;
   padding: 30px;
   p{
