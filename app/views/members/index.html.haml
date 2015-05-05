@@ -20,13 +20,13 @@
         %div.col-md-4.text-center.top30
           %div.card-miembros-detalle
             %div.avatar.text-center
-              = image_tag("estado.png", class: 'center-block')
+              = image_tag("#{user.government_type}.png", class: 'center-block')
             %br
             %p.nivel-gobierno.text-center
               = user.government_name
-            %p.datasets.hidden
-              25 datasets
             %hr
+            %p.datasets
+              = user.government_type.capitalize
             %div.hidden
               %p.herramientas-titulo.text-center
                 Herramientas utilizadas:
