@@ -26,7 +26,7 @@
               = user.government_name
             %hr
             %p.datasets
-              = user.government_type.capitalize
+              = !user.government_type.nil? ?  user.government_type.capitalize : "Miembro"
             %div.hidden
               %p.herramientas-titulo.text-center
                 Herramientas utilizadas:
