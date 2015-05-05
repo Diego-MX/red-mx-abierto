@@ -13,7 +13,7 @@ class MembersController < ApplicationController
     end
 
     def set_user_filter
-      @user = User.all
+      @user = User.where(government_type: ['delegacion', 'municipal','estatal'])
       unless params[:post].nil?
         @type = params[:post][:government_type]
         if @type == 'Delegacional'
