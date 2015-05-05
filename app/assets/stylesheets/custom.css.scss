@@ -440,9 +440,70 @@ input[type='radio']:checked:before {
    color: $rojo-mx !important;
 }
 /********************miembros***************/
-.marco{
-  padding: 10px;
-  margin: 10px;
-  border: 1px solid $gris-borde;
-}
 .top30 { margin-top:30px; }
+
+.card-miembros-detalle{
+  @extend .card-miembros;
+  text-align:center;
+  min-height: 308px;
+  max-width: 250px;
+  padding: 30px;
+  p{
+    margin: 0;
+  }
+  ul{
+    list-style: none;
+    padding: 0;
+  }
+  hr{
+    width: 75%;
+  }
+  .avatar{
+    width: 100%;
+    float:none;
+    img{
+    }
+  }
+  .nivel-gobierno{
+    width:100%;
+    text-align:center;
+    color: $azul-mx;
+    font-weight:700;
+  }
+  .herramientas-titulo{
+    width:100%;
+    color: $gris-font;
+    font-size: 0.9em;
+    font-weight:500;
+  }
+  .herramientas{
+    width: 100%;
+    font-size: 0.7em;
+    img{ 
+      max-width:20px;
+      max-height: 20px;
+      margin: 5px 0;
+      margin-left:auto;
+      margin-right:auto;
+
+    }
+    li{
+      padding: 12px 8px;
+      height: 70px;
+      float:left;
+      text-align: center;
+    }
+    .datatron{
+      width:33%;
+    }
+    .adela{
+      width:33%;
+    }
+    .nube{
+      width:33%;
+    }
+  }
+  .datasets{
+    color: $gris-font;
+  }
+}
