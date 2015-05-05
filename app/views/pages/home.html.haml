@@ -20,33 +20,6 @@
 
 %div.separador-verde
 
-%div.row.section
-  %div.container
-    %div.col-md-12
-      %div.col-md-4.col-md-offset-4
-        %h3.text-center.section-title
-          Lo
-          %a
-            más reciente
-          de la red
-          %hr
-      %ul.card-reciente.col-md-10.col-md-offset-1
-        %li.avatar
-          = image_tag 'placeholders/president.jpg', class: 'img-circle'
-        %li.estado
-          %a{href:'http://www.twitter.com/redmxabierto', target:'_blank'}
-            @RedMXAbierto
-
-          \: El estado de Puebla se acaba de unir a la red, revisa sus 
-          avances en
-          %a{href:'http://www.mxabierto.org/puebla', target:'_blank'}
-            mxabierto.org/puebla
-
-          %br
-          %p.hora
-            %span.glyphicon.glyphicon-time{"aria-hidden" => "true"}
-            Hace 3 horas
-%hr
 
 %div.row.section
   %div.container
@@ -63,91 +36,7 @@
         %p.text-center
           Al formar parte de la Red inicias en un proceso de apertura
           de datos que se describe en la
-          Guía de Implementación 
-          y que se compone de 4 pasos:
-
-%div.container.section
-  %div.row
-    %div.etapa.col-md-3
-      %h3.text-center
-        Planea
-        %span.glyphicon.glyphicon-question-sign{"aria-hidden" => "true"}
-      %div
-        %ul.card-miembros
-          %li.avatar
-            = image_tag 'placeholders/playa.jpg', class: 'img-circle'
-          %li.estado
-            Cancún, Q.R.
-        %ul.card-miembros
-          %li.avatar
-            = image_tag 'placeholders/guadalajara.jpg', class: 'img-circle'
-          %li.estado
-            Guadalajara, Jal.
-        %ul.card-miembros
-          %li.avatar
-            = image_tag 'placeholders/silla.jpg', class: 'img-circle'
-          %li.estado
-            Monterrey, N.L.
-    %div.etapa.col-md-3
-      %h3.text-center
-        Publica
-        %span.glyphicon.glyphicon-question-sign{"aria-hidden" => "true"}
-      %div
-        %ul.card-miembros
-          %li.avatar
-            = image_tag 'placeholders/playa.jpg', class: 'img-circle'
-          %li.estado
-            Cancún, Q.R.
-        %ul.card-miembros
-          %li.avatar
-            = image_tag 'placeholders/guadalajara.jpg', class: 'img-circle'
-          %li.estado
-            Guadalajara, Jal.
-        %ul.card-miembros
-          %li.avatar
-            = image_tag 'placeholders/silla.jpg', class: 'img-circle'
-          %li.estado
-            Monterrey, N.L.
-    %div.etapa.col-md-3
-      %h3.text-center
-        Perfecciona
-        %span.glyphicon.glyphicon-question-sign{"aria-hidden" => "true"}
-      %div
-        %ul.card-miembros
-          %li.avatar
-            = image_tag 'placeholders/playa.jpg', class: 'img-circle'
-          %li.estado
-            Cancún, Q.R.
-        %ul.card-miembros
-          %li.avatar
-            = image_tag 'placeholders/guadalajara.jpg', class: 'img-circle'
-          %li.estado
-            Guadalajara, Jal.
-        %ul.card-miembros
-          %li.avatar
-            = image_tag 'placeholders/silla.jpg', class: 'img-circle'
-          %li.estado
-            Monterrey, N.L.
-    %div.etapa.col-md-3
-      %h3.text-center
-        Promueve
-        %span.glyphicon.glyphicon-question-sign{"aria-hidden" => "true"}
-      %div
-        %ul.card-miembros
-          %li.avatar
-            = image_tag 'placeholders/playa.jpg', class: 'img-circle'
-          %li.estado
-            Cancún, Q.R.
-        %ul.card-miembros
-          %li.avatar
-            = image_tag 'placeholders/guadalajara.jpg', class: 'img-circle'
-          %li.estado
-            Guadalajara, Jal.
-        %ul.card-miembros
-          %li.avatar
-            = image_tag 'placeholders/silla.jpg', class: 'img-circle'
-          %li.estado
-            Monterrey, N.L.
+          Guía de Implementación y que se compone de 4 pasos.
   %div.row.section
     %div.col-md-12
       %p.text-center
@@ -159,13 +48,56 @@
         %button.btn.btn-lg.btn-success.center-block
           ¡Regístrate!
 
+
+%div.container.section.hidden
+  %div.row
+    %div.etapa.col-md-3
+      %h3.text-center
+        Planea
+        %span.glyphicon.glyphicon-question-sign{"aria-hidden" => "true"}
+      %div.hidden
+        %ul.card-miembros
+          %li.avatar
+            = image_tag 'placeholders/playa.jpg', class: 'img-circle'
+          %li.estado
+            Cancún, Q.R.
+    %div.etapa.col-md-3
+      %h3.text-center
+        Publica
+        %span.glyphicon.glyphicon-question-sign{"aria-hidden" => "true"}
+      %div.hidden
+        %ul.card-miembros
+          %li.avatar
+            = image_tag 'placeholders/playa.jpg', class: 'img-circle'
+          %li.estado
+            Cancún, Q.R.
+    %div.etapa.col-md-3
+      %h3.text-center
+        Perfecciona
+        %span.glyphicon.glyphicon-question-sign{"aria-hidden" => "true"}
+      %div.hidden
+        %ul.card-miembros
+          %li.avatar
+            = image_tag 'placeholders/playa.jpg', class: 'img-circle'
+          %li.estado
+            Cancún, Q.R.
+    %div.etapa.col-md-3
+      %h3.text-center
+        Promueve
+        %span.glyphicon.glyphicon-question-sign{"aria-hidden" => "true"}
+      %div.hidden
+        %ul.card-miembros
+          %li.avatar
+            = image_tag 'placeholders/playa.jpg', class: 'img-circle'
+          %li.estado
+            Cancún, Q.R.
 %hr
 
 %div.row.section.herramientas
   %div.container
-    %div.row.section
+    %div.row
       %div.col-md-4.col-md-offset-4
-        %h3.text-center.section-title.section
+        %h3.text-center.section-title
           Herramientas
           %hr
         %p.text-center
@@ -235,8 +167,10 @@
     %div.row.section-mini
       %div.col-md-12
         %p.text-center
-          %a.en_el_futuro
-            Ver todas las herramientas
+          Próximamente podrás ver todas estas herramientas.
+          %br
+          %a{href:'mailto:mexico.abierto@datos.gob.mx'}
+            Mándanos un correo con sugerencias >
 
     %div.row
       %div.col-md-4.col-md-offset-4
@@ -275,50 +209,13 @@
                 Modelo Plan de Apertura
               %li
                 Infraestructura Estratégica de Datos Abiertos
-%hr
-
-%div.row.section
-  %div.container.experiencias
-    %div.row.section
-      %div.col-md-4.col-md-offset-4
-        %h3.text-center.section-title.section
-          Experiencias
-          %hr
-    %div.col-md-6
-      = image_tag 'placeholders/obama.jpg', class: 'img-rounded col-sm-3'
-      %div.col-sm-9
-        %p
-          %h3
-            Experiencia, aciertos y áreas de oportunidad
-          %h5.italicas
-            Gerardo Pérez - Unidad Gobierno Digital
-            %br
-            Marzo 18, 2015
-          %p
-            El 1 de enero del 2014, 
-            iniciamos con la actual administración y se planteó la necesidad de 
-            comenzar a implementar nuevos mecanismos que integren a la ciudadanía 
-            en el proceso de toma de decisiones.
-          %p
-            %a.en_el_futuro
-              Ver la historia completa >
-    %div.col-md-6
-      = image_tag 'placeholders/bachelet.jpg', class: 'img-rounded col-sm-3'
-      %div.col-sm-9
-        %p
-          %h3
-            El impulso al Gobierno Abierto
-          %h5.italicas
-            Andrea Barenque - Dirección de Gobierno Abierto
-            %br
-            Marzo 24, 2015
-          %p
-            La colaboración como clave para la apertura: Gobierno Abierto se 
-            refiere al impulso de nuevas formas de comunicación y colaboración 
-            entre gobierno y sociedad
-          %p
-            %a.en_el_futuro
-              Ver la historia completa >
+    %div.row.section-mini
+      %div.col-md-12
+        %p.text-center
+          Estos documentos están en construcción, coméntalos si tienes alguna sugerencia.
+          %br
+          %a{href:'https://docs.google.com/document/d/1dCDNXZF7a1awad025VLVEhcQ_jH4m1Cmivzn0S8ejWE/edit'}
+            Ver recursos editoriales >
 %hr
 %div.row.section
   %div.container
@@ -330,33 +227,84 @@
     %div.section
       %div.col-md-8.col-md-offset-2
         %ul.card-experiencias.col-md-6
-          %li
-            Usando Datos Abiertos en temas de Seguridad.
+          %li.titulo
+            Estandarización y uso de datos de seguridad pública a nivel Municipal. 
+          %li.descripcion
+            Se aprovecharán mejores prácticas para la generación, estandarización y uso de datos de seguridad pública a nivel Municipal junto con la Oficina de Seguridad Pública y Justicia en INEGI y  la Oficina de las Naciones Unidas para Drogas y Crimen (en México).
           %li.context-info
             Seguridad
           %li
             %i.fa.fa-circle.seguridad
         %ul.card-experiencias.col-md-6
-          %li
-            Usando Datos Abiertos en temas de Salud.
+          %li.titulo
+            Expediente Clínico Electrónico
+          %li.descripcion
+            Este ejercicio se estará planteando en las siguientes semanas al Estado de Jalisco y la idea es seguir el proceso de apertura del Expediente Clínico Electrónico y de información de la Secretaría de Salud Estatal, para establecer un estándar mínimo de información de Salud para replicarlo con otras entidades. 
           %li.context-info.salud
             Salud
           %li.circulo
             %i.fa.fa-circle.salud
         %ul.card-experiencias.col-md-6
-          %li
-            Usando Datos Abiertos en temas de Transporte y Tráfico.
+          %li.titulo
+            Visualización de indicadores económicos
+          %li.descripcion
+            Con el Distrito Federal se plantea apoyar el desarrollo de una herramienta que podrá replicarse en otros estados; esta tiene el objetivo de hacer más sencilla la visualización de indicadores económicos a nivel nacional y local .
           %li.context-info
-            Transporte y Tráfico
+            Desarrollo Económico
           %li.circulo
-            %i.fa.fa-circle.transporte
+            %i.fa.fa-circle.economia
         %ul.card-experiencias.col-md-6
-          %li
-            Usando Datos Abiertos en temas de Educación.
+          %li.titulo
+            Estándar de Datos de Educación
+          %li.descripcion
+            El Estado de Morelos recibirá apoyo para continuar mejorando, documentando y midiendo el efecto que las rutas de transporte tienen en la deserción escolar en el Estado de Morelos; con la intención de generar un estándar de Datos de Educación para las entidades federativas.
           %li.context-info
             Educación
           %li.circulo
             %i.fa.fa-circle.educacion
+%hr
+%div.row.section
+  %div.container.experiencias
+    %div.row
+      %div.col-md-4.col-md-offset-4
+        %h3.text-center.section-title
+          Experiencias
+          %hr
+    %div.col-md-6
+      = image_tag 'xalapa-historia.jpg', class: 'img-rounded col-sm-3'
+      %div.col-sm-9
+        %p
+          %h3
+            Xalapa: Aciertos y experiencias en Datos Abiertos
+          %h5.italicas
+            Gerardo Pérez - Unidad Gobierno Digital
+            %br
+            Marzo 18, 2015
+          %p
+            El 1 de enero del 2014, 
+            iniciamos con la actual administración y se planteó la necesidad de 
+            comenzar a implementar nuevos mecanismos que integren a la ciudadanía 
+            en el proceso de toma de decisiones.
+          %p
+            %a{href:'http://datos.gob.mx/avances/xalapaproceso.html'}
+              Ver la historia completa >
+    %div.col-md-6
+      = image_tag 'puebla-historia.jpg', class: 'img-rounded col-sm-3'
+      %div.col-sm-9
+        %p
+          %h3
+            Puebla: La colaboración como clave para la apertura
+          %h5.italicas
+            Andrea Barenque - Dirección de Gobierno Abierto
+            %br
+            Marzo 24, 2015
+          %p
+            La colaboración como clave para la apertura: Gobierno Abierto se 
+            refiere al impulso de nuevas formas de comunicación y colaboración 
+            entre Gobierno y sociedad
+          %p
+            %a{href:'http://datos.gob.mx/avances/pueblarmxa.html'}
+              Ver la historia completa >
 
 %div.row.section.azulado#actualizaciones
   %div.container
@@ -364,7 +312,7 @@
       %form.form-inline.newsletter.col-md-offset-2
         .form-group
           %label{:for => "exampleInputEmail2"}
-            ¿Quiéres saber más sobre la Red México Abierto?
+            Inscríbete para recibir el boletín de la Red México Abierto
           %div.input-group.input-group-lg
             %input.form-control{ :placeholder => "Correo electrónico", :type => "email"}
         %button.btn.btn-default.btn-success.btn-lg{:type => "submit"}
@@ -372,10 +320,3 @@
 
 %div.separador-verde
 = render 'layouts/footer'
-
-:javascript
-  $( document ).ready(function(){
-    $('.en_el_futuro').click(function(){
-      alert('Podrás ver el link en el primer release.');
-    });
-  });
