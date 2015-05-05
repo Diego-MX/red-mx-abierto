@@ -4,6 +4,7 @@
     %nav
       %ul.nav.navbar-nav.pull-right
         %li= link_to t('navbar.inicio'), root_path
+        %li= link_to t('navbar.miembros'), members_path
         - if user_signed_in?
           - if current_user.admin?
             = render 'layouts/admin_links'

@@ -1,0 +1,52 @@
+%div.row.section
+  %div.container
+    %div.col-md-12
+    = form_tag({controller: "members", action: "index"}, method: "get") do
+      %div.col-md-4.col-md-offset-4
+        %h3.text-center.section-title
+          = t('.title')
+        %hr.small
+      %div.col-md-6.col-md-offset-3.text-center
+        = t('.subtitle')
+      %div.col-md-6.col-md-offset-3.text-center.top30
+        = t('.num_miembros',num: @user.count)
+      %div.col-md-6.col-md-offset-3.top30
+        %div.row.form-control
+          %div.col-md-4.text-right
+            = t('.seleccionar')
+          %div.col-md-8.text-left
+            = select("post", "government_type", type_of_members.collect {|p| [  p[1] ] }, {include_blank: 'Todos',:selected => @type},onchange: "this.form.submit();", :class => 'form-control-members')
+      - @user.each do |user|
+        %div.col-md-4.text-center.top30
+          %div.card-miembros-detalle
+            %div.avatar.text-center
+              = image_tag("#{user.government_type}.png", class: 'center-block')
+            %br
+            %p.nivel-gobierno.text-center
+              = user.government_name
+            %hr
+            %p.datasets
+              = user.government_type.capitalize
+            %div.hidden
+              %p.herramientas-titulo.text-center
+                Herramientas utilizadas:
+              %ul.herramientas
+                %li.datatron.center-block
+                  =image_tag('datatron.png')
+                  Datatrón
+                %li.datatron.center-block
+                  =image_tag('adela.png')
+                  Adela
+                %li.datatron.center-block
+                  =image_tag('nubedatos.png')
+                  Nube
+
+  %div.col-md-12.container
+    %div.col-md-4.col-md-offset-4
+      %h3.text-center.section-title
+      %hr.small
+      %p.text-center
+        ¿Te gustaría formar parte de la Red México Abierto?
+      %a{:href => "#{new_user_registration_path}"}
+        %button.btn.btn-lg.btn-success.center-block
+          ¡Regístrate!

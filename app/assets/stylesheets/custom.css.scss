@@ -78,6 +78,7 @@ body {
 .navbar{
   padding:25px 0;
   background-color:transparent;
+  border: 0px solid transparent;
 }
 
 
@@ -336,7 +337,9 @@ input[type='radio']:checked:before {
   padding-bottom: 10px;
   color: $gris-font;
 }
-
+.icons-padding-footer{
+  padding-bottom: 50px;
+}
 .border-between > [class*='col-']:before {
  background: #e3e3e3;
  bottom: 0;
@@ -402,6 +405,18 @@ input[type='radio']:checked:before {
   -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
+.form-control-members {
+  display: block;
+  width: 100%;
+  height: 20px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: $gris-font;
+  background-color: white;
+  background-image: none;
+  border: 0px solid $gris-borde;
+  border-radius: 4px;
+}
 
 .margin-text-field{
   margin-top: 10px;
@@ -436,4 +451,73 @@ input[type='radio']:checked:before {
 .padding-radio-button{
     vertical-align: middle;
     padding-bottom: 8px;
+}
+
+/********************miembros***************/
+.top30 { margin-top:30px; }
+
+.card-miembros-detalle{
+  @extend .card-miembros;
+  text-align:center;
+  min-height: 250px;
+  max-width: 250px;
+  padding: 30px;
+  p{
+    margin: 0;
+  }
+  ul{
+    list-style: none;
+    padding: 0;
+  }
+  hr{
+    width: 75%;
+  }
+  .avatar{
+    width: 100%;
+    float:none;
+    img{
+    }
+  }
+  .nivel-gobierno{
+    width:100%;
+    text-align:center;
+    color: $azul-mx;
+    font-weight:700;
+  }
+  .herramientas-titulo{
+    width:100%;
+    color: $gris-font;
+    font-size: 0.9em;
+    font-weight:500;
+  }
+  .herramientas{
+    width: 100%;
+    font-size: 0.7em;
+    img{ 
+      max-width:20px;
+      max-height: 20px;
+      margin: 5px 0;
+      margin-left:auto;
+      margin-right:auto;
+
+    }
+    li{
+      padding: 12px 8px;
+      height: 70px;
+      float:left;
+      text-align: center;
+    }
+    .datatron{
+      width:33%;
+    }
+    .adela{
+      width:33%;
+    }
+    .nube{
+      width:33%;
+    }
+  }
+  .datasets{
+    color: $gris-font;
+  }
 }
