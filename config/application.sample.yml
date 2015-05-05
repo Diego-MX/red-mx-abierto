@@ -1,4 +1,12 @@
+# amazon keys
 AWS_KEY: ''
 AWS_SECRET_KEY: ''
 AWS_REGION: ''
 AWS_BUCKET: ''
+
+# action mailer production config
+SMTP_USERNAME: ''
+SMTP_PASSWORD: ''
+SMTP_CONFIG_DOMAIN: ''
+SMTP_CONFIG_ADDRESS: ''
+MAILER_SENDER: 'no-responda@redmxabierto.org'

@@ -6,6 +6,9 @@ es:
         update: Guardar cambios
       user:
         update: Guardar
+      password:
+        create: Manda las instrucciones a mi correo electrónico
+        update: Actualiza mi contraseña
   simple_form:
     labels:
       tool:
