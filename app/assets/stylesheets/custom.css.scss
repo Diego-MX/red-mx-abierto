@@ -340,12 +340,20 @@ input[type='radio']:checked:before {
 }
 
 .texto-padding-top-down{
-  padding-top: 10px;
-  padding-bottom: 10px;
   color: $gris-font;
+  font-size: 1.2em;
+  padding-bottom: 1em;
 }
+.texto-padding-top-down-right{
+  color: $gris-font;
+  font-size: 1.2em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+}
+
 .icons-padding-footer{
-  padding-bottom: 50px;
+  padding-bottom: 3em;
+  padding-top: 3em;
 }
 .border-between > [class*='col-']:before {
  background: #e3e3e3;
@@ -360,11 +368,18 @@ input[type='radio']:checked:before {
  display: none;
 }
 
+.fa-footer {
+  font-size: 2.0em;
+}
 .fa-envelope:hover {
     color: $verde-mx-hover !important;
 }
 .fa-twitter:hover {
     color: $verde-mx-hover !important;
+}
+.image_footer_right{
+  padding-right: 1em;
+  margin-bottom: 0.5em;
 }
 /*************************a-green******************/
 .a-green{
