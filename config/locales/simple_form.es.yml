@@ -4,13 +4,18 @@ es:
       tool:
         create: Agregar herramienta
         update: Guardar cambios
+      user:
+        update: Guardar
   simple_form:
-
     labels:
       tool:
         name: Nombre de la herramienta
         description: Descripción (Máximo 250 caracteres)
         url: Dirección web
+      user:
+        full_name: Nombre completo
+        email: Correo electrónico
+        dependency_name: Nombre de la dependencia
     placeholders:
       tool:
         name: Adela
