@@ -30,6 +30,10 @@ app.controller('activitiesCtrl', [ '$http', '$cookies', function($http, $cookies
     self.names = [];
     self.user_activities = [];
     self.hideWelcomeMessage = !!$cookies["_hide_first_log_in_message"];
+
+    // active tab variables
+    self.currentStage = null;
+    self.currentStep = null;
   };
 
   self.activityChecked = function(activityId) {
@@ -62,6 +66,21 @@ app.controller('activitiesCtrl', [ '$http', '$cookies', function($http, $cookies
     // Let's set a cookie so that the message doesn't appear again
     self.hideWelcomeMessage = true;
     $cookies["_hide_first_log_in_message"] = true;
+  };
+
+  // let's add some code for the active tabs
+  // stages_path
+  self.setTabs = function(stageId, stepId) {
+    self.setStageTab(stageId);
+    self.setStepTab(stepId);
+  };
+
+  self.setStageTab = function(id) {
+    self.currentStage = id;
+  };
+
+  self.setStepTab = function(id) {
+    self.currentStep = id;
   };
 
   self.init();

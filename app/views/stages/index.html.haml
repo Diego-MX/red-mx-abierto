@@ -3,7 +3,7 @@
   -# Check if this is a first time user
   = render 'first_time_user'
 
-  .row{ style: 'margin-bottom:15px;'}
+  .row{ style: 'margin-bottom:15px;', 'ng-init' => "activities.setTabs(#{@last_activity.step.stage.id}, #{@last_activity.step.id})" }
     .col-sm-5
     .col-sm-7
       %p.pull-right
@@ -12,20 +12,14 @@
   - if @stages.any?
     #stage-wrapper.btn-group.btn-group-justified{ role: 'group' }
       - @stages.each_with_index do |stage, idx|
-        %a.btn.btn-default{'href' => "#tab#{stage.id}", 'data-toggle' => 'tab', class: "#{no_left_border(idx)}" }
+        %a.btn.btn-default{'href' => "#tab#{stage.id}", 'data-toggle' => 'tab', 'ng-click' => "activities.setTabs(#{stage.id}, #{stage.steps.first.id})", class: "#{no_left_border(idx)}", 'ng-class' => "{ active: activities.currentStage == #{stage.id} }" }
           %div{ 'data-toggle' => "tooltip", 'data-placement' => "left", 'title' => "#{stage.name}" }
             = truncate stage.name
 
     .tab-content
-      - @stages.tap do |head, *body|
-        -# First element should be selected
-        .tab-pane.fade.in.active{ id: "tab#{head.id}" }
-          = render 'steps_listing', steps: head.steps
-
-        -# Remaining elements
-        - body.each do |stage|
-          .tab-pane.fade.in{ id: "tab#{stage.id}" }
-            = render 'steps_listing', steps: stage.steps
+      - @stages.each do |stage|
+        .tab-pane.fade.in{ id: "tab#{stage.id}", 'ng-class' => "{ active: activities.currentStage == #{stage.id} }" }
+          = render 'steps_listing', steps: stage.steps
 
   - else
     .jumbotron.text-center.slight-top-margin

@@ -1,22 +1,15 @@
 - if steps.any?
   #step-wrapper
     - steps.each_with_index do |step, idx|
-      %a.btn.btn-default.slight-top-margin{'href' => "#step_tab#{step.id}", 'data-toggle' => 'tab' }
+      %a.btn.btn-default.slight-top-margin{'href' => "#step_tab#{step.id}", 'data-toggle' => 'tab', 'ng-click' => "activities.setStepTab(#{step.id})", 'ng-class' => "{ active: activities.currentStep == #{step.id} }" }
         %div{ 'data-toggle' => "tooltip", 'data-placement' => "left", 'title' => "#{ step.name }" }
           = idx + 1
 
   .tab-content
-    - steps.tap do |first_step, *body|
-      -# First step
-      .tab-pane.fade.in.active{ id: "step_tab#{first_step.id}" }
-        %h3= first_step.name
-        = render 'activities_listing', stage: first_step.stage, activities: first_step.activities
-
-      -# Rest of steps
-      - body.each do |step|
-        .tab-pane.fade.in{ id: "step_tab#{step.id}" }
-          %h3= step.name
-          = render 'activities_listing', stage: step.stage, activities: step.activities
+    - steps.each do |step|
+      .tab-pane.fade.in{ id: "step_tab#{step.id}", 'ng-class' => "{ active: activities.currentStep == #{step.id} }" }
+        %h3= step.name
+        = render 'activities_listing', stage: step.stage, activities: step.activities
 - else
   .jumbotron.text-center.slight-top-margin
     %p= t('.no_steps')
