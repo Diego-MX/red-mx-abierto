@@ -430,3 +430,10 @@ input[type='radio']:checked:before {
 .text-red{
    color: $rojo-mx !important;
 }
+.padding-radio-title{
+    padding-top: 3px;
+}
+.padding-radio-button{
+    vertical-align: middle;
+    padding-bottom: 8px;
+}
