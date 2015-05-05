@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: "users/registrations"}
-  resources :pages, only: [:home]
-  resources :users
-  resources :members, only: [:index]
-  get 'pages/home'
+  resources :users, except: :destroy
 
   resources :pages, only: :home
+  resources :members, only: :index
+  get 'pages/home'
+
 
   resources :stages, only: :index
   match '/user_activities', to: 'user_activities#update', via: :post

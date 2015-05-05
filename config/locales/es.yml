@@ -36,6 +36,15 @@ es:
       user:
         not_found_in_database: Revisa que el usuario y contraseña han sido escritos correctamente.
         invalid: Revisa que el usuario y contraseña han sido escritos correctamente.
+  users:
+    notices:
+      saved_successfully: La información del perfil ha sido guardada satisfactoriamente.
+    alerts:
+      save_failed: La información del perfil no se ha guardado.
+    edit:
+      government_type: "Tipo de gobierno: %{answer}"
+      location: "Ubicación: %{answer}"
+
   stages:
     first_time_user:
       welcome_title: ¡Bienvenido a tu perfil de MéxicoAbierto.org!
@@ -155,6 +164,7 @@ es:
     registrar: Registrar
     implementation_guide: Guía de implementación
     tools: Herramientas
+    profile: Perfil
   footer:
     menu:
       acerca: Acerca de
