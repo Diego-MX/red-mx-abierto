@@ -1,10 +1,17 @@
 - if steps.any?
+  %br    
+    %div.row
+  - steps.each_with_index do |step, index|
+    - if index == 0
+      %div.col-lg-1.text-green.text-padding-circles{ class: "listenercolor#{index}"}
+        = label index,  index+1, :class => 'js-activity-number', :id => index
+    - else
+      %div.col-lg-1.text-padding-circles{ class: "listenercolor#{index}"}
+        = label index,  index+1, :class => 'js-activity-number', :id => index
+  %br
   %br
   - steps.each_with_index do |step, index|
-    %div.col-md-1
-      = label :index,  index+1, :class => 'js-activity-number', :id => index
-  %br
-  - steps.each_with_index do |step, index|
+    %div.row
     - if index == 0
       %div.listener{ class: "hide#{index}"}
         %h3= step.name
@@ -20,6 +27,8 @@
   $('.js-activity-number').click(function() {
       for (i = 0; i < 30; i++) { 
         $(".hide"+i).addClass("hide");
+        $(".listenercolor"+i).removeClass("text-green");
       }
       $(".hide"+this.id).removeClass("hide");
+      $(".listenercolor"+this.id).addClass("text-green");
   });

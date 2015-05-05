@@ -424,3 +424,18 @@ input[type='radio']:checked:before {
 .text-red{
    color: $rojo-mx !important;
 }
+
+.text-green{
+  color: $blanco !important;
+     background: url('circulo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+.text-padding-circles{
+    text-align: center !important;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
