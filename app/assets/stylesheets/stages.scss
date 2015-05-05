@@ -42,10 +42,11 @@
   }
 }
 
-.no-left-border {
-  border-left: 0;
+.checkbox-container {
+  padding: 15px;
+  border-radius: 5px;
 }
 
-.action_link {
-  cursor: pointer;
+.done {
+  background-color: $grey-100;
 }

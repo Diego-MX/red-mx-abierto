@@ -3,3 +3,11 @@ $base_separation_margin: 15px;
 .slight-top-margin {
   margin-top: $base_separation_margin;
 }
+
+.no-left-border {
+  border-left: 0;
+}
+
+.action_link {
+  cursor: pointer;
+}

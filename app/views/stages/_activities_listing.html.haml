@@ -3,7 +3,7 @@
   - activities.each do |activity|
     - user_activity = @user_activities.find_by(activity: activity)
     .row.checkbox{ 'ng-init' => "activities.user_activities[#{user_activity.id}] = #{user_activity.checked}" }
-      .col-xs-12.col-sm-9
+      .col-xs-12.col-sm-9.checkbox-container{ 'ng-class' => "{ done: activities.user_activities[#{user_activity.id}] }" }
         = label_tag do
           %input{ type: 'checkbox', 'ng-model' => "activities.user_activities[#{user_activity.id}]", 'ng-change' => "activities.activityChecked(#{user_activity.id})" }
           = activity.name
