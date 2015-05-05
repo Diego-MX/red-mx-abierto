@@ -16,6 +16,9 @@ es:
         full_name: Nombre completo
         email: Correo electrónico
         dependency_name: Nombre de la dependencia
+        current_password: Escribe tu contraseña actual
+        password: Nueva contraseña
+        password_confirmation: Confirma tu nueva contraseña
     placeholders:
       tool:
         name: Adela

@@ -1,18 +1,4 @@
 es:
-  activerecord:
-    errors:
-      models:
-        user:
-          attributes:
-            email:
-              blank: Debes escribir un correo electrónico válido.
-              invalid: Correo inválido.
-              taken: El correo ya ha sido tomado.
-            password:
-              blank: Debes escribir una contraseña válida.
-              too_short: La contraseña es muy corta.
-            password_confirmation:
-              confirmation: Las contraseñas deben ser iguales.
   devise:
     sessions:
       new:
@@ -44,6 +30,7 @@ es:
     edit:
       government_type: "Tipo de gobierno: %{answer}"
       location: "Ubicación: %{answer}"
+      change_password: Cambia tu contraseña
 
   stages:
     first_time_user:
@@ -188,14 +175,3 @@ es:
       deputation_empty: Indica tu delegación
   messages:
     user_create: Usuario registrado exitosamente
-  activerecord:
-    errors:
-      models:
-        user:
-          attributes:
-            email:
-              blank: Debes poner un correo
-              invalid: El correo no es válido
-            password:
-              blank: Debes poner una contraseña
-              too_short: La contraseña es muy corta

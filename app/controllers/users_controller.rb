@@ -9,9 +9,9 @@ class UsersController < ApplicationController
   def update
     authorize @user
     if @user.update(user_params)
-      redirect_to edit_user_path(current_user), notice: I18n.t('users.notices.saved_successfully')
+      render :edit, notice: I18n.t('users.notices.saved_successfully')
     else
-      redirect_to edit_user_path(current_user), alert: I18n.t('users.alerts.save_failed')
+      render :edit, alert: I18n.t('users.alerts.save_failed')
     end
   end
 
