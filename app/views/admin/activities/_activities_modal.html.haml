@@ -11,10 +11,12 @@
           .form-group
             = f.label :name, t('.activity_name')
             = f.text_field :name, class: 'form-control'
-          -# We should use this field when it matters the order for each activity
-          -# .form-group
-            = f.label :position, t('.activity_position')
-            = f.number_field :position, class: 'form-control', 'min' => 1
+            .slight-top-margin
+            - if @tools.any?
+              %p= t('.tools')
+              = f.collection_check_boxes(:tool_ids, @tools, :id, :name) do |b|
+                .checkbox
+                  = b.label { b.check_box + b.text }
 
           .form-group
         .modal-footer

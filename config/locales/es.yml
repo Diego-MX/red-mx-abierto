@@ -5,10 +5,12 @@ es:
         user:
           attributes:
             email:
+              blank: Debes escribir un correo electrónico válido.
               invalid: Correo inválido.
               taken: El correo ya ha sido tomado.
             password:
-              too_short: La contraseña debe estar compuesta por al menos 8 caracteres.
+              blank: Debes escribir una contraseña válida.
+              too_short: La contraseña es muy corta.
             password_confirmation:
               confirmation: Las contraseñas deben ser iguales.
   devise:
@@ -135,6 +137,7 @@ es:
       activities_modal:
         activity: Actividades
         activity_name: Nombre de la actividad
+        tools: Herramientas
         cancel: Cancelar
         save: Guardar cambios
       index:
@@ -165,9 +168,9 @@ es:
   user:
     validation:
       dependency_name_empty: Debes escribir el nombre de la dependencia
-      dependency_name_length: El nombre de la dependencia debe tener por lo menos 3 caracteres.
+      dependency_name_length: El nombre de la dependencia debe tener por lo menos 10 caracteres.
       full_name_empty: Tu nombre  no puede estar en blanco.
-      full_name_length: Tu nombre debe tener por lo menos 3 caracteres.
+      full_name_length: Tu nombre debe tener por lo menos 10 caracteres.
       full_name_format: El nombre solo debe tener letras.
       government_type_empty: Indica el tipo de gobierno al que perteneces
       state_empty: Indica tu Estado

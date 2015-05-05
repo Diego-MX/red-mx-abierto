@@ -14,6 +14,13 @@ $azul-claro-mx: #50D0E8;
 $morado-mx: #825DA4;
 $blanco: #fff;
 
+// google materia design colors
+$grey-100: #F5F5F5;
+$grey-200: #EEEEEE;
+$grey-300: #E0E0E0;
+$grey-400: #BDBDBD;
+$grey-500: #9E9E9E;
+
 
 /*New color assignments for template*/
 $gray-light:$gris-font;
@@ -35,3 +42,8 @@ $colores-tematicas: (
     (salud, $azul-mx),
     (educacion, $morado-mx)
 );
+
+
+// admin colors
+$default_admin_text_color: white;
+$default_admin_background_color: black;

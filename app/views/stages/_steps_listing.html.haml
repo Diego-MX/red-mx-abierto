@@ -1,7 +1,15 @@
 - if steps.any?
-  - steps.each do |step|
-    %h3= step.name
-    = render 'activities_listing', stage: step.stage, activities: step.activities
+  #step-wrapper
+    - steps.each_with_index do |step, idx|
+      %a.btn.btn-default.slight-top-margin{'href' => "#step_tab#{step.id}", 'data-toggle' => 'tab', 'ng-click' => "activities.setStepTab(#{step.id})", 'ng-class' => "{ active: activities.currentStep == #{step.id} }" }
+        %div{ 'data-toggle' => "tooltip", 'data-placement' => "left", 'title' => "#{ step.name }" }
+          = idx + 1
+
+  .tab-content
+    - steps.each do |step|
+      .tab-pane.fade.in{ id: "step_tab#{step.id}", 'ng-class' => "{ active: activities.currentStep == #{step.id} }" }
+        %h3= step.name
+        = render 'activities_listing', stage: step.stage, activities: step.activities
 - else
   .jumbotron.text-center.slight-top-margin
     %p= t('.no_steps')
