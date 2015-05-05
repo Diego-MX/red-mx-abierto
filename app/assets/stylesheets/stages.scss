@@ -47,7 +47,7 @@
   border-radius: 5px;
 
   &:hover {
-    @include active_background_color();
+    background-color: $grey-100;
   }
 }
 
