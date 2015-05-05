@@ -29,6 +29,12 @@ body {
   .btn-success{
     box-shadow: 0 0 0 0px rgba(251, 218, 88, 0) inset, 0 0 0 0px rgba(255, 255, 255, 0.15) inset, 0 6px 0 0px rgba(0, 0, 0, 0.2), 0 6px 0 0 darken($btn-success-bg, 0.6);
   }
+  button{
+    input{
+      background-color: transparent;
+      border: none;
+    }
+  }
 }
 
 
@@ -391,10 +397,9 @@ input[type='radio']:checked:before {
 .form-control {
   display: block;
   width: 100%;
-  height: 34px;
-  padding: 6px 12px;
-  margin-left: 10px;
-  font-size: 14px;
+  height: 44px;
+  padding: 6px 24px;
+  font-size: 1em;
   line-height: 1.42857143;
   color: $gris-font;
   background-color: white;
@@ -446,11 +451,13 @@ input[type='radio']:checked:before {
    color: $rojo-mx !important;
 }
 .padding-radio-title{
-    padding-top: 3px;
+  margin-top: 3px;
+  font-weight: 700;
 }
 .padding-radio-button{
-    vertical-align: middle;
-    padding-bottom: 8px;
+  vertical-align: middle;
+  margin-bottom: 12px;
+  font-weight: 500;
 }
 
 /********************miembros***************/
