@@ -151,6 +151,7 @@ es:
         delete_confirmation: ¿Estás seguro que quieres borrar esta actividad?
   navbar:
     inicio: Inicio
+    miembros: Miembros
     registrar: Registrar
     implementation_guide: Guía de implementación
     tools: Herramientas
