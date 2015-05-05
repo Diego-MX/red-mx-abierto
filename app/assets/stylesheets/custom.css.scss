@@ -365,6 +365,21 @@ input[type='radio']:checked:before {
 .fa-twitter:hover {
     color: $verde-mx-hover !important;
 }
+
+.text-big{
+  color: $negro-mx;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+.text-conditions{
+   text-align: justify;
+    text-justify: inter-word;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+.text-conditions-title{
+  color: $gris-font;
+}
 /*************************a-green******************/
 .a-green{
   color: $gris-font !important;
@@ -528,3 +543,4 @@ input[type='radio']:checked:before {
     color: $gris-font;
   }
 }
+
