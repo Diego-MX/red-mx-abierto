@@ -1,13 +1,15 @@
 = simple_form_for @user, defaults: { input_html: { class: 'form-control'}, label_html: { class: 'slight-top-margin' } }, html: { class: 'form-signin' } do |f|
+  %ul{ style: 'list-style-type: none;padding:0; 0px;margin: 15px 0 0 0;' }
+    %li{ style: 'margin-bottom:15px;' }= t('.government_type', answer: pretty_government(@user.government_type))
+    %li{ style: 'margin-bottom:15px;' }= t('.location', answer: pretty_location(@user))
+
   = f.input :full_name, required: true
   = f.input :email, required: true
   = f.input :dependency_name, required: true
 
   = f.input :government_type, as: :hidden, readonly: true
   = f.input :state, as: :hidden, readonly: true
-
-  %ul{ style: 'list-style-type: none;padding:0; 0px;margin: 15px 0 0 0;' }
-    %li{ style: 'margin-bottom:15px;' }= t('.government_type', answer: pretty_government(@user.government_type))
-    %li{ style: 'margin-bottom:15px;' }= t('.location', answer: pretty_location(@user))
+  .slight-top-margin.text-right
+    = link_to t('.change_password'), edit_user_registration_path
 
   = f.button :submit, class: 'btn btn-block btn-success slight-top-margin'

@@ -1,0 +1,20 @@
+es:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: Debes escribir un correo electrónico válido.
+              invalid: Correo inválido.
+              taken: El correo ya ha sido tomado.
+            password:
+              blank: Debes escribir una contraseña válida.
+              too_short: La contraseña es muy corta.
+              invalid: Contraseña incorrecta.
+            current_password:
+              blank: Debes escribir una contraseña válida.
+              too_short: La contraseña es muy corta.
+              invalid: Contraseña incorrecta.
+            password_confirmation:
+              confirmation: Las contraseñas deben ser iguales.
