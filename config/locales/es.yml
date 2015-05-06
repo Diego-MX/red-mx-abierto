@@ -154,6 +154,7 @@ es:
       herramientas: Herramientas
       miembros: Miembros
       preguntas: Preguntas Frecuentas
+      liga_terminos: Terminos de la Red
   user:
     validation:
       dependency_name_empty: Debes escribir el nombre de la dependencia

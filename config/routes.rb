@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   end
 
   get 'pages/home'
+  get 'pages/conditions' 
 
   root 'pages#home'
 end

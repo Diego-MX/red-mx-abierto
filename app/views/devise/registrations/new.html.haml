@@ -72,7 +72,7 @@
           %div.col-md-7.col-md-offset-2.padding-row
             = check_box_tag "accept",:key, @acepted, :class => "js-button-checked"
             = t('.terminos')
-            = link_to t('.liga_terminos'), root_path, :class => 'a-green'
+            = link_to t('.liga_terminos'), pages_conditions_path, :class => 'a-green'
           %div.col-md-8.col-md-offset-2.padding-row
             %button.btn.btn-lg.btn-success.center-block
               = f.submit t('.registra') , :disabled => !@acepted

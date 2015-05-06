@@ -4,4 +4,10 @@ class PagesController < ApplicationController
     skip_authorization
     render layout: 'main'
   end
+
+
+  def conditions
+      skip_authorization
+      render layout: 'devise'
+  end
 end
