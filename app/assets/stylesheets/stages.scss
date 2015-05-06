@@ -1,6 +1,6 @@
 @import 'variables';
 
-@mixin active_stage_background() {
+@mixin active_background_color() {
   color: white;
   background-color: $verde-mx;
 }
@@ -15,11 +15,11 @@
     background-color: $grey-100;
 
     &:hover {
-      @include active_stage_background();
+      @include active_background_color();
     }
 
     &.active{
-      @include active_stage_background();
+      @include active_background_color();
     }
   }
 }
@@ -33,11 +33,11 @@
     border-radius: 50%;
 
     &:hover {
-      @include active_stage_background();
+      @include active_background_color();
     }
 
     &.active{
-      @include active_stage_background();
+      @include active_background_color();
     }
   }
 }
@@ -45,6 +45,10 @@
 .checkbox-container {
   padding: 15px;
   border-radius: 5px;
+
+  &:hover {
+    background-color: $grey-100;
+  }
 }
 
 .done {

@@ -1,0 +1,9 @@
+@import 'variables';
+
+#header > li > a {
+  color: $navbar_links_default;
+
+  &:hover {
+    color: $navbar_links_hover;
+  }
+}

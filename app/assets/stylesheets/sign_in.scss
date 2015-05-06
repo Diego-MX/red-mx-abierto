@@ -1,19 +1,22 @@
 $padding-top: 40px;
 $padding-bottom: 40px;
 $background-color: #eee;
-$container_width: 330px;
+// form container widths
+$new_session_form_width: 330px;
+$edit_profile_form_width: 640px;
 
-.sign_in {
-  padding-top: $padding-top;
-  padding-bottom: $padding-bottom;
-  background-color: $background-color;
+@mixin forms($width, $padding) {
+  max-width: $width;
+  padding: $padding;
 }
+
+// new session form
 
 .form-signin {
-  max-width: $container_width;
-  padding: 15px;
+  @include forms($new_session_form_width, 15px);
   margin: 0 auto;
 }
+
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
   margin-bottom: 10px;
@@ -42,4 +45,11 @@ $container_width: 330px;
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+// user profile form
+
+.form-signin {
+  @include forms($edit_profile_form_width, 15px);
+  margin: 0 auto;
 }

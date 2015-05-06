@@ -1,28 +1,5 @@
 es:
-  activerecord:
-    errors:
-      models:
-        user:
-          attributes:
-            email:
-              blank: Debes escribir un correo electrónico válido.
-              invalid: Correo inválido.
-              taken: El correo ya ha sido tomado.
-            password:
-              blank: Debes escribir una contraseña válida.
-              too_short: La contraseña es muy corta.
-            password_confirmation:
-              confirmation: Las contraseñas deben ser iguales.
   devise:
-    sessions:
-      new:
-        log_in: Inicia sesión
-        email: Correo electrónico
-        password: Contraseña
-        log_in_button: Entrar
-      user:
-        signed_in: Has iniciado sesión.
-        signed_out: Has cerrado sesión.
     registrations:
       new:
         sign_up: Regístrate
@@ -36,6 +13,16 @@ es:
       user:
         not_found_in_database: Revisa que el usuario y contraseña han sido escritos correctamente.
         invalid: Revisa que el usuario y contraseña han sido escritos correctamente.
+  users:
+    notices:
+      saved_successfully: La información del perfil ha sido guardada satisfactoriamente.
+    alerts:
+      save_failed: La información del perfil no se ha guardado.
+    edit:
+      government_type: "Tipo de gobierno: %{answer}"
+      location: "Ubicación: %{answer}"
+      change_password: Cambia tu contraseña
+
   stages:
     first_time_user:
       welcome_title: ¡Bienvenido a tu perfil de MéxicoAbierto.org!
@@ -155,6 +142,7 @@ es:
     registrar: Registrar
     implementation_guide: Guía de implementación
     tools: Herramientas
+    profile: Perfil
   footer:
     menu:
       acerca: Acerca de
@@ -166,6 +154,7 @@ es:
       herramientas: Herramientas
       miembros: Miembros
       preguntas: Preguntas Frecuentas
+      liga_terminos: Terminos de la Red
   user:
     validation:
       dependency_name_empty: Debes escribir el nombre de la dependencia

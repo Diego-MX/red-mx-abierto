@@ -4,13 +4,24 @@ es:
       tool:
         create: Agregar herramienta
         update: Guardar cambios
+      user:
+        update: Guardar
+      password:
+        create: Manda las instrucciones a mi correo electrónico
+        update: Actualiza mi contraseña
   simple_form:
-
     labels:
       tool:
         name: Nombre de la herramienta
         description: Descripción (Máximo 250 caracteres)
         url: Dirección web
+      user:
+        full_name: Nombre completo
+        email: Correo electrónico
+        dependency_name: Nombre de la dependencia
+        current_password: Escribe tu contraseña actual
+        password: Nueva contraseña
+        password_confirmation: Confirma tu nueva contraseña
     placeholders:
       tool:
         name: Adela

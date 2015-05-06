@@ -13,13 +13,19 @@ $gris-contextual: #d8d8d8;
 $azul-claro-mx: #50D0E8;
 $morado-mx: #825DA4;
 $blanco: #fff;
+$verde-claro-mx: #9BD065;
+$negro-mx: #000;
 
-// google materia design colors
+// google material design colors
 $grey-100: #F5F5F5;
 $grey-200: #EEEEEE;
 $grey-300: #E0E0E0;
 $grey-400: #BDBDBD;
 $grey-500: #9E9E9E;
+
+// navbar colors
+$navbar_links_default: #FAFAFA;
+$navbar_links_hover: #00D8A2;
 
 
 /*New color assignments for template*/
@@ -39,8 +45,9 @@ $navbar-inverse-link-active-bg: transparent;
 $colores-tematicas: (
     (seguridad, $rojo-mx),
     (transporte, $amarillo-mx),
-    (salud, $azul-mx),
-    (educacion, $morado-mx)
+    (salud, $azul-claro-mx),
+    (educacion, $morado-mx),
+    (economia, $verde-claro-mx)
 );
 
 

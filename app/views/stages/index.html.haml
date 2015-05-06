@@ -12,7 +12,7 @@
   - if @stages.any?
     #stage-wrapper.btn-group.btn-group-justified{ role: 'group' }
       - @stages.each_with_index do |stage, idx|
-        %a.btn.btn-default{'href' => "#tab#{stage.id}", 'data-toggle' => 'tab', 'ng-click' => "activities.setTabs(#{stage.id}, #{stage.steps.first.id})", class: "#{no_left_border(idx)}", 'ng-class' => "{ active: activities.currentStage == #{stage.id} }" }
+        %a.btn.btn-default{'href' => "#tab#{stage.id}", 'data-toggle' => 'tab', 'ng-click' => "activities.setTabs(#{stage.id}, #{fetch_step_id(stage.steps.first)})", class: "#{no_left_border(idx)}", 'ng-class' => "{ active: activities.currentStage == #{stage.id} }" }
           %div{ 'data-toggle' => "tooltip", 'data-placement' => "left", 'title' => "#{stage.name}" }
             = truncate stage.name
 

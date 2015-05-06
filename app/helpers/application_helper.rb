@@ -6,4 +6,8 @@ module ApplicationHelper
   def no_left_border(idx)
     "no-left-border" if idx == 0
   end
+
+  def fetch_step_id(step)
+    (step.present?) ? step.id : "null"
+  end
 end

@@ -2,7 +2,7 @@
   .container
     = link_to image_tag("toplogo.png"), root_path, {class: 'navbar-brand'}
     %nav
-      %ul.nav.navbar-nav.pull-right
+      %ul#header.nav.navbar-nav.pull-right
         %li= link_to t('navbar.inicio'), root_path
         %li= link_to t('navbar.miembros'), members_path
         - if user_signed_in?
@@ -10,8 +10,10 @@
             = render 'layouts/admin_links'
           - else
             = render 'layouts/member_links'
-            
-          %li= link_to t("devise.sessions.log_out"), destroy_user_session_path, method: :delete
+
+          -# links for both admins and users
+          %li= link_to t('navbar.profile'), edit_user_path(current_user)
+          %li= link_to t('devise.sessions.log_out'), destroy_user_session_path, method: :delete
         - else
           %li= link_to t('navbar.registrar'), new_user_registration_path
           %li= link_to t("devise.sessions.log_in"), user_session_path
