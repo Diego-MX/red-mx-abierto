@@ -54,7 +54,8 @@
     %div.etapa.col-md-3
       %h3.text-center
         Planea
-        %span.glyphicon.glyphicon-question-sign{"aria-hidden" => "true"}
+        %span.icon-remove.idrow{rel: "tooltip", title: "#{t('messages.tooltip_planea')}"}
+          %span.glyphicon.glyphicon-question-sign{"aria-hidden" => "true"}
       %div.hidden
         %ul.card-miembros
           %li.avatar
@@ -64,7 +65,8 @@
     %div.etapa.col-md-3
       %h3.text-center
         Publica
-        %span.glyphicon.glyphicon-question-sign{"aria-hidden" => "true"}
+        %span.icon-remove.idrow{rel: "tooltip", title:  "#{t('messages.tooltip_publica')}"}
+          %span.glyphicon.glyphicon-question-sign{"aria-hidden" => "true"}
       %div.hidden
         %ul.card-miembros
           %li.avatar
@@ -74,7 +76,8 @@
     %div.etapa.col-md-3
       %h3.text-center
         Perfecciona
-        %span.glyphicon.glyphicon-question-sign{"aria-hidden" => "true"}
+        %span.icon-remove.idrow{rel: "tooltip", title:  "#{t('messages.tooltip_perfecciona')}"}
+          %span.glyphicon.glyphicon-question-sign{"aria-hidden" => "true"}
       %div.hidden
         %ul.card-miembros
           %li.avatar
@@ -84,7 +87,8 @@
     %div.etapa.col-md-3
       %h3.text-center
         Promueve
-        %span.glyphicon.glyphicon-question-sign{"aria-hidden" => "true"}
+        %span.icon-remove.idrow{rel: "tooltip", title:  "#{t('messages.tooltip_promueve')}"}
+          %span.glyphicon.glyphicon-question-sign{"aria-hidden" => "true"}
       %div.hidden
         %ul.card-miembros
           %li.avatar
@@ -320,3 +324,6 @@
 
 %div.separador-verde
 = render 'layouts/footer'
+
+:javascript
+  $("span[rel=tooltip]").tooltip();
